@@ -1,0 +1,8 @@
+Flask==0.10.1
+django-dotenv==1.4.1 # Read environment variables from .env
+django-getenv==1.3.1 # Get environment variables
+newrelic
+
+# Error tracking
+blinker==1.4
+rollbar==0.11.6

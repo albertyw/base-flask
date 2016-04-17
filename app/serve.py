@@ -21,7 +21,7 @@ if env('ENV') == 'production':
 
         """init rollbar module"""
         rollbar.init(
-            'ROLLBAR_TOKEN',
+            env('ROLLBAR_SERVER_TOKEN'),
             # environment name
             env('ENV'),
             # server root directory, makes tracebacks prettier
@@ -31,6 +31,14 @@ if env('ENV') == 'production':
 
         # send exceptions from `app` to rollbar, using flask's signal system.
         got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+
+
+@app.context_processor
+def inject_envs():
+    envs = {}
+    envs['ROLLBAR_CLIENT_TOKEN'] = env('ROLLBAR_CLIENT_TOKEN')
+    envs['SEGMENT_TOKEN'] = env('SEGMENT_TOKEN')
+    return {'ENV': envs}
 
 
 @app.route("/")

@@ -1,7 +1,7 @@
 import os
 import sys
-root_path = os.path.dirname(os.path.realpath(__file__))+'/../../'
-sys.path.append(root_path+'/app/')
+root_path = os.path.dirname(os.path.realpath(__file__)) + '/../../'
+sys.path.append(root_path + '/app/')
 
 import dotenv
 dotenv.read_dotenv(os.path.join(root_path, '.env'))
@@ -13,7 +13,7 @@ monitor.start(interval=1.0)
 
 # Set up NewRelic Agent
 import newrelic.agent
-config_path = root_path+'/config/'
+config_path = root_path + '/config/'
 newrelic_ini = '%s/newrelic.ini' % config_path
 if env('ENV') in ['production', 'staging']:
     newrelic.agent.initialize(newrelic_ini, env('ENV'))

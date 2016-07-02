@@ -5,4 +5,4 @@ newrelic
 
 # Error tracking
 blinker==1.4
-rollbar==0.13.0
+rollbar==0.13.1

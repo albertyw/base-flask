@@ -3,7 +3,7 @@
     accessToken: '{{ ENV['ROLLBAR_CLIENT_TOKEN'] }}',
     captureUncaught: true,
     payload: {
-      environment: "production"
+      environment: "{{ ENV['ENV'] }}"
     }
   };
   // Rollbar Snippet

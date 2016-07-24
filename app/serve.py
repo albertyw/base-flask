@@ -38,6 +38,7 @@ def inject_envs():
     envs = {}
     envs['ROLLBAR_CLIENT_TOKEN'] = env('ROLLBAR_CLIENT_TOKEN')
     envs['SEGMENT_TOKEN'] = env('SEGMENT_TOKEN')
+    envs['ENV'] = env('ENV')
     return {'ENV': envs}
 
 

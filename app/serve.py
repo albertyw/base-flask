@@ -2,11 +2,10 @@ import os
 
 from flask import Flask, render_template, got_request_exception
 
-
 import dotenv
+from getenv import env
 root_path = os.path.dirname(os.path.realpath(__file__)) + '/../'
 dotenv.read_dotenv(os.path.join(root_path, '.env'))
-from getenv import env
 
 
 app = Flask(__name__)

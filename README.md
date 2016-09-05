@@ -16,3 +16,10 @@ mkvirtualenv app -p python3.5
 pip install -r requirements.txt
 python app/serve.py
 ```
+
+Testing
+-------
+
+```
+python app/tests.py
+```

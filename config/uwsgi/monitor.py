@@ -2,7 +2,6 @@ from __future__ import print_function
 
 import os
 import sys
-import time
 import signal
 import threading
 import atexit
@@ -102,7 +101,7 @@ atexit.register(_exiting)
 
 
 def track(path):
-    if not path in _files:
+    if path not in _files:
         _files.append(path)
 
 

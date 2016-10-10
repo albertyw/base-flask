@@ -47,5 +47,10 @@ def index():
     return render_template("index.htm")
 
 
+@app.route("/robots.txt")
+def robots():
+    return render_template("robots.txt")
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

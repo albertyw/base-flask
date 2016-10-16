@@ -10,6 +10,7 @@ dotenv.read_dotenv(os.path.join(root_path, '.env'))
 
 app = Flask(__name__)
 app.debug = env('DEBUG') == 'true'
+app.config['SERVER_NAME'] = env('SERVER_NAME')
 
 
 if env('ENV') == 'production':

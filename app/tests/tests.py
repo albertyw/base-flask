@@ -23,7 +23,3 @@ class PageCase(unittest.TestCase):
         response = self.app.get(path)
         self.assertEqual(response.status_code, 200)
         self.assertIn(string, response.get_data())
-
-
-if __name__ == '__main__':
-    unittest.main()

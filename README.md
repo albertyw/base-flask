@@ -22,5 +22,6 @@ Testing
 -------
 
 ```
-python app/tests.py
+cd app
+coverage run -m unittest discover
 ```

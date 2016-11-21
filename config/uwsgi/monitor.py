@@ -86,6 +86,7 @@ def _monitor():
         except:
             pass
 
+
 _thread = threading.Thread(target=_monitor)
 _thread.setDaemon(True)
 
@@ -96,6 +97,7 @@ def _exiting():
     except:
         pass
     _thread.join()
+
 
 atexit.register(_exiting)
 

@@ -12,7 +12,7 @@ Development
 -----------
 
 With virtualenvwrapper:
-```
+```bash
 mkvirtualenv app -p python3.5
 pip install -r requirements.txt
 ln -s .env.development .env
@@ -22,7 +22,7 @@ python app/serve.py
 Testing
 -------
 
-```
+```bash
 cd app
 coverage run -m unittest discover
 ```
@@ -30,7 +30,7 @@ coverage run -m unittest discover
 Production
 ----------
 
-```
+```bash
 ln -s .env.production .env
 bin/setup.sh
 ```

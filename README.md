@@ -26,3 +26,11 @@ Testing
 cd app
 coverage run -m unittest discover
 ```
+
+Production
+----------
+
+```
+ln -s .env.production .env
+bin/setup.sh
+```

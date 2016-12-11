@@ -15,6 +15,7 @@ With virtualenvwrapper:
 ```
 mkvirtualenv app -p python3.5
 pip install -r requirements.txt
+ln -s .env.development .env
 python app/serve.py
 ```
 

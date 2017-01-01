@@ -6,7 +6,7 @@ flask-sitemap==0.2.0
 
 # Error tracking
 blinker==1.4
-rollbar==0.13.8
+rollbar==0.13.9
 
 # Testing
 flake8==3.2.1 # Python linting

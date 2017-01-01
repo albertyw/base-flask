@@ -34,9 +34,7 @@ sudo service nginx restart
 sudo apt-get install -y uwsgi uwsgi-plugin-python3 python3-dev python3-setuptools
 
 # Install python/pip/virtualenvwrapper
-curl https://bootstrap.pypa.io/get-pip.py | sudo python2
 curl https://bootstrap.pypa.io/get-pip.py | sudo python3
-sudo pip2 install virtualenvwrapper
 sudo pip3 install virtualenvwrapper
 
 # Install python packages

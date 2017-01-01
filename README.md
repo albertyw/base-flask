@@ -23,6 +23,7 @@ Testing
 -------
 
 ```bash
+pip install -r requirements-test.txt
 cd app
 coverage run -m unittest discover
 ```

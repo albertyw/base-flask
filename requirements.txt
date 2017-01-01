@@ -11,7 +11,3 @@ flask-sitemap==0.2.0 # Web sitemaps
 blinker==1.4         # Dependency of rollbar
 newrelic             # Website monitoring
 rollbar==0.13.9      # rollbar.com error logging
-
-# Testing
-codeclimate-test-reporter==0.2.0 # Test coverage
-flake8==3.2.1                    # Python linting

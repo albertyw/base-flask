@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update repository
-cd /var/www/website/
+cd /var/www/website/ || exit 1
 git checkout master
 git pull
 
@@ -13,7 +13,7 @@ workon GIT_REPOSITORY_NAME
 pip install -r requirements.txt
 
 # Configure settings
-cd GIT_REPOSITORY
+cd GIT_REPOSITORY || exit 1
 ln -sf .env.production .env
 
 # Restart services

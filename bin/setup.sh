@@ -11,6 +11,8 @@ sudo ln -s ~/website /var/www/website
 # Clone repository
 git clone GIT_REPOSITORY
 sudo mv GIT_REPOSITORY_NAME /var/www/website
+cd /var/www/website || exit 1
+ln -s .env.production .env
 
 # Install nginx
 sudo add-apt-repository ppa:nginx/stable

@@ -6,24 +6,43 @@
 [![Test Coverage](https://codeclimate.com/github/albertyw/base-flask/badges/coverage.svg)](https://codeclimate.com/github/albertyw/base-flask/coverage)
 [![Hound CI](https://img.shields.io/badge/houndci-monitored-blue.svg)](https://houndci.com/)
 
-Base Flask/uWSGI/nginx setup
+This is a base Flask/uWSGI/nginx setup, useful as a skeleton for building
+simple web apps from.  This is meant to be used for websites, as opposed to
+pure JSON sites which would be better developed using a different language or
+framework (e.g. [sanic](https://github.com/channelcat/sanic)).
+
+Features
+--------
+
+ - Developed specifically for Python 3
+ - Minimal but up-to-date python dependencies
+ - 100% test coverage
+ - No issues from Code Climate
+ - PEP8 compliant
+ - Documented setup and usage procedures
+ - Includes setting up secure and fast nginx/uwsgi in production
 
 Development
 -----------
 
-With virtualenvwrapper:
+### Setup (using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)):
+
 ```bash
 mkvirtualenv app -p python3.5
 pip install -r requirements.txt
+pip install -r requirements-test.txt
 ln -s .env.development .env
+```
+
+### Spinning up the server:
+
+```bash
 python app/serve.py
 ```
 
-Testing
--------
+### Running tests:
 
 ```bash
-pip install -r requirements-test.txt
 cd app
 coverage run -m unittest discover
 ```
@@ -31,7 +50,17 @@ coverage run -m unittest discover
 Production
 ----------
 
+### Setup
+
 ```bash
+mkvirtualenv app -p python3.5
+pip install -r requirements.txt
 ln -s .env.production .env
 bin/setup.sh
+```
+
+### Deploment
+
+```bash
+bin/deploy.sh
 ```

@@ -62,7 +62,7 @@ server {
 
     # config to enable HSTS(HTTP Strict Transport Security) https://developer.mozilla.org/en-US/docs/Security/HTTP_Strict_Transport_Security
     # to avoid ssl stripping https://en.wikipedia.org/wiki/SSL_stripping#SSL_stripping
-    add_header Strict-Transport-Security "max-age=31536000; includeSubdomains;";
+    add_header Strict-Transport-Security "max-age=1209600; includeSubdomains;";
 
     gzip on;
     gzip_disable "msie6";

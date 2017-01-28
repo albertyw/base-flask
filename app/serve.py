@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template, got_request_exception
+from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
 
 import dotenv
@@ -15,8 +16,26 @@ app.config['SERVER_NAME'] = env('SERVER_NAME')
 
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
 app.config['SITEMAP_URL_SCHEME'] = 'https'
+assets = Environment(app)
 ext = Sitemap(app=app)
 
+
+js = Bundle(
+    'js/jquery.min.js',
+    'js/tether.min.js',
+    'js/bootstrap.min.js',
+    'js/global.js',
+    filters='rjsmin', output='gen/bundle.min.js'
+)
+assets.register('js_all', js)
+css = Bundle(
+    'css/normalize.min.css',
+    'css/tether.min.css',
+    'css/bootstrap.min.css',
+    'css/global.css',
+    filters='cssmin', output='gen/bundle.min.css'
+)
+assets.register('css_all', css)
 
 if env('ENV') == 'production':
     import rollbar

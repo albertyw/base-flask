@@ -3,10 +3,9 @@
   <head>
     {% block head %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/css/tether.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    {% assets "css_all" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
     {% include "rollbar.htm" %}
     {% include "segment.htm" %}
     <title>{% block title %}{% endblock %}</title>
@@ -41,8 +40,8 @@
         {% endblock %}
       </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% assets "js_all" %}
+      <script src="{{ ASSET_URL }}" /></script>
+    {% endassets %}
   </body>
 </html>

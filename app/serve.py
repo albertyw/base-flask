@@ -21,7 +21,7 @@ ext = Sitemap(app=app)
 
 
 js = Bundle(
-    'js/jquery.min.js',
+    'js/jquery-3.1.1.min.js',
     'js/tether.min.js',
     'js/bootstrap.min.js',
     'js/global.js',

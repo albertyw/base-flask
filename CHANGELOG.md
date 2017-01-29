@@ -1,3 +1,9 @@
+v1.2.0
+======
+
+ - Update bootstrap, tether, jquery, and normalize to latest versions
+
+
 v1.1.0
 ======
 

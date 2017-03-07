@@ -1,3 +1,3 @@
 # Testing
-codeclimate-test-reporter==0.2.0 # Test coverage
+codeclimate-test-reporter==0.2.1 # Test coverage
 flake8==3.3.0                    # Python linting

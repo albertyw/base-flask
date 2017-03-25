@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+v1.2.3
+------
+
+ - Remove some unused code
+ - Update dependencies
+
+
 v1.2.2
 ------
 

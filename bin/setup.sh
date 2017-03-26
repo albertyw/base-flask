@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Setup directories
-sudo ln -s /var/www/website ~/website
-
 # Clone repository
 git clone GIT_REPOSITORY
 sudo mv GIT_REPOSITORY_NAME /var/www/website
 cd /var/www/website || exit 1
 ln -s .env.production .env
+sudo ln -s /var/www/website ~/website
 
 # Install nginx
 sudo add-apt-repository ppa:nginx/stable

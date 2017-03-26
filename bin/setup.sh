@@ -20,11 +20,10 @@ sudo rm -r /etc/nginx/sites-available
 sudo rm -r /etc/nginx/sites-enabled
 sudo ln -s /var/www/website/config/sites-available /etc/nginx/sites-available
 sudo ln -s /var/www/website/config/sites-enabled /etc/nginx/sites-enabled
-sudo service nginx restart
 sudo rm -r /var/www/html
 
 # Secure nginx
-openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
+sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
 # Copy server.crt and server.key to /etc/nginx/ssl
 sudo service nginx restart
 

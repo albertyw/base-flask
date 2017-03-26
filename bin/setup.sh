@@ -30,8 +30,10 @@ sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
 sudo service nginx restart
 
 # Install uwsgi
-sudo apt-get install python-minimal
-sudo apt-get install -y uwsgi uwsgi-plugin-python3 python3-dev python3-setuptools
+sudo mkdir /var/log/uwsgi/
+sudo chown www-data:www-data /var/log/uwsgi
+sudo apt-get install -y build-essential python-minimal
+sudo apt-get install -y python3-dev python3-setuptools
 
 # Install python/pip/virtualenvwrapper
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2

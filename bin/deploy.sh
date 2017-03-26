@@ -9,7 +9,7 @@ git pull
 virtualenvlocation=$(which virtualenvwrapper.sh)
 # shellcheck source=/dev/null
 source "$virtualenvlocation"
-workon GIT_REPOSITORY_NAME
+workon $GIT_REPOSITORY_NAME
 pip install -r requirements.txt
 
 # Make generated static file directory writable

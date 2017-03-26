@@ -46,6 +46,7 @@ pip3 install -r /var/www/website/requirements.txt
 sudo ln -s "$HOME/.virtualenvs" /var/www/.virtualenvs
 
 # Set up uwsgi
-sudo ln -s /var/www/website/config/uwsgi/website.ini /etc/uwsgi/apps-available/website.ini
-sudo ln -s ../apps-available/website.ini /etc/uwsgi/apps-enabled/website.ini
+sudo rm -r /etc/uwsgi/apps-available
+sudo rm -r /etc/uwsgi/apps-enabled
+sudo ln -s /var/www/website/config/uwsgi /etc/uwsgi/apps-enabled
 sudo service uwsgi restart

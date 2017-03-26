@@ -45,7 +45,7 @@ sudo pip3 install virtualenvwrapper
 # shellcheck disable=SC1091
 . /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv --python=/usr/bin/python3 $GIT_REPOSITORY_NAME
-pip3 install -r /var/www/website/requirements.txt
+pip install -r /var/www/website/requirements.txt
 sudo ln -s "$HOME/.virtualenvs" /var/www/.virtualenvs
 
 # Make generated static file directory writable
@@ -53,9 +53,7 @@ sudo chown www-data app/static/gen
 sudo chown www-data app/static/.webassets-cache
 
 # Set up uwsgi
-sudo rm -r /etc/uwsgi/apps-available
-sudo rm -r /etc/uwsgi/apps-enabled
-sudo ln -s /var/www/website/config/uwsgi /etc/uwsgi/apps-enabled
+sudo ln -s /var/www/website/config/uwsgi/uwsgi.service /etc/systemd/system/uwsgi.service
 
 # Start uwsgi
 sudo systemctl start uwsgi

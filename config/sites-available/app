@@ -54,12 +54,6 @@ server {
     ssl_certificate_key         /etc/nginx/ssl/server.key;
     ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
 
-    # enable ocsp stapling (mechanism by which a site can convey certificate revocation information to visitors in a privacy-preserving, scalable manner)
-    # http://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
-    resolver 8.8.8.8;
-    ssl_stapling on;
-    ssl_trusted_certificate /etc/nginx/ssl/1_WEBSITE.com_bundle.crt;
-
     # config to enable HSTS(HTTP Strict Transport Security) https://developer.mozilla.org/en-US/docs/Security/HTTP_Strict_Transport_Security
     # to avoid ssl stripping https://en.wikipedia.org/wiki/SSL_stripping#SSL_stripping
     add_header Strict-Transport-Security "max-age=1209600; includeSubdomains;";

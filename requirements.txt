@@ -5,6 +5,7 @@ Flask==0.12.0        # Web microframework
 Flask-Assets==0.12   # Merge and minify CSS and JS assets
 Jinja2>=2.8.1        # Templating for Flask; pinned past security update
 cssmin==0.2.0        # CSS minification
+uWSGI==2.0.14        # Application server
 
 # Features
 flask-sitemap==0.2.0 # Web sitemaps

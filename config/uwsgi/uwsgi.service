@@ -7,8 +7,7 @@ User=www-data
 Group=www-data
 WorkingDirectory=/var/www/website
 Environment="PATH=/var/www/.virtualenvs/$PROJECT/bin"
-ExecStart=/var/www/.virtualenvs/$PROJECT/bin/uwsgi --ini /var/www/
-website/config/uwsgi/website.ini
+ExecStart=/var/www/.virtualenvs/$PROJECT/bin/uwsgi --ini /var/www/website/config/uwsgi/website.ini
 
 [Install]
 WantedBy=multi-user.target

@@ -56,4 +56,7 @@ sudo chown www-data app/static/.webassets-cache
 sudo rm -r /etc/uwsgi/apps-available
 sudo rm -r /etc/uwsgi/apps-enabled
 sudo ln -s /var/www/website/config/uwsgi /etc/uwsgi/apps-enabled
-sudo service uwsgi restart
+
+# Start uwsgi
+sudo systemctl start uwsgi
+sudo systemctl enable uwsgi

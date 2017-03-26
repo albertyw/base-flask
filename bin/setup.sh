@@ -5,6 +5,7 @@ sudo hostnamectl set-hostname $HOSTNAME
 
 # Clone repository
 git clone $GIT_REPOSITORY
+sudo mkdir -p /var/www
 sudo mv $GIT_REPOSITORY_NAME /var/www/website
 cd /var/www/website || exit 1
 ln -s .env.production .env

@@ -28,7 +28,7 @@ server {
     ssl_prefer_server_ciphers   on;
     ssl_session_cache           shared:SSL:10m;
     ssl_session_timeout         10m;
-    ssl_certificate             /etc/nginx/ssl/1_WEBSITE.com_bundle.crt;
+    ssl_certificate             /etc/nginx/ssl/server.pem;
     ssl_certificate_key         /etc/nginx/ssl/server.key;
     ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
 
@@ -50,7 +50,7 @@ server {
     ssl_prefer_server_ciphers   on;
     ssl_session_cache           shared:SSL:10m;
     ssl_session_timeout         10m;
-    ssl_certificate             /etc/nginx/ssl/1_WEBSITE.com_bundle.crt;
+    ssl_certificate             /etc/nginx/ssl/server.pem;
     ssl_certificate_key         /etc/nginx/ssl/server.key;
     ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
 

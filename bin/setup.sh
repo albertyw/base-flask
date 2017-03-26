@@ -23,8 +23,9 @@ sudo ln -s /var/www/website/config/sites-enabled /etc/nginx/sites-enabled
 sudo rm -r /var/www/html
 
 # Secure nginx
+sudo mkdir /etc/nginx/ssl
 sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
-# Copy server.crt and server.key to /etc/nginx/ssl
+# Copy server.key and server.pem to /etc/nginx/ssl
 sudo service nginx restart
 
 # Install uwsgi

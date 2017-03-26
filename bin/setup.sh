@@ -45,6 +45,10 @@ mkvirtualenv --python=/usr/bin/python3 $GIT_REPOSITORY_NAME
 pip3 install -r /var/www/website/requirements.txt
 sudo ln -s "$HOME/.virtualenvs" /var/www/.virtualenvs
 
+# Make generated static file directory writable
+sudo chown www-data app/static/gen
+sudo chown www-data app/static/.webassets-cache
+
 # Set up uwsgi
 sudo rm -r /etc/uwsgi/apps-available
 sudo rm -r /etc/uwsgi/apps-enabled

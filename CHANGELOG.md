@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+v1.3.0
+------
+
+ - Update setup to support running on AWS Ubuntu 16.04 Xenial
+ - Switch from upstart to systemd for uwsgi
+
+
 v1.2.3
 ------
 

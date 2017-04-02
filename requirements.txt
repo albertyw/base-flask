@@ -1,7 +1,7 @@
 # Core packages
 django-dotenv==1.4.1 # Read environment variables from .env
 django-getenv==1.3.1 # Get environment variables
-Flask==0.12.0        # Web microframework
+Flask==0.12.1        # Web microframework
 Flask-Assets==0.12   # Merge and minify CSS and JS assets
 Jinja2>=2.8.1        # Templating for Flask; pinned past security update
 cssmin==0.2.0        # CSS minification

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+v1.4.0
+------
+
+ - Update python packages
+ - Simplify nginx/uwsgi setup
+ - Bugfix for uwsgi systemctl config
+
+
 v1.3.0
 ------
 

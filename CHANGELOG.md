@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+v1.4.1
+------
+
+ - Update normalize, rollbar, and jquery to latest versions
+ - Use unminified js and css for bundling
+ - Update newrelic package
+
+
 v1.4.0
 ------
 

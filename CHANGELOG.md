@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+v1.5.0
+------
+
+ - Add script to scaffold new project
+ - Better documentation
+ - Better setup script and deploy scripts
+ - Fixed all codeclimate issues
+
+
 v1.4.1
 ------
 

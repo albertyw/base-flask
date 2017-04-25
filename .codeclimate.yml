@@ -21,3 +21,9 @@ ratings:
     - bin/**
 exclude_paths:
   - config/
+  - app/static/css/bootstrap.css
+  - app/static/css/normalize.css
+  - app/static/tether.css
+  - app/static/js/bootstrap.js
+  - app/static/js/jquery.js
+  - app/static/js/tether.js

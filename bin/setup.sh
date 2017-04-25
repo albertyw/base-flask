@@ -30,7 +30,8 @@ sudo rm -r /var/www/html
 # Secure nginx
 sudo mkdir /etc/nginx/ssl
 sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
-# Copy server.key and server.pem to /etc/nginx/ssl
+# Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
+# pair can be generated from Cloudflare or letsencrypt.
 sudo service nginx restart
 
 # Install uwsgi

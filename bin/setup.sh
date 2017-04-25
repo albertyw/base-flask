@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This is a script that can be run on a freshly setup server (see the README
+# for more details) and bring it up to a production-ready state.  This script
+# requires sudo privileges to work and it should already be scaffolded using
+# bin/scaffold.sh
+
 # Setup server
 sudo hostnamectl set-hostname $HOSTNAME
 

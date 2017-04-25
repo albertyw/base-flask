@@ -22,6 +22,12 @@ Features
  - Documented setup and usage procedures
  - Includes setting up secure and fast nginx/uwsgi in production
 
+Setup
+-----
+
+Modify and run `bin/scaffold.sh` to create a copy of base-flask for your
+project needs.
+
 Development
 -----------
 

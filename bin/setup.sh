@@ -6,7 +6,7 @@ sudo hostnamectl set-hostname $HOSTNAME
 # Clone repository
 git clone $GIT_REPOSITORY
 sudo mkdir -p /var/www
-sudo mv $GIT_REPOSITORY_NAME /var/www/website
+sudo mv $PROJECT_NAME /var/www/website
 cd /var/www/website || exit 1
 ln -s .env.production .env
 sudo ln -s /var/www/website ~/website
@@ -43,7 +43,7 @@ sudo pip3 install virtualenvwrapper
 # Install python packages
 # shellcheck disable=SC1091
 . /usr/local/bin/virtualenvwrapper.sh
-mkvirtualenv --python=/usr/bin/python3 $GIT_REPOSITORY_NAME
+mkvirtualenv --python=/usr/bin/python3 $PROJECT_NAME
 pip install -r /var/www/website/requirements.txt
 sudo ln -s "$HOME/.virtualenvs" /var/www/.virtualenvs
 

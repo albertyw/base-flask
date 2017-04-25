@@ -11,8 +11,9 @@ sudo hostnamectl set-hostname $HOSTNAME
 # Clone repository
 git clone $GIT_REPOSITORY
 sudo mkdir -p /var/www
+rm -rf /var/www/website
 sudo mv $PROJECT_NAME /var/www/website
-cd /var/www/website || exit 1
+cd /var/www/website
 ln -s .env.production .env
 sudo ln -s /var/www/website ~/website
 
@@ -22,20 +23,20 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # Configure nginx
-sudo rm -r /etc/nginx/sites-available
-sudo rm -r /etc/nginx/sites-enabled
+sudo rm -rf /etc/nginx/sites-available
+sudo rm -rf /etc/nginx/sites-enabled
 sudo ln -s /var/www/website/config/sites-enabled /etc/nginx/sites-enabled
-sudo rm -r /var/www/html
+sudo rm -rf /var/www/html
 
 # Secure nginx
-sudo mkdir /etc/nginx/ssl
+sudo mkdir -p /etc/nginx/ssl
 sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
 # Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
 # pair can be generated from Cloudflare or letsencrypt.
 sudo service nginx restart
 
 # Install uwsgi
-sudo mkdir /var/log/uwsgi/
+sudo mkdir -p /var/log/uwsgi/
 sudo chown www-data:www-data /var/log/uwsgi
 sudo apt-get install -y build-essential python-minimal
 sudo apt-get install -y python3-dev python3-setuptools
@@ -58,6 +59,7 @@ sudo chown www-data app/static/gen
 sudo chown www-data app/static/.webassets-cache
 
 # Set up uwsgi
+sudo rm -f /etc/systemd/system/uwsgi.service
 sudo ln -s /var/www/website/config/uwsgi/uwsgi.service /etc/systemd/system/uwsgi.service
 
 # Start uwsgi

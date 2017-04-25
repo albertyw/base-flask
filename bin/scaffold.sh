@@ -24,8 +24,8 @@ locations="${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.produ
 for findString in "${!replacements[@]}"; do
     replaceString="${replacements[$findString]}"
     echo "Replacing '${findString}' with '${replaceString}'"
-    for location in "${locations}"; do
-        find $location -type f -print0 | xargs -0 sed -i "s/${findString}/${replaceString}/g"
+    for location in ${locations}; do
+        find "$location" -type f -print0 | xargs -0 sed -i "s/${findString}/${replaceString}/g"
     done
 done
 

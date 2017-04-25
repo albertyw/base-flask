@@ -12,7 +12,7 @@ git pull
 virtualenvlocation=$(which virtualenvwrapper.sh)
 # shellcheck source=/dev/null
 source "$virtualenvlocation"
-workon $PROJECT_NAME
+workon "$PROJECT_NAME"
 pip install -r requirements.txt
 
 # Make generated static file directory writable

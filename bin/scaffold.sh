@@ -29,5 +29,9 @@ for findString in "${!replacements[@]}"; do
     done
 done
 
+# Move files
+cd $REPODIR
+mv config/uwsgi/uwsgi.service config/uwsgi/${replacements["\$PROJECT_NAME"]}-uwsgi.service
+
 # Cleanup
 rm bin/scaffold.sh

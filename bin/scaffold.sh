@@ -10,16 +10,16 @@ set -e
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$BASEDIR/../"
 
+# Replace strings.  MODIFY REPLACEMENTS
 declare -A replacements
-replacements=( \
-  ["\$HOSTNAME"]="\$HOSTNAME" \
-  ["\$GIT_REPOSITORY"]="\$GIT_REPOSITORY" \
-  ["\$PROJECT_NAME"]="\$PROJECT_NAME" \
-  ["\$NEWRELIC_KEY"]="\$NEWRELIC_KEY" \
-  ["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN" \
-  ["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN" \
-  ["\$SEGMENT_TOKEN"]="\$SEGMENT_TOKEN" \
-)
+replacements["\$HOSTNAME"]="\$HOSTNAME"                          # albertyw.com
+replacements["\$GIT_REPOSITORY"]="\$GIT_REPOSITORY"              # git@github.com:albertyw/albertyw.com
+replacements["\$PROJECT_NAME"]="\$PROJECT_NAME"                  # albertyw.com
+replacements["\$NEWRELIC_KEY"]="\$NEWRELIC_KEY"                  # abcdefgh
+replacements["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN"  # abcdefgh
+replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"  # abcdefgh
+replacements["\$SEGMENT_TOKEN"]="\$SEGMENT_TOKEN"                # abcdefgh
+
 locations="${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"
 for findString in "${!replacements[@]}"; do
     replaceString="${replacements[$findString]}"
@@ -29,4 +29,5 @@ for findString in "${!replacements[@]}"; do
     done
 done
 
+# Cleanup
 rm bin/scaffold.sh

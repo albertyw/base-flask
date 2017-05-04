@@ -1,12 +1,18 @@
 CHANGELOG
 =========
 
+v1.6.1
+------
+
+ - Fix unupdated uwsgi service name
+
+
 v1.6.0
 ------
 
  - Update deployment config and log files to support multiple base-flask
    apps running on the same server
- - Update newrelic package^i
+ - Update newrelic package
 
 
 v1.5.0

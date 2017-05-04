@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+v1.6.0
+------
+
+ - Update deployment config and log files to support multiple base-flask
+   apps running on the same server
+ - Update newrelic package^i
+
+
 v1.5.0
 ------
 

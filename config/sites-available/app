@@ -6,7 +6,7 @@ server_tokens off;
 
 # Change IP address to domain name
 server {
-    include         sites-enabled/headers;
+    include         sites-enabled/$PROJECT_NAME-headers;
     server_name     $server_addr;
     return          301 https://www.$HOSTNAME$request_uri;
 }
@@ -41,8 +41,8 @@ server {
 server {
     listen          443 ssl http2 default_server;
     server_name     www.$HOSTNAME;
-    access_log      /var/log/nginx/website.access.log;
-    error_log       /var/log/nginx/website.error.log;
+    access_log      /var/log/nginx/$PROJECT_NAME.access.log;
+    error_log       /var/log/nginx/$PROJECT_NAME.error.log;
 
     ssl on;
     ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
@@ -70,7 +70,7 @@ server {
 
     # static files used for the website
     location /static {
-        include      sites-enabled/headers;
+        include      sites-enabled/$PROJECT_NAME-headers;
         alias        "/var/www/$PROJECT_NAME/app/static/";
         try_files $uri.html $uri $uri/ =404;
         expires     7d;
@@ -78,8 +78,8 @@ server {
     }
 
     location / {
-        include         sites-enabled/headers;
-        uwsgi_pass      unix://tmp/website.sock;
+        include         sites-enabled/$PROJECT_NAME-headers;
+        uwsgi_pass      unix://tmp/$PROJECT_NAME.sock;
         include         uwsgi_params;
         uwsgi_param     UWSGI_SCHEME $scheme;
         uwsgi_param     SERVER_SOFTWARE    nginx/$nginx_version;

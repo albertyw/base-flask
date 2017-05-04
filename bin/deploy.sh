@@ -4,7 +4,7 @@
 # It can be called from a CI/CD tool like Codeship.
 
 # Update repository
-cd /var/www/website/ || exit 1
+cd /var/www/$PROJECT_NAME/ || exit 1
 git checkout master
 git pull
 

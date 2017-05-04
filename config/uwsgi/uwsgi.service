@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=www-data
 Group=www-data
-WorkingDirectory=/var/www/website
+WorkingDirectory=/var/www/$PROJECT_NAME
 Environment="PATH=/var/www/.virtualenvs/$PROJECT/bin"
-ExecStart=/var/www/.virtualenvs/$PROJECT/bin/uwsgi --ini /var/www/website/config/uwsgi/website.ini
+ExecStart=/var/www/.virtualenvs/$PROJECT/bin/uwsgi --ini /var/www/$PROJECT_NAME/config/uwsgi/website.ini
 
 [Install]
 WantedBy=multi-user.target

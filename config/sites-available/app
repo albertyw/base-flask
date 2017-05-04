@@ -71,7 +71,7 @@ server {
     # static files used for the website
     location /static {
         include      sites-enabled/headers;
-        alias        "/var/www/website/app/static/";
+        alias        "/var/www/$PROJECT_NAME/app/static/";
         try_files $uri.html $uri $uri/ =404;
         expires     7d;
         add_header Cache-Control "public";

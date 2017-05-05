@@ -8,6 +8,7 @@ set -ex
 # Update repository
 cd /var/www/$PROJECT_NAME/ || exit 1
 git checkout master
+git fetch -tp
 git pull
 
 # Update python packages

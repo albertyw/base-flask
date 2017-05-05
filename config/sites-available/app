@@ -3,6 +3,11 @@
 server_tokens off;
 
 ### Redirects ###
+server {
+    listen         80;
+    server_name    $HOSTNAME www.$HOSTNAME;
+    return         301 https://www.$HOSTNAME$request_uri;
+}
 
 # Change IP address to domain name
 server {

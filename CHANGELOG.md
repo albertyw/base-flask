@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+v1.6.2
+------
+
+ - Various fixes for multitenancy, uwsgi configs, and scaffolding
+
+
 v1.6.1
 ------
 

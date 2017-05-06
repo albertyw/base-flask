@@ -35,3 +35,6 @@ mv config/uwsgi/uwsgi.service config/uwsgi/${replacements["\$PROJECT_NAME"]}-uws
 
 # Cleanup
 rm bin/scaffold.sh
+rm CHANGELOG.md
+rm LICENSE
+rm README.md

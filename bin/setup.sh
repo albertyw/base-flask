@@ -60,9 +60,9 @@ sudo chown www-data app/static/gen
 sudo chown www-data app/static/.webassets-cache
 
 # Set up uwsgi
-sudo rm -f /etc/systemd/system/uwsgi.service
-sudo ln -s /var/www/$PROJECT_NAME/config/uwsgi/uwsgi.service /etc/systemd/system/$PROJECT_NAME-uwsgi.service
+sudo rm -f /etc/systemd/system/$PROJECT_NAME-uwsgi.service
+sudo ln -s /var/www/$PROJECT_NAME/config/uwsgi/$PROJECT_NAME-uwsgi.service /etc/systemd/system/$PROJECT_NAME-uwsgi.service
 
 # Start uwsgi
-sudo systemctl start uwsgi
-sudo systemctl enable uwsgi
+sudo systemctl start $PROJECT_NAME-uwsgi
+sudo systemctl enable $PROJECT_NAME-uwsgi

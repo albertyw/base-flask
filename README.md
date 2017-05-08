@@ -59,6 +59,28 @@ cd app
 coverage run -m unittest discover
 ```
 
+### CI/CD
+
+This repo uses:
+
+```bash
+# Setup
+virtualenv -p $(which python3) "${HOME}/cache/python3_env"
+source "${HOME}/cache/python3_env/bin/activate"
+pip install -r requirements.txt
+ln -s .env.development .env
+
+# Test
+flake8
+cd app
+coverage run -m unittest
+coverage report
+codeclimate-test-reporter
+
+# Deployment
+ssh ubuntu@direct.albertyw.com /var/www/website/bin/deploy.sh
+```
+
 Production
 ----------
 

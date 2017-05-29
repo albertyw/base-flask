@@ -24,4 +24,4 @@ sudo chown www-data app/static/.webassets-cache
 
 # Restart services
 sudo service nginx restart
-sudo systemctl restart $PROJECT_NAME-uwsgi
+sudo systemctl restart $PROJECT_NAME-uwsgi.service

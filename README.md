@@ -64,10 +64,10 @@ coverage run -m unittest discover
 This repo uses:
 
 ```bash
-# Setup
-virtualenv -p $(which python3) "${HOME}/cache/python3_env"
-source "${HOME}/cache/python3_env/bin/activate"
+# Switch to python 3
+pyenv local 3.5
 pip install -r requirements.txt
+pip install -r requirements-test.txt
 ln -s .env.development .env
 
 # Test

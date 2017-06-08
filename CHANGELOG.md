@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+v1.6.3
+------
+
+ - Updates to dependencies
+ - Fixes for uwsgi service setup
+ - Updates to CI setup and documentation
+
+
 v1.6.2
 ------
 

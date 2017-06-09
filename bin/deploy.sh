@@ -3,8 +3,6 @@
 # This script is meant to be run on a server with the production app running.
 # It can be called from a CI/CD tool like Codeship.
 
-set -ex
-
 # Update repository
 cd /var/www/$PROJECT_NAME/ || exit 1
 git checkout master

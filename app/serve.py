@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, got_request_exception
+from flask import Flask, render_template, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
 
@@ -70,6 +70,11 @@ def inject_envs():
 
 
 app.register_blueprint(app_pages)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.htm")
 
 
 if __name__ == "__main__":

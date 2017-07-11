@@ -1,8 +1,10 @@
 import os
 
-from flask import Flask, render_template, got_request_exception
+from flask import Flask, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
+
+from app import app as app_pages
 
 import dotenv
 from getenv import env
@@ -67,14 +69,7 @@ def inject_envs():
     return {'ENV': envs}
 
 
-@app.route("/")
-def index():
-    return render_template("index.htm")
-
-
-@app.route("/robots.txt")
-def robots():
-    return render_template("robots.txt")
+app.register_blueprint(app_pages)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from flask import Flask, render_template, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
 
-from app import app as app_pages
+from routes import handlers
 
 import dotenv
 from getenv import env
@@ -69,7 +69,7 @@ def inject_envs():
     return {'ENV': envs}
 
 
-app.register_blueprint(app_pages)
+app.register_blueprint(handlers)
 
 
 @app.errorhandler(404)

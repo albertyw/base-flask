@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+v1.7.0
+------
+
+ - Add 404 handler
+ - Split out handlers to separate file
+ - Updates to dependencies
+ - README updates
+
+
 v1.6.3
 ------
 

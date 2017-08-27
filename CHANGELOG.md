@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+v2.0.0
+------
+
+ - Removed django-getenv dependency
+ - Disable uWSGI autoreload
+ - Back to 100% test coverage
+ - Updated packages
+
+
 v1.7.0
 ------
 

@@ -7,14 +7,13 @@ from flask_sitemap import Sitemap
 from routes import handlers
 
 import dotenv
-from getenv import env
 root_path = os.path.dirname(os.path.realpath(__file__)) + '/../'
 dotenv.read_dotenv(os.path.join(root_path, '.env'))
 
 
 app = Flask(__name__)
-app.debug = env('DEBUG') == 'true'
-app.config['SERVER_NAME'] = env('SERVER_NAME')
+app.debug = os.environ['DEBUG'] == 'true'
+app.config['SERVER_NAME'] = os.environ['SERVER_NAME']
 
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
 app.config['SITEMAP_URL_SCHEME'] = 'https'
@@ -39,7 +38,7 @@ css = Bundle(
 )
 assets.register('css_all', css)
 
-if env('ENV') == 'production':
+if os.environ['ENV'] == 'production':
     import rollbar
     import rollbar.contrib.flask
 
@@ -47,9 +46,9 @@ if env('ENV') == 'production':
     def init_rollbar():
         """init rollbar module"""
         rollbar.init(
-            env('ROLLBAR_SERVER_TOKEN'),
+            os.environ['ROLLBAR_SERVER_TOKEN'],
             # environment name
-            env('ENV'),
+            os.environ['ENV'],
             # server root directory, makes tracebacks prettier
             root=os.path.dirname(os.path.realpath(__file__)),
             # flask already sets up logging
@@ -63,9 +62,9 @@ if env('ENV') == 'production':
 @app.context_processor
 def inject_envs():
     envs = {}
-    envs['ROLLBAR_CLIENT_TOKEN'] = env('ROLLBAR_CLIENT_TOKEN')
-    envs['SEGMENT_TOKEN'] = env('SEGMENT_TOKEN')
-    envs['ENV'] = env('ENV')
+    envs['ROLLBAR_CLIENT_TOKEN'] = os.environ['ROLLBAR_CLIENT_TOKEN']
+    envs['SEGMENT_TOKEN'] = os.environ['SEGMENT_TOKEN']
+    envs['ENV'] = os.environ['ENV']
     return {'ENV': envs}
 
 

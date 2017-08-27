@@ -2,7 +2,6 @@ import os
 import sys
 
 import dotenv
-from getenv import env
 import monitor
 import newrelic.agent
 
@@ -16,7 +15,7 @@ monitor.start(interval=1.0)
 # Set up NewRelic Agent
 config_path = root_path + '/config/'
 newrelic_ini = '%s/newrelic.ini' % config_path
-if env('ENV') in ['production', 'staging']:
-    newrelic.agent.initialize(newrelic_ini, env('ENV'))
+if os.environ['ENV'] in ['production', 'staging']:
+    newrelic.agent.initialize(newrelic_ini, os.environ['ENV'])
 
 from serve import * # noqa

@@ -19,6 +19,11 @@ class PageCase(unittest.TestCase):
     def test_sitemap_load(self):
         self.page_test('/sitemap.xml', b'')
 
+    def test_not_found(self):
+        response = self.app.get('/asdf')
+        self.assertEqual(response.status_code, 404)
+        self.assertIn(b'Not Found', response.get_data())
+
     def page_test(self, path, string):
         response = self.app.get(path)
         self.assertEqual(response.status_code, 200)

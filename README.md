@@ -30,9 +30,13 @@ project needs.
 
 Base-flask is designed to work with a minimally sized [AWS EC2](https://aws.amazon.com/ec2/instance-types/)
 or [DigitalOcean](https://www.digitalocean.com/pricing/)
-instance, running a modern version of Ubuntu (16.04 LTS recommended).  A CDN
-like [cloudflare](https://www.cloudflare.com/) can also be added on to boost
-speed.
+instance, running a modern version of Ubuntu (16.04 LTS recommended).
+
+### CDN
+
+A CDN like [cloudflare](https://www.cloudflare.com/) can also be added on to boost
+speed.  A good cloudflare setup would be to use full SSL encryption and to
+install an origin certificate so that requests are encrypted end-to-end.
 
 Development
 -----------

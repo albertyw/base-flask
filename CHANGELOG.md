@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+v2.0.1
+------
+
+ - Update dependencies
+
+
 v2.0.0
 ------
 

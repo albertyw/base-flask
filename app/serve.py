@@ -8,7 +8,7 @@ from routes import handlers
 
 import dotenv
 root_path = os.path.dirname(os.path.realpath(__file__)) + '/../'
-dotenv.read_dotenv(os.path.join(root_path, '.env'))
+dotenv.load_dotenv(os.path.join(root_path, '.env'))
 
 
 app = Flask(__name__)

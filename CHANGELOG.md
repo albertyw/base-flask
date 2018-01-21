@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+v2.1.0
+------
+
+ - Replace django-dotenv with python-dotenv
+ - Update dependencies
+
+
 v2.0.2
 ------
 

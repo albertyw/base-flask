@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+2.1.1
+-----
+
+ - Update python packages
+ - Update js packages
+
+
 v2.1.0
 ------
 

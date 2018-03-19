@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+2.1.2
+-----
+
+ - Update python packages
+
+
 2.1.1
 -----
 

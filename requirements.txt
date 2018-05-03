@@ -6,7 +6,7 @@ cssmin==0.2.0        # CSS minification
 uWSGI==2.0.17        # Application server
 
 # Features
-flask-sitemap==0.2.0 # Web sitemaps
+flask-sitemap==0.3.0 # Web sitemaps
 
 # Monitoring/tracking/logging
 blinker==1.4         # Dependency of rollbar

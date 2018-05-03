@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+2.1.3
+-----
+
+ - Update python packages
+ - Update rollbar.js
+
+
 2.1.2
 -----
 

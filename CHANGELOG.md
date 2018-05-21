@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+2.1.4
+-----
+
+ - Switch from gemnasium to pyup
+
+
 2.1.3
 -----
 

@@ -59,6 +59,7 @@ python app/serve.py
 ### Running tests:
 
 ```bash
+mypy app --ignore-missing-imports
 cd app
 coverage run -m unittest discover
 ```

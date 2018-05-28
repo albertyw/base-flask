@@ -34,7 +34,7 @@ css = Bundle(
     'css/tether.css',
     'css/bootstrap.css',
     'css/global.css',
-    filters='cssmin', output='gen/bundle.min.css'
+    filters='pyscss', output='gen/bundle.min.css'
 )
 assets.register('css_all', css)
 

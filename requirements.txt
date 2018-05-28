@@ -2,7 +2,7 @@
 python-dotenv==0.8.2 # Read environment variables from .env
 Flask==1.0.2         # Web microframework
 Flask-Assets==0.12   # Merge and minify CSS and JS assets
-cssmin==0.2.0        # CSS minification
+pyscss==1.3.5        # CSS minification
 uWSGI==2.0.17        # Application server
 
 # Features

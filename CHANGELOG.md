@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+2.2.0
+-----
+
+ - Switch from cssmin to pyscss
+ - Add mypy
+ - Dependency updates
+
+
 2.1.4
 -----
 

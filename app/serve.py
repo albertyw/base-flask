@@ -13,7 +13,8 @@ dotenv.load_dotenv(os.path.join(root_path, '.env'))
 
 app = Flask(__name__)
 app.debug = os.environ['DEBUG'] == 'true'
-app.config['SERVER_NAME'] = os.environ['SERVER_NAME']
+if os.environ['SERVER_NAME']:
+    app.config['SERVER_NAME'] = os.environ['SERVER_NAME']
 
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
 app.config['SITEMAP_URL_SCHEME'] = 'https'

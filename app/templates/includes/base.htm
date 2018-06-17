@@ -6,8 +6,8 @@
     {% assets "css_all" %}
       <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
-    {% include "rollbar.htm" %}
-    {% include "segment.htm" %}
+    {% include "includes/rollbar.htm" %}
+    {% include "includes/segment.htm" %}
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
   </head>
@@ -43,6 +43,6 @@
     {% assets "js_all" %}
       <script src="{{ ASSET_URL }}" /></script>
     {% endassets %}
-    {% include "logfit.htm" %}
+    {% include "includes/logfit.htm" %}
   </body>
 </html>

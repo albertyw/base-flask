@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+2.3.0
+-----
+
+ - Add logfit.js
+ - Move template includes into subdirectory
+ - Make launching server in development not depend on server name
+
+
 2.2.0
 -----
 

@@ -19,8 +19,8 @@ sudo ln -s /var/www/$PROJECT_NAME ~/$PROJECT_NAME
 
 # Install nginx
 sudo add-apt-repository ppa:nginx/stable
-sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt update
+sudo apt install -y nginx
 
 # Configure nginx
 sudo rm -rf /etc/nginx/sites-available
@@ -39,8 +39,8 @@ sudo service nginx restart
 # Install uwsgi
 sudo mkdir -p /var/log/uwsgi/
 sudo chown www-data:www-data /var/log/uwsgi
-sudo apt-get install -y build-essential python-minimal
-sudo apt-get install -y python3-dev python3-setuptools
+sudo apt install -y build-essential python-minimal
+sudo apt install -y python3-dev python3-setuptools
 
 # Install python/pip/virtualenvwrapper
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2

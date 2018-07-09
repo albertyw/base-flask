@@ -3,12 +3,12 @@ import os
 from flask import Flask, render_template, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
+from syspath import get_parent_path
 
 from routes import handlers
 
 import dotenv
-root_path = os.path.dirname(os.path.realpath(__file__)) + '/../'
-dotenv.load_dotenv(os.path.join(root_path, '.env'))
+dotenv.load_dotenv(os.path.join(get_parent_path(), '.env'))
 
 
 app = Flask(__name__)

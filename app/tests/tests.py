@@ -2,7 +2,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import serve
+from syspath import git_root  # NOQA
+
+from app import serve
 
 
 class PageCase(unittest.TestCase):

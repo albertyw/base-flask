@@ -4,9 +4,9 @@ import sys
 import dotenv
 import monitor
 import newrelic.agent
-from syspath import get_current_path
+from syspath import git_root, get_git_root  # NOQA
 
-root_path = os.path.join(get_current_path(), '..', '..')
+root_path = get_git_root()
 sys.path.append(os.path.join(root_path, 'app'))
 dotenv.load_dotenv(os.path.join(root_path, '.env'))
 

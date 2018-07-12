@@ -3,12 +3,12 @@ import os
 from flask import Flask, render_template, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
-from syspath import get_parent_path
+from syspath import git_root, get_git_root  # NOQA
 
-from routes import handlers
+from app.routes import handlers
 
 import dotenv
-dotenv.load_dotenv(os.path.join(get_parent_path(), '.env'))
+dotenv.load_dotenv(os.path.join(get_git_root(), '.env'))
 
 
 app = Flask(__name__)

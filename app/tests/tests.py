@@ -2,8 +2,6 @@ from __future__ import absolute_import
 
 import unittest
 
-from syspath import git_root  # NOQA
-
 from app import serve
 
 

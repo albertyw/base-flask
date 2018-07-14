@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+2.4.0
+-----
+
+ - Install and integrate syspath
+ - Make tests be able to run from any directory
+ - Modernize up setup.sh commands
+ - Update dependencies
+
+
 2.3.0
 -----
 

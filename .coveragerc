@@ -1,10 +1,9 @@
 [run]
 source=.
-omit =
-  .virtualenv
+omit=.virtualenv
 
 [report]
 exclude_lines =
   pragma: no cover
-  if __name__ == "__main__":
   production
+  if __name__ == "__main__":

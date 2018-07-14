@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+2.4.1
+-----
+
+ - Update syspath
+ - Simplify path setup for development, test, and production environments
+
+
 2.4.0
 -----
 

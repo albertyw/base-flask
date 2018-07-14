@@ -1,12 +1,10 @@
 import os
-import sys
 
 import dotenv
 import monitor
 import newrelic.agent
 from syspath import git_root
 
-sys.path.append(os.path.join(git_root.path, 'app'))
 dotenv.load_dotenv(os.path.join(git_root.path, '.env'))
 
 monitor.start(interval=1.0)
@@ -16,4 +14,4 @@ if os.environ['ENV'] in ['production', 'staging']:
     newrelic_ini = os.path.join(git_root.path, 'config', 'newrelic.ini')
     newrelic.agent.initialize(newrelic_ini, os.environ['ENV'])
 
-from serve import * # noqa
+from app.serve import * # noqa

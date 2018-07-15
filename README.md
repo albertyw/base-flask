@@ -60,7 +60,6 @@ python app/serve.py
 
 ```bash
 mypy app --ignore-missing-imports
-cd app
 coverage run -m unittest discover
 ```
 
@@ -77,7 +76,6 @@ ln -s .env.development .env
 
 # Test
 flake8
-cd app
 coverage run -m unittest discover
 coverage report
 codeclimate-test-reporter

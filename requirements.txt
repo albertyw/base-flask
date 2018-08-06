@@ -11,5 +11,5 @@ flask-sitemap==0.3.0 # Web sitemaps
 
 # Monitoring/tracking/logging
 blinker==1.4         # Dependency of rollbar
-newrelic==4.0.0.99   # Website monitoring
+newrelic==4.2.0.100  # Website monitoring
 rollbar==0.14.1      # rollbar.com error logging

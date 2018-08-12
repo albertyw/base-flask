@@ -35,3 +35,10 @@ sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
 # Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
 # pair can be generated from Cloudflare or letsencrypt.
 sudo service nginx restart
+
+# Set up docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y docker-ce
+sudo usermod -aG docker ${USER}

@@ -5,11 +5,6 @@
 
 # Install uwsgi
 mkdir -p /var/www/app/logs/uwsgi
-chown www-data:www-data /var/www/app/logs/uwsgi
-
-# Make generated static file directory writable
-chown www-data /var/www/app/app/static/gen
-chown www-data /var/www/app/app/static/.webassets-cache
 
 # Set up uwsgi
 rm -f /etc/systemd/system/uwsgi.service
@@ -17,3 +12,6 @@ rm -f /etc/systemd/system/uwsgi.service
 # Start uwsgi
 systemctl enable /var/www/app/config/uwsgi/uwsgi.service
 systemctl start uwsgi.service
+
+# /bin/bash
+supervisord

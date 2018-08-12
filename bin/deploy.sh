@@ -1,25 +1,17 @@
 #!/bin/bash
-
-# This script is meant to be run on a server with the production app running.
-# It can be called from a CI/CD tool like Codeship.
+# This script will build and deploy a new docker image
 
 # Update repository
-cd /var/www/$PROJECT_NAME/ || exit 1
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 git checkout master
 git fetch -tp
 git pull
 
-# Update python packages
-virtualenvlocation=$(which virtualenvwrapper.sh)
-# shellcheck source=/dev/null
-source "$virtualenvlocation"
-workon "$PROJECT_NAME"
-pip install -r requirements.txt
+# Build and start container
+docker build -t $PROJECT_NAME:production .
+docker stop $(docker ps -q --filter ancestor=$PROJECT_NAME:production )
+docker run --detach --restart always -p 127.0.0.1:8080:8080 $PROJECT_NAME:production
 
-# Make generated static file directory writable
-sudo chown www-data app/static/gen
-sudo chown www-data app/static/.webassets-cache
-
-# Restart services
-sudo service nginx restart
-sudo systemctl restart $PROJECT_NAME-uwsgi.service
+# Cleanup docker
+docker container prune -f
+docker image prune -f

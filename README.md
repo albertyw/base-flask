@@ -21,16 +21,17 @@ Features
  - PEP8 compliant
  - Documented setup and usage procedures
  - Includes setting up secure and fast nginx/uwsgi in production
+ - Docker support
 
 Setup
 -----
 
 Modify and run `bin/scaffold.sh` to create a copy of base-flask for your
-project needs.
+project needs, then run `bin/setup.sh` to set up the host.
 
 Base-flask is designed to work with a minimally sized [AWS EC2](https://aws.amazon.com/ec2/instance-types/)
 or [DigitalOcean](https://www.digitalocean.com/pricing/)
-instance, running a modern version of Ubuntu (16.04 LTS recommended).
+instance, running a modern version of Ubuntu (18.04 LTS recommended).
 
 ### CDN
 
@@ -82,6 +83,13 @@ codeclimate-test-reporter
 
 # Deployment
 ssh example.com /var/www/website/bin/deploy.sh
+```
+
+### Building and starting the docker container
+
+```bash
+docker build -t $PROJECT_NAME:test .
+docker run -t -i -p 127.0.0.1:8080:8080 $PROJECT_NAME:test
 ```
 
 Production

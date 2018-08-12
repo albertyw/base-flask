@@ -6,8 +6,8 @@
 # bin/scaffold.sh
 
 # Install uwsgi
-sudo mkdir -p /var/log/uwsgi/
-sudo chown www-data:www-data /var/log/www/app/logs
+sudo mkdir -p /var/www/app/logs/uwsgi
+sudo chown www-data:www-data /var/www/app/logs/uwsgi
 
 # Make generated static file directory writable
 sudo chown www-data app/static/gen

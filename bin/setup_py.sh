@@ -9,9 +9,5 @@ mkdir -p /var/www/app/logs/uwsgi
 # Set up uwsgi
 rm -f /etc/systemd/system/uwsgi.service
 
-# Start uwsgi
-systemctl enable /var/www/app/config/uwsgi/uwsgi.service
-systemctl start uwsgi.service
-
 # /bin/bash
 supervisord

@@ -10,7 +10,7 @@ git pull
 # Build and start container
 docker build -t baseflask:production .
 docker stop $(docker ps -q --filter ancestor=baseflask:production )
-docker run --detach --restart always -p 8080:8080 baseflask:production
+docker run --detach --restart always -p 127.0.0.1:8080:8080 baseflask:production
 
 # Cleanup docker
 docker container prune -f

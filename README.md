@@ -85,6 +85,13 @@ codeclimate-test-reporter
 ssh example.com /var/www/website/bin/deploy.sh
 ```
 
+### Building and starting the docker container
+
+```bash
+docker build -t baseflask:test .
+docker run -t -i -p 8080:8080 baseflask:test
+```
+
 Production
 ----------
 

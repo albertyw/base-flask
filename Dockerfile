@@ -12,12 +12,10 @@ RUN mkdir -p /var/www/app
 COPY . /var/www/app
 WORKDIR /var/www/app
 RUN ln -fs .env.production .env
-RUN chmod +x bin/setup_py.sh
+# RUN chmod +x bin/start.sh
 
 RUN pip install -r requirements.txt
 
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-ENTRYPOINT ["bin/setup_py.sh"]
-
-CMD ["supervisord"]
+ENTRYPOINT ["bin/start.sh"]

@@ -82,14 +82,14 @@ coverage report
 codeclimate-test-reporter
 
 # Deployment
-ssh example.com /var/www/website/bin/deploy.sh
+ssh example.com website/bin/deploy.sh
 ```
 
 ### Building and starting the docker container
 
 ```bash
 docker build -t $PROJECT_NAME:test .
-docker run -t -i -p 127.0.0.1:8080:8080 $PROJECT_NAME:test
+docker run -t -i -p 127.0.0.1:5000:5000 $PROJECT_NAME:test
 ```
 
 Production
@@ -98,9 +98,6 @@ Production
 ### Setup
 
 ```bash
-mkvirtualenv app -p python3.5
-pip install -r requirements.txt
-ln -s .env.production .env
 bin/setup.sh
 ```
 

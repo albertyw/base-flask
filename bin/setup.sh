@@ -9,13 +9,8 @@
 sudo hostnamectl set-hostname "$HOSTNAME"
 
 # Clone repository
+cd ~
 git clone "$GIT_REPOSITORY"
-sudo mkdir -p /var/www
-rm -rf /var/www/$PROJECT_NAME
-sudo mv "$PROJECT_NAME" /var/www/$PROJECT_NAME
-cd /var/www/$PROJECT_NAME || exit 1
-ln -s .env.production .env
-sudo ln -s /var/www/$PROJECT_NAME ~/$PROJECT_NAME
 
 # Install nginx
 sudo add-apt-repository ppa:nginx/stable
@@ -25,8 +20,8 @@ sudo apt install -y nginx
 # Configure nginx
 sudo rm -rf /etc/nginx/sites-available
 sudo rm -rf /etc/nginx/sites-enabled/*
-sudo ln -s /var/www/$PROJECT_NAME/config/sites-available/app /etc/nginx/sites-enabled/$PROJECT_NAME-app
-sudo ln -s /var/www/$PROJECT_NAME/config/sites-available/headers /etc/nginx/sites-enabled/$PROJECT_NAME-headers
+sudo ln -s ~/$PROJECT_NAME/config/sites-available/app /etc/nginx/sites-enabled/$PROJECT_NAME-app
+sudo ln -s ~/$PROJECT_NAME/config/sites-available/headers /etc/nginx/sites-enabled/$PROJECT_NAME-headers
 sudo rm -rf /var/www/html
 
 # Secure nginx

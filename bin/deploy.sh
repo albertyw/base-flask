@@ -15,3 +15,6 @@ docker run --detach --restart always -p 127.0.0.1:5000:5000 $PROJECT_NAME:produc
 # Cleanup docker
 docker container prune -f
 docker image prune -f
+
+# Update nginx
+sudo service nginx reload

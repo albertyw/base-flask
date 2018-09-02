@@ -9,11 +9,11 @@ git pull
 
 # Build and start container
 docker build -t $PROJECT_NAME:production .
-docker stop $(docker ps -q --filter ancestor=$PROJECT_NAME:production )
-docker run --detach --restart always -p 127.0.0.1:5000:5000 $PROJECT_NAME:production
+docker stop $PROJECT_NAME || echo
+docker container prune -f
+docker run --detach --restart always -p 127.0.0.1:5000:5000 --name $PROJECT_NAME $PROJECT_NAME:production
 
 # Cleanup docker
-docker container prune -f
 docker image prune -f
 
 # Update nginx

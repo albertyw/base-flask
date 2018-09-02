@@ -98,9 +98,6 @@ Production
 ### Setup
 
 ```bash
-mkvirtualenv app -p python3.5
-pip install -r requirements.txt
-ln -s .env.production .env
 bin/setup.sh
 ```
 

@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="git@albertyw.com"
-EXPOSE 8080
+EXPOSE 5000
 
 RUN apt-get update -y
 RUN apt-get install -y build-essential python-minimal python3-dev python3-setuptools curl supervisor

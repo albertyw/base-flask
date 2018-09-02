@@ -89,7 +89,7 @@ ssh example.com /var/www/website/bin/deploy.sh
 
 ```bash
 docker build -t $PROJECT_NAME:test .
-docker run -t -i -p 127.0.0.1:8080:8080 $PROJECT_NAME:test
+docker run -t -i -p 127.0.0.1:5000:5000 $PROJECT_NAME:test
 ```
 
 Production

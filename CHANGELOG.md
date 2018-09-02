@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.0.0
+-----
+
+ - Add docker support
+
+
 2.4.2
 -----
 

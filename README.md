@@ -82,7 +82,7 @@ coverage report
 codeclimate-test-reporter
 
 # Deployment
-ssh example.com /var/www/website/bin/deploy.sh
+ssh example.com website/bin/deploy.sh
 ```
 
 ### Building and starting the docker container

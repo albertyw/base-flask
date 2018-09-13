@@ -14,8 +14,8 @@ git clone "$GIT_REPOSITORY"
 
 # Install nginx
 sudo add-apt-repository ppa:nginx/stable
-sudo apt update
-sudo apt install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 # Configure nginx
 sudo rm -rf /etc/nginx/sites-available
@@ -34,6 +34,6 @@ sudo service nginx restart
 # Set up docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt update
-sudo apt install -y docker-ce
+sudo apt-get update
+sudo apt-get install -y docker-ce
 sudo usermod -aG docker ${USER}

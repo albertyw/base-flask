@@ -5,7 +5,7 @@ EXPOSE 5000
 # Install updates and system packages
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y build-essential python-minimal python3-dev python3-setuptools curl supervisor locales
+RUN apt install -y build-essential locales
 
 # Set locale
 ENV LANG en_US.UTF-8

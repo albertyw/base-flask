@@ -5,7 +5,7 @@ EXPOSE 5000
 # Install updates and system packages
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y build-essential locales
+RUN apt install -y build-essential locales software-properties-common
 
 # Set locale
 ENV LANG en_US.UTF-8

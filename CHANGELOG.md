@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.0.1
+-----
+
+ - Update dependencies
+ - Optimizations to docker builds
+ - Make deploy script work from any directory
+ - Parameterize ports
+
+
 3.0.0
 -----
 

@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="git@albertyw.com"
-EXPOSE 5000
+EXPOSE $INTERNAL_PORT
 
 # Install updates and system packages
 RUN apt-get update

@@ -1,8 +1,10 @@
 #!/bin/bash
 # This script will build and deploy a new docker image
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+cd "$DIR"/..
+
 # Update repository
-cd $GIT_REPOSITORY || exit 1
 git checkout master
 git fetch -tp
 git pull

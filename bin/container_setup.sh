@@ -16,3 +16,6 @@ ln -fs .env.production .env
 curl https://bootstrap.pypa.io/get-pip.py | python3
 pip3 install virtualenvwrapper
 pip3 install -r requirements.txt
+
+# Set up supervisor
+cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

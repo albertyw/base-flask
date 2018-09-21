@@ -20,6 +20,5 @@ WORKDIR /var/www/app
 # App-specific setup
 RUN bin/container_setup.sh
 
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
+# Set startup script
 CMD ["bin/start.sh"]

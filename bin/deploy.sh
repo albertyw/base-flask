@@ -13,7 +13,12 @@ git pull
 docker build -t $PROJECT_NAME:production .
 docker stop $PROJECT_NAME || echo
 docker container prune -f
-docker run --detach --restart always -p 127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT --name $PROJECT_NAME $PROJECT_NAME:production
+docker run \
+    --detach \
+    --restart=always \
+    --publish=127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT \
+    --network=host \
+    --name=$PROJECT_NAME $PROJECT_NAME:production
 
 # Cleanup docker
 docker image prune -f --filter "until=336h"

@@ -16,7 +16,7 @@ docker container prune -f
 docker run --detach --restart always -p 127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT --name $PROJECT_NAME $PROJECT_NAME:production
 
 # Cleanup docker
-docker image prune -f --filter "until=14d"
+docker image prune -f --filter "until=336h"
 
 # Update nginx
 sudo service nginx reload

@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.0.2
+-----
+
+ - Removed unused python autoreload with uwsgi
+ - Fixed flag for docker pruning images
+ - Make docker container use host networking for communicating out of the container
+ - Dependency updates
+
+
 3.0.1
 -----
 

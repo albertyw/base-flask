@@ -5,7 +5,7 @@
 # modify your git status.  After this completes, it is suggested that you copy
 # all files to a new repository and commit them there
 
-set -e
+set -ex
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$BASEDIR/../"

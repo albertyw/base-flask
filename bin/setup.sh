@@ -5,6 +5,8 @@
 # requires sudo privileges to work and it should already be scaffolded using
 # bin/scaffold.sh
 
+set -ex
+
 # Setup server
 sudo hostnamectl set-hostname "$HOSTNAME"
 

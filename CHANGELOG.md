@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.0.3
+-----
+
+ - Clean up bin scripts
+ - Remove tether and update normalize.css
+
+
 3.0.2
 -----
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is the script that is run inside a new container to set it up at first
+
 set -ex
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"

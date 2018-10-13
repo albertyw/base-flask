@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # This script will build and deploy a new docker image
 
 set -ex

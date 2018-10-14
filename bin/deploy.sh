@@ -20,7 +20,6 @@ docker run \
     --detach \
     --restart=always \
     --publish=127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT \
-    --network=host \
     --name=$PROJECT_NAME $PROJECT_NAME:production
 
 # Cleanup docker

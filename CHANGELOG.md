@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.0.4
+-----
+
+ - Bust caches with networking
+ - Turn off host networking
+
 3.0.3
 -----
 

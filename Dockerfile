@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:stable
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
 

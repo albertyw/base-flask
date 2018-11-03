@@ -9,10 +9,12 @@ cd "$DIR"/..
 
 source .env
 
-# Update repository
-git checkout master
-git fetch -tp
-git pull
+if [  "$ENV" = "production" ]; then
+    # Update repository
+    git checkout master
+    git fetch -tp
+    git pull
+fi
 
 # Build and start container
 docker build -t $PROJECT_NAME:$ENV .
@@ -24,8 +26,10 @@ docker run \
     --publish=127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT \
     --name=$PROJECT_NAME $PROJECT_NAME:$ENV
 
-# Cleanup docker
-docker image prune -f --filter "until=336h"
+if [  "$ENV" = "production" ]; then
+    # Cleanup docker
+    docker image prune -f --filter "until=336h"
 
-# Update nginx
-sudo service nginx reload
+    # Update nginx
+    sudo service nginx reload
+fi

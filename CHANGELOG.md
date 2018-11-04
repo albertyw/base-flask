@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.0.5
+-----
+
+ - Make deployment script able to run outside of production
+ - Dependency updates
+
+
 3.0.4
 -----
 

@@ -22,8 +22,8 @@ sudo apt-get install -y nginx
 # Configure nginx
 sudo rm -rf /etc/nginx/sites-available
 sudo rm -rf /etc/nginx/sites-enabled/*
-sudo ln -s ~/$PROJECT_NAME/config/sites-available/app /etc/nginx/sites-enabled/$PROJECT_NAME-app
-sudo ln -s ~/$PROJECT_NAME/config/sites-available/headers /etc/nginx/sites-enabled/$PROJECT_NAME-headers
+sudo ln -s ~/$PROJECT_NAME/config/nginx/app /etc/nginx/sites-enabled/$PROJECT_NAME-app
+sudo ln -s ~/$PROJECT_NAME/config/nginx/headers /etc/nginx/sites-enabled/$PROJECT_NAME-headers
 sudo rm -rf /var/www/html
 
 # Secure nginx

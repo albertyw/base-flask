@@ -83,4 +83,15 @@ server {
         expires          7d;
         add_header       Cache-Control "public";
     }
+
+    location /static {
+        root             $REPO_NAME/app;
+        expires          24h;
+        include          sites-enabled/$PROJECT_NAME-headers;
+        add_header       'Access-Control-Allow-Origin' "https://www.$HOSTNAME";
+        add_header       'Access-Control-Allow-Methods' 'GET, HEAD, OPTIONS';
+        add_header       'Access-Control-Allow-Headers' 'range';
+        add_header       'Access-Control-Expose-Headers' 'content-length';
+        add_header       'Access-Control-Max-Age' '1728000';
+    }
 }

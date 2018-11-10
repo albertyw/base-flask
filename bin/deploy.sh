@@ -24,6 +24,7 @@ docker run \
     --detach \
     --restart=always \
     --publish=127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT \
+    --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
     --name=$PROJECT_NAME $PROJECT_NAME:$ENV
 
 if [  "$ENV" = "production" ]; then

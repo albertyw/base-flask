@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.1.0
+-----
+
+ - Clarify nginx config directory naming
+ - Serve static files directly from nginx
+
+
 3.0.5
 -----
 

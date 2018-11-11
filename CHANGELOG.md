@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.2.0
+-----
+
+ - Updated to bootstrap 4.1.3
+ - Updated normalize.css to v8.0.1
+
+
 3.1.0
 -----
 

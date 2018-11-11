@@ -85,7 +85,7 @@ server {
     }
 
     location /static {
-        root             $REPO_NAME/app;
+        root             $REPO_PATH/app;
         expires          24h;
         include          sites-enabled/$PROJECT_NAME-headers;
         add_header       'Access-Control-Allow-Origin' "https://www.$HOSTNAME";

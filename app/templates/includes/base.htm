@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     {% block head %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% assets "css_all" %}
       <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
@@ -13,23 +14,18 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">TITLE</a>
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mb-0 h1" href="#">TITLE</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Page 1</a>
+            <a class="nav-item nav-link" href="#">Page 2</a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li>NAV</li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+        </div>
       </nav>
       <div id="main">
         {% block content %}{% endblock %}

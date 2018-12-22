@@ -1,15 +1,15 @@
 # Core packages
-python-dotenv==0.9.1 # Read environment variables from .env
-Flask==1.0.2         # Web microframework
-Flask-Assets==0.12   # Merge and minify CSS and JS assets
-pyscss==1.3.5        # CSS minification
-uWSGI==2.0.17.1      # Application server
-syspath==1.1.0       # Modify paths
+python-dotenv==0.10.1  # Read environment variables from .env
+Flask==1.0.2           # Web microframework
+Flask-Assets==0.12     # Merge and minify CSS and JS assets
+pyscss==1.3.5          # CSS minification
+uWSGI==2.0.17.1        # Application server
+syspath==1.1.0         # Modify paths
 
 # Features
-flask-sitemap==0.3.0 # Web sitemaps
+flask-sitemap==0.3.0   # Web sitemaps
 
 # Monitoring/tracking/logging
-blinker==1.4         # Dependency of rollbar
-newrelic==4.8.0.110  # Website monitoring
-rollbar==0.14.5      # rollbar.com error logging
+blinker==1.4           # Dependency of rollbar
+newrelic==4.8.0.110    # Website monitoring
+rollbar==0.14.5        # rollbar.com error logging

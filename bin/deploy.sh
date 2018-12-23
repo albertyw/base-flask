@@ -19,7 +19,7 @@ fi
 # Build and start container
 docker build -t $PROJECT_NAME:$ENV .
 docker stop $PROJECT_NAME || echo
-docker container prune -f
+docker container prune --force --filter "until=336h"
 docker run \
     --detach \
     --restart=always \
@@ -29,7 +29,7 @@ docker run \
 
 if [  "$ENV" = "production" ]; then
     # Cleanup docker
-    docker image prune -f --filter "until=336h"
+    docker image prune --force --filter "until=336h"
 
     # Update nginx
     sudo service nginx reload

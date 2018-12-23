@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.2.1
+-----
+
+ - Make deployments prune only containers older than 14 days
+ - Updated dependencies
+
+
 3.2.0
 -----
 

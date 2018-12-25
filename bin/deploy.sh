@@ -9,7 +9,7 @@ cd "$DIR"/..
 
 source .env
 
-if [  "$ENV" = "production" ]; then
+if [ "$ENV" = "production" ]; then
     # Update repository
     git checkout master
     git fetch -tp
@@ -27,7 +27,7 @@ docker run \
     --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
     --name=$PROJECT_NAME $PROJECT_NAME:$ENV
 
-if [  "$ENV" = "production" ]; then
+if [ "$ENV" = "production" ]; then
     # Cleanup docker
     docker image prune --force --filter "until=336h"
 

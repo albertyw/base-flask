@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.2.2
+-----
+
+ - Fix container pruning during deployment
+ - Export logs from container into host
+
+
 3.2.1
 -----
 

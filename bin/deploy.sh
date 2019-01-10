@@ -20,7 +20,7 @@ fi
 docker build -t $PROJECT_NAME:$ENV .
 docker stop $PROJECT_NAME || echo
 docker container prune --force --filter "until=336h"
-docker container rm $PROJECT_NAME
+docker container rm $PROJECT_NAME || echo
 docker run \
     --detach \
     --restart=always \

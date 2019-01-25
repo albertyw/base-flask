@@ -18,9 +18,9 @@ fi
 
 # Build and start container
 docker build -t $PROJECT_NAME:$ENV .
-docker stop $PROJECT_NAME || echo
+docker stop $PROJECT_NAME || true
 docker container prune --force --filter "until=336h"
-docker container rm $PROJECT_NAME || echo
+docker container rm $PROJECT_NAME || true
 docker run \
     --detach \
     --restart=always \

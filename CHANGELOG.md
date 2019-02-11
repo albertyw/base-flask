@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.2.3
+-----
+
+ - Fix permissions on log files
+ - Fix removing nonexistent docker containers
+ - Clean up error suppress in deployment script (thanks @cdlewis)
+ - Update dependencies
+
+
 3.2.2
 -----
 

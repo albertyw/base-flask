@@ -45,7 +45,7 @@ Development
 ### Setup (using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)):
 
 ```bash
-mkvirtualenv app -p python3.5
+mkvirtualenv app -p python3.7
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env
@@ -77,7 +77,7 @@ This repo uses:
 
 ```bash
 # Switch to python 3
-pyenv local 3.5
+pyenv local 3.7
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env

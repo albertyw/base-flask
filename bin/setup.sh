@@ -5,7 +5,8 @@
 # requires sudo privileges to work and it should already be scaffolded using
 # bin/scaffold.sh
 
-set -ex
+set -exuo pipefail
+IFS=$'\n\t'
 
 # Setup server
 sudo hostnamectl set-hostname "$HOSTNAME"

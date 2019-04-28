@@ -5,7 +5,8 @@
 # modify your git status.  After this completes, it is suggested that you copy
 # all files to a new repository and commit them there
 
-set -ex
+set -exuo pipefail
+IFS=$'\n\t'
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$BASEDIR/../"

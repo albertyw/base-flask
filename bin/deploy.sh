@@ -18,17 +18,17 @@ if [ "$ENV" = "production" ]; then
 fi
 
 # Build and start container
-docker build -t $PROJECT_NAME:$ENV .
-docker stop $PROJECT_NAME || true
+docker build -t "$PROJECT_NAME:$ENV" .
+docker stop "$PROJECT_NAME" || true
 docker container prune --force --filter "until=336h"
-docker container rm $PROJECT_NAME || true
+docker container rm "$PROJECT_NAME" || true
 docker run \
     --detach \
     --restart=always \
-    --publish=127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT \
+    --publish="127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT" \
     --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
-    --name=$PROJECT_NAME $PROJECT_NAME:$ENV
+    --name="$PROJECT_NAME" "$PROJECT_NAME:$ENV"
 
 if [ "$ENV" = "production" ]; then
     # Cleanup docker

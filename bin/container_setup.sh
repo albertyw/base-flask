@@ -6,7 +6,7 @@ set -exuo pipefail
 IFS=$'\n\t'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-cd $DIR/..
+cd "$DIR/.."
 
 apt-get update
 apt-get install -y python-minimal python3-dev python3-setuptools curl supervisor

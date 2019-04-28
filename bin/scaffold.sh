@@ -33,7 +33,7 @@ for findString in "${!replacements[@]}"; do
 done
 
 # Move files
-cd $REPODIR
+cd "$REPODIR"
 mv config/uwsgi/uwsgi.service config/uwsgi/${replacements["\$PROJECT_NAME"]}-uwsgi.service
 
 # Cleanup

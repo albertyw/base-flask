@@ -5,7 +5,8 @@
 # modify your git status.  After this completes, it is suggested that you copy
 # all files to a new repository and commit them there
 
-set -ex
+set -exuo pipefail
+IFS=$'\n\t'
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$BASEDIR/../"
@@ -32,7 +33,7 @@ for findString in "${!replacements[@]}"; do
 done
 
 # Move files
-cd $REPODIR
+cd "$REPODIR"
 mv config/uwsgi/uwsgi.service config/uwsgi/${replacements["\$PROJECT_NAME"]}-uwsgi.service
 
 # Cleanup

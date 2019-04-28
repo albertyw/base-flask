@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.3.0
+-----
+
+ - Add docker networking
+ - Cleanup shell scripts
+ - Update dependencies
+
+
 3.2.3
 -----
 

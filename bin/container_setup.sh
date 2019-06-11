@@ -8,7 +8,9 @@ IFS=$'\n\t'
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 cd "$DIR/.."
 
+# Install updates and system packages
 apt-get update
+apt-get install -y build-essential locales software-properties-common
 apt-get install -y python-minimal python3-dev python3-setuptools curl supervisor
 
 # Set locale

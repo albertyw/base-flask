@@ -23,6 +23,7 @@ replacements["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN"  # abcdefgh
 replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"  # abcdefgh
 replacements["\$SEGMENT_TOKEN"]="\$SEGMENT_TOKEN"                # abcdefgh
 
+IFS=' '
 locations="${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"
 for findString in "${!replacements[@]}"; do
     replaceString="${replacements[$findString]}"
@@ -32,12 +33,10 @@ for findString in "${!replacements[@]}"; do
     done
 done
 
-# Move files
-cd "$REPODIR"
-mv config/uwsgi/uwsgi.service config/uwsgi/${replacements["\$PROJECT_NAME"]}-uwsgi.service
-
 # Cleanup
+cd "$REPODIR"
 rm bin/scaffold.sh
 rm CHANGELOG.md
 rm LICENSE
 rm README.md
+chmod +x bin/*

@@ -39,3 +39,4 @@ rm bin/scaffold.sh
 rm CHANGELOG.md
 rm LICENSE
 rm README.md
+chmod +x bin/*

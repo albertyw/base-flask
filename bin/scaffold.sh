@@ -24,7 +24,7 @@ replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"  # abcdefgh
 replacements["\$SEGMENT_TOKEN"]="\$SEGMENT_TOKEN"                # abcdefgh
 
 IFS=' '
-locations="${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"
+locations="Dockerfile ${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"
 for findString in "${!replacements[@]}"; do
     replaceString="${replacements[$findString]}"
     echo "Replacing '${findString}' with '${replaceString}'"

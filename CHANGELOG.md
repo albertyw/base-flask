@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.3.1
+-----
+
+ - Update dependencies
+ - Update docs to python 3.7
+
+
 3.3.0
 -----
 

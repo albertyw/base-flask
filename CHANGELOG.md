@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.3.2
+-----
+
+ - Update dependencies
+ - Refactor robots.txt route out of routes.py
+ - Cleanup
+ - Forward IP address from nginx
+ - Fix scaffolding
+
+
 3.3.1
 -----
 

@@ -71,6 +71,11 @@ def inject_envs():
 app.register_blueprint(handlers)
 
 
+@app.route("/robots.txt")
+def robots():
+    return render_template("robots.txt")
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.htm"), 404

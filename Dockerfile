@@ -1,4 +1,6 @@
-FROM debian:stable
+# Needed for python 3.7
+FROM ubuntu:18.04
+
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
 

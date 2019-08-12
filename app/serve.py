@@ -1,5 +1,6 @@
 import os
 
+import dotenv
 from flask import Flask, render_template, got_request_exception
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
@@ -7,9 +8,8 @@ from syspath import git_root
 
 from app.routes import handlers
 
-import dotenv
-dotenv.load_dotenv(os.path.join(git_root.path, '.env'))
 
+dotenv.load_dotenv(os.path.join(git_root.path, '.env'))
 
 app = Flask(__name__)
 app.debug = os.environ['DEBUG'] == 'true'

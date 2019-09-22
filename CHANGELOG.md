@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.3.3
+-----
+
+ - Add varsnap
+ - Switch from debian to ubuntu
+ - Clean up imports
+ - Update to python 3.7
+ - Update dependencies
+
+
 3.3.2
 -----
 

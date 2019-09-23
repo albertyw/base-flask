@@ -1,0 +1,14 @@
+{
+  "name": "base-flask",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertyw/base-flask.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "clean-css-cli": "^4.3.0"
+  }
+}

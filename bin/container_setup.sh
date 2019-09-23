@@ -22,5 +22,10 @@ curl https://bootstrap.pypa.io/get-pip.py | python3.7
 pip3 install virtualenvwrapper
 pip3 install -r requirements.txt
 
+# Set up node
+curl -sL https://deb.nodesource.com/setup_11.x | bash -
+apt-get install nodejs
+npm install
+
 # Set up supervisor
 cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

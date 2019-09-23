@@ -33,7 +33,7 @@ css = Bundle(
     'css/normalize.css',
     'css/bootstrap.css',
     'css/global.css',
-    filters='pyscss', output='gen/bundle.min.css'
+    filters='cleancss', output='gen/bundle.min.css'
 )
 assets.register('css_all', css)
 

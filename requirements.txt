@@ -8,6 +8,7 @@ syspath==1.1.0         # Modify paths
 
 # Features
 flask-sitemap==0.3.0   # Web sitemaps
+-e git://github.com/miracle2k/webassets.git@d1f3455e383446ca4ab0c644f326ee937e68e809#egg=webassets  # CSS/JS Minification
 
 # Monitoring/tracking/logging
 blinker==1.4           # Dependency of rollbar

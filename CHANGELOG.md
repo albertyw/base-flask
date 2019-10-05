@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.3.4
+-----
+
+ - Add node dependency to minify/bundle CSS
+ - Update dependencies
+ - Clean up docker images on deploy
+ - Update varsnap keys
+
+
 3.3.3
 -----
 

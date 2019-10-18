@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.4.0
+-----
+
+ - Add varsnap.js
+ - Update to python 3.8
+ - Stop copying logs into docker container
+ - Update dependencies
+ - Remove deprecated nginx configs
+
+
 3.3.5
 -----
 

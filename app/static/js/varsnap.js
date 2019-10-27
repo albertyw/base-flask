@@ -1,5 +1,5 @@
 /*
- * VarSnap.js v0.4.5
+ * VarSnap.js v1.0.0
  */
 (function(exports) {
     (function(f) {
@@ -1393,6 +1393,35 @@
             }, {} ],
             33: [ function(require, module, exports) {
                 "use strict";
+                function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+                    try {
+                        var info = gen[key](arg);
+                        var value = info.value;
+                    } catch (error) {
+                        reject(error);
+                        return;
+                    }
+                    if (info.done) {
+                        resolve(value);
+                    } else {
+                        Promise.resolve(value).then(_next, _throw);
+                    }
+                }
+                function _asyncToGenerator(fn) {
+                    return function() {
+                        var self = this, args = arguments;
+                        return new Promise(function(resolve, reject) {
+                            var gen = fn.apply(self, args);
+                            function _next(value) {
+                                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+                            }
+                            function _throw(err) {
+                                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                            }
+                            _next(undefined);
+                        });
+                    };
+                }
                 function _toConsumableArray(arr) {
                     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
                 }
@@ -1435,7 +1464,7 @@
                 var produceURL = "https://www.varsnap.com/api/snap/produce/";
                 var consumeURL = "https://www.varsnap.com/api/snap/consume/";
                 var produceTrialURL = "https://www.varsnap.com/api/trial/produce/";
-                var version = "v0.4.5";
+                var version = "v1.0.0";
                 var configKeys = {
                     varsnap: "varsnap",
                     env: "env",
@@ -1661,7 +1690,7 @@
                             var data = {
                                 consumer_token: Util.getConfig(this.config, configKeys.consumerToken),
                                 snap_id: snap.id,
-                                dev_outputs: localOutputs,
+                                test_outputs: localOutputs,
                                 matches: matches
                             };
                             return Util.ajax(produceTrialURL, data).then(function(response) {
@@ -1724,11 +1753,91 @@
                     Consumers.push(consumer);
                     return wrapped;
                 }
+                function runTests() {
+                    return _runTests.apply(this, arguments);
+                }
+                function _runTests() {
+                    _runTests = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+                        var consumers, status, _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, consumer, testStatus;
+                        return regeneratorRuntime.wrap(function _callee$(_context) {
+                            while (1) {
+                                switch (_context.prev = _context.next) {
+                                  case 0:
+                                    consumers = Util.getConsumers();
+                                    status = true;
+                                    _iteratorNormalCompletion2 = true;
+                                    _didIteratorError2 = false;
+                                    _iteratorError2 = undefined;
+                                    _context.prev = 5;
+                                    _iterator2 = consumers[Symbol.iterator]();
+
+                                  case 7:
+                                    if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
+                                        _context.next = 16;
+                                        break;
+                                    }
+                                    consumer = _step2.value;
+                                    _context.next = 11;
+                                    return consumer.consumeOnce();
+
+                                  case 11:
+                                    testStatus = _context.sent;
+                                    status = status && testStatus;
+
+                                  case 13:
+                                    _iteratorNormalCompletion2 = true;
+                                    _context.next = 7;
+                                    break;
+
+                                  case 16:
+                                    _context.next = 22;
+                                    break;
+
+                                  case 18:
+                                    _context.prev = 18;
+                                    _context.t0 = _context["catch"](5);
+                                    _didIteratorError2 = true;
+                                    _iteratorError2 = _context.t0;
+
+                                  case 22:
+                                    _context.prev = 22;
+                                    _context.prev = 23;
+                                    if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                                        _iterator2["return"]();
+                                    }
+
+                                  case 25:
+                                    _context.prev = 25;
+                                    if (!_didIteratorError2) {
+                                        _context.next = 28;
+                                        break;
+                                    }
+                                    throw _iteratorError2;
+
+                                  case 28:
+                                    return _context.finish(25);
+
+                                  case 29:
+                                    return _context.finish(22);
+
+                                  case 30:
+                                    return _context.abrupt("return", status);
+
+                                  case 31:
+                                  case "end":
+                                    return _context.stop();
+                                }
+                            }
+                        }, _callee, null, [ [ 5, 18, 22, 30 ], [ 23, , 25, 29 ] ]);
+                    }));
+                    return _runTests.apply(this, arguments);
+                }
                 module.exports = {
                     configKeys: configKeys,
                     Util: Util,
                     Producer: Producer,
                     Consumer: Consumer,
+                    runTests: runTests,
                     varsnap: varsnap,
                     version: version
                 };

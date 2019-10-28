@@ -1,5 +1,5 @@
 /*
- * VarSnap.js v1.0.0
+ * VarSnap.js v1.0.1
  */
 (function(exports) {
     (function(f) {
@@ -1464,7 +1464,7 @@
                 var produceURL = "https://www.varsnap.com/api/snap/produce/";
                 var consumeURL = "https://www.varsnap.com/api/snap/consume/";
                 var produceTrialURL = "https://www.varsnap.com/api/trial/produce/";
-                var version = "v1.0.0";
+                var version = "v1.0.1";
                 var configKeys = {
                     varsnap: "varsnap",
                     env: "env",
@@ -1653,16 +1653,24 @@
                                 var _didIteratorError = false;
                                 var _iteratorError = undefined;
                                 try {
-                                    for (var _iterator = response.results[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                                    var _loop = function _loop() {
                                         var snap = _step.value;
-                                        Util.log("Receiving call from VarSnap uuid: " + snap["id"]);
                                         var inputs = Consumer.deserialize(snap["inputs"]);
                                         var prodOutputs = Consumer.deserialize(snap["prod_outputs"]);
-                                        var localOutputs = _this.targetFunc.apply(_this, _toConsumableArray(inputs));
+                                        var localOutputs = undefined;
+                                        try {
+                                            localOutputs = _this.targetFunc.apply(_this, _toConsumableArray(inputs));
+                                        } catch (err) {
+                                            localOutputs = err;
+                                        }
                                         var matches = deepEqual(prodOutputs, localOutputs);
-                                        _this.reportLog(inputs, prodOutputs, localOutputs, matches);
-                                        _this.reportCentral(snap, localOutputs, matches);
+                                        _this.reportCentral(snap, localOutputs, matches).then(function(trialURL) {
+                                            _this.reportLog(inputs, prodOutputs, localOutputs, matches, trialURL);
+                                        });
                                         matches = allMatches && matches;
+                                    };
+                                    for (var _iterator = response.results[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                                        _loop();
                                     }
                                 } catch (err) {
                                     _didIteratorError = true;
@@ -1690,7 +1698,7 @@
                             var data = {
                                 consumer_token: Util.getConfig(this.config, configKeys.consumerToken),
                                 snap_id: snap.id,
-                                test_outputs: localOutputs,
+                                test_outputs: Producer.serialize(localOutputs),
                                 matches: matches
                             };
                             return Util.ajax(produceTrialURL, data).then(function(response) {
@@ -1698,8 +1706,7 @@
                                     return false;
                                 }
                                 var trialURL = response["trial_url"];
-                                Util.log("Trial URL:                     " + trialURL);
-                                return true;
+                                return trialURL;
                             })["catch"](function(error) {
                                 Util.error("Cannot upload test results to VarSnap: " + error);
                                 return false;
@@ -1707,13 +1714,15 @@
                         }
                     }, {
                         key: "reportLog",
-                        value: function reportLog(inputs, prodOutputs, localOutputs, matches) {
+                        value: function reportLog(inputs, prodOutputs, localOutputs, matches, trialURL) {
                             var functionName = Util.getSignature(this.targetFunc);
+                            Util.log("Testing with VarSnap uuid:     " + snap["id"]);
                             Util.log("Function:                      " + functionName);
                             Util.log("Function input args:           " + inputs);
                             Util.log("Production function outputs:   " + prodOutputs);
                             Util.log("Your function outputs:         " + localOutputs);
                             Util.log("Matching outputs:              " + matches);
+                            Util.log("Trial URL:                     " + trialURL);
                             Util.log("");
                         }
                     } ], [ {
@@ -1728,6 +1737,10 @@
                     return Consumer;
                 }();
                 function varsnap(func) {
+                    if (varsnap.config === undefined) {
+                        console.error("Varsnap has no config; disabling.");
+                        return func;
+                    }
                     if (varsnap.config.logger) {
                         Util.logger = varsnap.config.logger;
                     }

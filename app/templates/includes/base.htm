@@ -34,9 +34,8 @@
         {% endblock %}
       </footer>
     </div>
-    {% assets "js_all" %}
-      <script src="{{ ASSET_URL }}" /></script>
-    {% endassets %}
+    <script src="{{ url_for('static', filename='gen/bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     {% include "includes/logfit.htm" %}
   </body>
 </html>

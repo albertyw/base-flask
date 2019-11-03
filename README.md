@@ -69,7 +69,7 @@ python app/serve.py
 ```bash
 flake8
 mypy app --ignore-missing-imports
-shellcheck --exclude=SC1091 bin/*
+shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 ```
 

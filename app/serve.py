@@ -19,8 +19,6 @@ if os.environ.get('SERVER_NAME', ''):  # pragma: no cover
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
 app.config['SITEMAP_URL_SCHEME'] = 'https'
 assets = Environment(app)
-cleancss_bin = os.path.join(git_root.path, 'node_modules', '.bin', 'cleancss')
-assets.config['cleancss_bin'] = cleancss_bin
 ext = Sitemap(app=app)
 
 
@@ -31,13 +29,6 @@ js = Bundle(
     filters='rjsmin', output='gen/bundle.min.js'
 )
 assets.register('js_all', js)
-css = Bundle(
-    'css/normalize.css',
-    'css/bootstrap.css',
-    'css/global.css',
-    filters='cleancss', output='gen/bundle.min.css'
-)
-assets.register('css_all', css)
 
 if os.environ['ENV'] == 'production':
     import rollbar

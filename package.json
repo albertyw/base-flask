@@ -1,6 +1,7 @@
 {
   "name": "base-flask",
   "scripts": {
+    "minify": "bin/minify.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

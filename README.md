@@ -49,6 +49,7 @@ mkvirtualenv app -p python3.8
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env
+npm install
 
 # Install shellcheck
 # brew install shellcheck
@@ -59,6 +60,7 @@ ln -s .env.development .env
 ### Spinning up the server:
 
 ```bash
+npm run minify
 python app/serve.py
 ```
 

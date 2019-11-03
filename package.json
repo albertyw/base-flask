@@ -19,6 +19,7 @@
     "dotenv": "^8.2.0",
     "envify": "^4.1.0",
     "jquery": "^3.4.1",
+    "logfit": "^0.8.0",
     "uglifyify": "^5.0.2",
     "varsnap": "^1.0.2"
   }

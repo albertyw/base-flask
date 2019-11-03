@@ -4,6 +4,12 @@ var $ = require('jquery');
 global.jQuery = $;
 global.$ = $;
 
+const LogFit = require('logfit');
+const logfit = new LogFit({
+  source: process.env.LOGFIT_CLIENT_TOKEN,
+});
+logfit.report();
+
 var varsnap = require('varsnap');
 varsnap.config = {
   varsnap: 'true',

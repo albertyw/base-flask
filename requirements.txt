@@ -1,13 +1,11 @@
 # Core packages
 python-dotenv==0.10.3  # Read environment variables from .env
 Flask==1.1.1           # Web microframework
-Flask-Assets==0.12     # Merge and minify CSS and JS assets
 uWSGI==2.0.18          # Application server
 syspath==1.1.0         # Modify paths
 
 # Features
 flask-sitemap==0.3.0   # Web sitemaps
--e git://github.com/miracle2k/webassets.git@d1f3455e383446ca4ab0c644f326ee937e68e809#egg=webassets  # CSS/JS Minification
 
 # Monitoring/tracking/logging
 blinker==1.4           # Dependency of rollbar

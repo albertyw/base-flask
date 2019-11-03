@@ -1,7 +1,7 @@
 {
   "name": "base-flask",
   "scripts": {
-    "minify": "bin/minify.sh",
+    "minify": "bin/minify-css.sh && node bin/minify-js.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -10,6 +10,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "clean-css-cli": "^4.3.0"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babelify": "^10.0.0",
+    "bootstrap": "^4.3.1",
+    "browserify": "^16.5.0",
+    "clean-css-cli": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "envify": "^4.1.0",
+    "jquery": "^3.4.1",
+    "logfit": "^0.8.0",
+    "uglifyify": "^5.0.2",
+    "varsnap": "^1.0.2"
   }
 }

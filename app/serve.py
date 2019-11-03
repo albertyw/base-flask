@@ -2,7 +2,6 @@ import os
 
 import dotenv
 from flask import Flask, render_template, got_request_exception
-from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
 from syspath import git_root
 
@@ -18,17 +17,8 @@ if os.environ.get('SERVER_NAME', ''):  # pragma: no cover
 
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
 app.config['SITEMAP_URL_SCHEME'] = 'https'
-assets = Environment(app)
 ext = Sitemap(app=app)
 
-
-js = Bundle(
-    'js/jquery.js',
-    'js/bootstrap.bundle.js',
-    'js/global.js',
-    filters='rjsmin', output='gen/bundle.min.js'
-)
-assets.register('js_all', js)
 
 if os.environ['ENV'] == 'production':
     import rollbar

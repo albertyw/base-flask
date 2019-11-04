@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.5.0
+-----
+
+ - Switch js and css to minify with node instead of python
+ - Update dependencies
+
+
 3.4.0
 -----
 

@@ -1,7 +1,7 @@
 {
   "name": "base-flask",
   "scripts": {
-    "minify": "bin/minify-css.sh && node bin/minify-js.js",
+    "minify": "node bin/minify-css.js && node bin/minify-js.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

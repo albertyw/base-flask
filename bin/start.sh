@@ -6,5 +6,8 @@
 set -exuo pipefail
 IFS=$'\n\t'
 
+# Minify static files
+npm run minify
+
 # Run supervisor to run uwsgi
 supervisord

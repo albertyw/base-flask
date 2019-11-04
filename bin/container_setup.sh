@@ -28,7 +28,6 @@ pip3 install -r requirements.txt
 curl -sL https://deb.nodesource.com/setup_11.x | bash -
 apt-get install nodejs
 npm install
-npm run minify
 
 # Set up supervisor
 cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

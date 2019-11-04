@@ -6,7 +6,6 @@ require('dotenv').config();
 
 const inputFile = path.join(__dirname, '..', 'app', 'static', 'js', 'index.js');
 const outputFile = path.join(__dirname, '..', 'app', 'static', 'gen', 'bundle.min.js');
-const bootstrap = path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js');
 const outputStream = fs.createWriteStream(outputFile);
 
 browserify(inputFile, {debug: true})
@@ -16,9 +15,18 @@ browserify(inputFile, {debug: true})
   .bundle()
   .pipe(outputStream);
 
+// Append additional files at end of bundle
+const rawAppends = [
+  path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js')
+];
+const rawAppendPromises = rawAppends.map(rawAppend => {
+  return fs.promises.readFile(rawAppend);
+});
 outputStream.on('finish', () => {
-  const bootstrapStream = fs.createWriteStream(outputFile, {flags: 'a'});
-  fs.readFile(bootstrap, (err, bootstrapData) => {
-    bootstrapStream.write(bootstrapData);
+  Promise.all(rawAppendPromises).then(rawAppendData => {
+    const stream = fs.createWriteStream(outputFile, {flags: 'a'});
+    for(data of rawAppendData) {
+      stream.write(data);
+    }
   });
 });

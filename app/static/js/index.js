@@ -18,4 +18,6 @@ varsnap.config = {
   consumerToken: process.env.VARSNAP_CONSUMER_TOKEN,
 };
 
+require('./rollbar.js');
+
 require('./global.js');

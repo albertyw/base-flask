@@ -44,10 +44,7 @@ if os.environ['ENV'] == 'production':
 @app.context_processor
 def inject_envs():
     envs = {}
-    envs['ROLLBAR_CLIENT_TOKEN'] = os.environ['ROLLBAR_CLIENT_TOKEN']
     envs['SEGMENT_TOKEN'] = os.environ['SEGMENT_TOKEN']
-    envs['ENV'] = os.environ['ENV']
-    envs['LOGFIT_CLIENT_TOKEN'] = os.environ['LOGFIT_CLIENT_TOKEN']
     return {'ENV': envs}
 
 

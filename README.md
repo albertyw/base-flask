@@ -87,7 +87,7 @@ ln -s .env.development .env
 # Test
 flake8
 mypy app --ignore-missing-imports
-shellcheck --exclude=SC1091 bin/*
+shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 coverage report
 codeclimate-test-reporter

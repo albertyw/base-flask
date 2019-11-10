@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.5.1
+-----
+
+ - Refactor minification to be more extendable
+ - Move more js dependencies to npm
+ - Various clean and updates
+
+
 3.5.0
 -----
 

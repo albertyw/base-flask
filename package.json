@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "babelify": "^10.0.0",
     "bootstrap": "^4.3.1",
     "browserify": "^16.5.0",
@@ -21,7 +21,7 @@
     "jquery": "^3.4.1",
     "logfit": "^0.8.0",
     "popper.js": "^1.16.0",
-    "rollbar": "^2.14.2",
+    "rollbar": "^2.14.3",
     "uglifyify": "^5.0.2",
     "varsnap": "^1.0.2"
   }

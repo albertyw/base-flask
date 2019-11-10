@@ -2,7 +2,8 @@
   "name": "base-flask",
   "scripts": {
     "minify": "node bin/minify.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint .",
+    "test": "npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
     "rollbar": "^2.14.3",
     "uglifyify": "^5.0.2",
     "varsnap": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0"
   }
 }

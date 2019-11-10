@@ -7,9 +7,9 @@ require('dotenv').config();
 
 // CSS Minification Configs
 const cssSources = [
-  "app/static/css/normalize.css",
-  "node_modules/bootstrap/dist/css/bootstrap.css",
-  "app/static/css/global.css",
+  'app/static/css/normalize.css',
+  'node_modules/bootstrap/dist/css/bootstrap.css',
+  'app/static/css/global.css',
 ];
 const cssOutputFile = 'app/static/gen/bundle.min.css';
 
@@ -36,7 +36,7 @@ const jsRawAppendPromises = jsRawAppends.map(rawAppend => {
 jsOutputStream.on('finish', () => {
   Promise.all(jsRawAppendPromises).then(rawAppendData => {
     const stream = fs.createWriteStream(jsOutputFile, {flags: 'a'});
-    for(data of rawAppendData) {
+    for(let data of rawAppendData) {
       stream.write(data);
     }
   });
@@ -50,4 +50,4 @@ new CleanCSS({returnPromise: true})
     const stream = fs.createWriteStream(cssOutputFile);
     stream.write(output.styles);
   })
-  .catch(error => { console.error(error); })
+  .catch(error => { console.error(error); });

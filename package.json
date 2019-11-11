@@ -3,7 +3,8 @@
   "scripts": {
     "minify": "node bin/minify.js",
     "eslint": "eslint .",
-    "test": "npm run eslint"
+    "stylelint": "stylelint app/static/css/*",
+    "test": "npm run eslint && npm run stylelint"
   },
   "repository": {
     "type": "git",

@@ -14,10 +14,10 @@ const cssSources = [
 const cssOutputFile = path.join('app', 'static', 'gen', 'bundle.min.css');
 
 // JS Minification Configs
-const jsInputFile = path.join(__dirname, '..', 'app', 'static', 'js', 'index.js');
-const jsOutputFile = path.join(__dirname, '..', 'app', 'static', 'gen', 'bundle.min.js');
+const jsInputFile = path.join('app', 'static', 'js', 'index.js');
+const jsOutputFile = path.join('app', 'static', 'gen', 'bundle.min.js');
 const jsRawAppends = [
-  path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js')
+  path.join('node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js')
 ];
 
 // Minify js

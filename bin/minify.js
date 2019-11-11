@@ -7,11 +7,11 @@ require('dotenv').config();
 
 // CSS Minification Configs
 const cssSources = [
-  'node_modules/normalize.css/normalize.css',
-  'node_modules/bootstrap/dist/css/bootstrap.css',
-  'app/static/css/global.css',
+  path.join('node_modules', 'normalize.css', 'normalize.css'),
+  path.join('node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.css'),
+  path.join('app', 'static', 'css', 'global.css'),
 ];
-const cssOutputFile = 'app/static/gen/bundle.min.css';
+const cssOutputFile = path.join('app', 'static', 'gen', 'bundle.min.css');
 
 // JS Minification Configs
 const jsInputFile = path.join(__dirname, '..', 'app', 'static', 'js', 'index.js');

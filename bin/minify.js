@@ -7,7 +7,7 @@ require('dotenv').config();
 
 // CSS Minification Configs
 const cssSources = [
-  'app/static/css/normalize.css',
+  'node_modules/normalize.css/normalize.css',
   'node_modules/bootstrap/dist/css/bootstrap.css',
   'app/static/css/global.css',
 ];

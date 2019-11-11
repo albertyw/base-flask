@@ -21,6 +21,7 @@
     "envify": "^4.1.0",
     "jquery": "^3.4.1",
     "logfit": "^0.8.0",
+    "normalize.css": "^8.0.1",
     "popper.js": "^1.16.0",
     "rollbar": "^2.14.3",
     "uglifyify": "^5.0.2",

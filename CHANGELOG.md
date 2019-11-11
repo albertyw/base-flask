@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.5.2
+-----
+
+ - Fix js naming
+ - Add linters for css and js
+ - Switch to imported normalize.css
+
+
 3.5.1
 -----
 

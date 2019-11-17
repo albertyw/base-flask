@@ -19,7 +19,6 @@ sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-g
 
 # Set up python
 curl https://bootstrap.pypa.io/get-pip.py | python3.8
-pip3 install virtualenvwrapper
 pip3 install -r requirements.txt
 
 # Set up node

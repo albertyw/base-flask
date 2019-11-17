@@ -11,6 +11,7 @@
     "url": "git+https://github.com/albertyw/base-flask.git"
   },
   "license": "MIT",
+  "private": true,
   "dependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",

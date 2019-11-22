@@ -1,6 +1,6 @@
 import unittest
 
-from varsnap import TestVarSnap  # noqa: F401
+from varsnap import TestVarsnap  # noqa: F401
 
 from app import serve
 

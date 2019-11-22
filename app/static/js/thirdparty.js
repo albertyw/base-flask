@@ -22,7 +22,7 @@ function setupLogfit() {
   logfit.report();
 }
 
-function setupVarSnap() {
+function setupVarsnap() {
   varsnap.config = {
     varsnap: 'true',
     env: 'production',
@@ -34,5 +34,5 @@ function setupVarSnap() {
 module.exports = {
   rollbar: setupRollbar(),
   logfit: setupLogfit(),
-  varsnap: setupVarSnap(),
+  varsnap: setupVarsnap(),
 };

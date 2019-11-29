@@ -24,6 +24,7 @@ docker network inspect "$PROJECT_NAME" &>/dev/null ||
 docker stop "$PROJECT_NAME" || true
 docker container prune --force --filter "until=336h"
 docker image prune --force --filter "until=336h"
+docker volume prune --force
 docker container rm "$PROJECT_NAME" || true
 docker run \
     --detach \

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.5.3
+-----
+
+ - Dependency updates
+ - Make docker prune strategy more aggressive
+ - Add support for description meta tags
+
+
 3.5.2
 -----
 

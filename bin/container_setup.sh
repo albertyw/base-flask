@@ -10,10 +10,20 @@ cd "$DIR/.."
 
 # Install updates and system packages
 apt-get update
-apt-get install -y build-essential locales software-properties-common
-apt-get install -y gcc curl supervisor git
-apt-get install -y python-minimal python-dev python3-setuptools python3.8 python3.8-dev
-apt-get install -y nodejs
+apt-get install -y \
+    build-essential \
+    locales \
+    software-properties-common \
+    gcc \
+    curl \
+    supervisor \
+    git \
+    python-minimal \
+    python-dev \
+    python3-setuptools \
+    python3.8 \
+    python3.8-dev \
+    nodejs \
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set locale

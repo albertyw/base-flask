@@ -18,6 +18,7 @@ if [ "$ENV" = "production" ]; then
 fi
 
 # Build and start container
+docker pull "$(grep FROM Dockerfile | awk '{print $2}')"
 docker build -t "$PROJECT_NAME:$ENV" .
 docker network inspect "$PROJECT_NAME" &>/dev/null ||
     docker network create --driver bridge "$PROJECT_NAME"

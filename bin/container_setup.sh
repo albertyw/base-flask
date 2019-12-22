@@ -23,7 +23,7 @@ apt-get install -y --no-install-recommends \
     python3-setuptools \
     python3.8 \
     python3.8-dev \
-    nodejs \
+    nodejs
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set locale

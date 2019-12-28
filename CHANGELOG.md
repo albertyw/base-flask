@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.5.4
+-----
+
+ - Set up hadolint to lint Dockerfiles
+ - Refactor Dockerfile
+ - Prune some unneeded OS packages
+ - Update dependencies
+
+
 3.5.3
 -----
 

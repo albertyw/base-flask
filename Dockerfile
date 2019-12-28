@@ -5,6 +5,10 @@ LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
 
 # Set locale
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    locales \
+    && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
@@ -20,8 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.8-minimal                 `: Python` \
     python3-dev python3-setuptools    `: Support for installing Python packages` \
     nodejs                            `: Javascript assets` \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+    && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures
 RUN mkdir -p /var/www/app

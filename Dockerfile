@@ -13,11 +13,14 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# Install updates and system packages
+# Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    software-properties-common        `: Needed for add-apt-repository` \
+    software-properties-common wget   `: Needed for add-apt-repository` \
+    && wget https://deb.nodesource.com/setup_12.x && bash setup_12.x \
+    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential locales curl      `: Basic-packages` \
-    gcc                               `: Needed for python/node native extensions` \
+    gcc g++ make                      `: Needed for python/node native extensions` \
     git                               `: Needed for pip install from github` \
     supervisor                        `: Runnning python in daemon mode` \
     libssl-dev                        `: SSL extensions for python` \

@@ -15,18 +15,18 @@ ENV LC_ALL en_US.UTF-8
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    software-properties-common wget   `: Needed for add-apt-repository` \
+    gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
     && wget https://deb.nodesource.com/setup_12.x && bash setup_12.x \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential locales curl      `: Basic-packages` \
-    gcc g++ make                      `: Needed for python/node native extensions` \
-    git                               `: Needed for pip install from github` \
-    supervisor                        `: Runnning python in daemon mode` \
-    libssl-dev                        `: SSL extensions for python` \
-    python3.8-minimal                 `: Python` \
-    python3-dev python3-setuptools    `: Support for installing Python packages` \
-    nodejs                            `: Javascript assets` \
+    build-essential curl                        `: Basic-packages` \
+    gcc g++ make                                `: Needed for python/node native extensions` \
+    git                                         `: Needed for pip install from github` \
+    supervisor                                  `: Runnning python in daemon mode` \
+    libssl-dev                                  `: SSL extensions for python` \
+    python3.8                                   `: Python` \
+    python3.8-dev python3-setuptools            `: Support for installing Python packages` \
+    nodejs                                      `: Javascript assets` \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures

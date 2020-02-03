@@ -1,11 +1,20 @@
 CHANGELOG
 =========
 
+3.5.6
+-----
+
+ - Fix varsnap.js env
+ - Write nginx logs to local logs
+ - Update deps
+
+
 3.5.5
 -----
 
  - Fix the version of python and node that are used for operations
  - Don't copy node_modules into docker container
+
 
 3.5.4
 -----

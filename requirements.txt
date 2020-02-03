@@ -1,8 +1,8 @@
 # Core packages
-python-dotenv==0.10.3  # Read environment variables from .env
+python-dotenv==0.10.5  # Read environment variables from .env
 Flask==1.1.1           # Web microframework
 uWSGI==2.0.18          # Application server
-syspath==1.1.0         # Modify paths
+syspath==2.0.0         # Modify paths
 
 # Features
 flask-sitemap==0.3.0   # Web sitemaps
@@ -11,4 +11,4 @@ flask-sitemap==0.3.0   # Web sitemaps
 blinker==1.4           # Dependency of rollbar
 newrelic==5.4.1.134    # Website monitoring
 rollbar==0.14.7        # rollbar.com error logging
-varsnap==1.0.1         # Test discovery
+varsnap==1.1.1         # Test discovery

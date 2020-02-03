@@ -13,21 +13,21 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "babelify": "^10.0.0",
     "bootstrap": "^4.4.1",
     "browserify": "^16.5.0",
-    "clean-css": "^4.2.1",
+    "clean-css": "^4.2.3",
     "dotenv": "^8.2.0",
     "envify": "^4.1.0",
     "jquery": "^3.4.1",
     "logfit": "^0.8.0",
     "normalize.css": "^8.0.1",
-    "popper.js": "^1.16.0",
+    "popper.js": "^1.16.1",
     "rollbar": "^2.14.4",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.1.0"
+    "varsnap": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

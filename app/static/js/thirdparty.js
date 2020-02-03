@@ -25,7 +25,7 @@ function setupLogfit() {
 function setupVarsnap() {
   varsnap.config = {
     varsnap: 'true',
-    env: 'production',
+    env: process.env.ENV,
     producerToken: process.env.VARSNAP_PRODUCER_TOKEN,
     consumerToken: process.env.VARSNAP_CONSUMER_TOKEN,
   };

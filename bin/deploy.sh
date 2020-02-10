@@ -8,7 +8,9 @@ IFS=$'\n\t'
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 cd "$DIR"/..
 
+set +x  # Do not print contents of .env
 source .env
+set -x
 
 if [ "$ENV" = "production" ]; then
     # Update repository

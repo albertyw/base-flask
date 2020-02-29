@@ -8,6 +8,9 @@ IFS=$'\n\t'
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 cd "$DIR"/..
 
+CONTAINER="$PROJECT_NAME"
+PORT="$INTERNAL_PORT"
+NETWORK="$CONTAINER"_net
 set +x  # Do not print contents of .env
 source .env
 set -x
@@ -21,21 +24,21 @@ fi
 
 # Build container and network
 docker pull "$(grep FROM Dockerfile | awk '{print $2}')"
-docker build -t "$PROJECT_NAME:$ENV" .
-docker network inspect "$PROJECT_NAME" &>/dev/null ||
-    docker network create --driver bridge "$PROJECT_NAME"
+docker build -t "$CONTAINER:$ENV" .
+docker network inspect "$NETWORK" &>/dev/null ||
+    docker network create --driver bridge "$NETWORK"
 
 # Start container
-docker stop "$PROJECT_NAME" || true
-docker container rm "$PROJECT_NAME" || true
+docker stop "$CONTAINER" || true
+docker container rm "$CONTAINER" || true
 docker run \
     --detach \
     --restart=always \
-    --publish="127.0.0.1:$INTERNAL_PORT:$INTERNAL_PORT" \
-    --network="$PROJECT_NAME" \
+    --publish="127.0.0.1:$PORT:$PORT" \
+    --network="$NETWORK" \
     --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
-    --name="$PROJECT_NAME" "$PROJECT_NAME:$ENV"
+    --name="$CONTAINER" "$CONTAINER:$ENV"
 
 if [ "$ENV" = "production" ]; then
     # Cleanup docker

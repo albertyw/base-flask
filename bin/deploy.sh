@@ -11,14 +11,15 @@ cd "$DIR"/..
 CONTAINER="$PROJECT_NAME"
 PORT="$INTERNAL_PORT"
 NETWORK="$CONTAINER"_net
-BRANCH="$1"
+DEPLOY_BRANCH="${1:-}"
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 set +x  # Do not print contents of .env
 source .env
 set -x
 
-if [ -n "$BRANCH" ]; then
+if [ -n "$DEPLOY_BRANCH" ]; then
     # Update repository
-    git checkout "$BRANCH"
+    git checkout "$DEPLOY_BRANCH"
     git fetch -tp
     git pull
 fi

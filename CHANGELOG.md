@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.5.7
+-----
+
+ - Make deploy.sh default to deploying current state of repository
+ - Update gitignore for nginx to ignore logrotated files
+ - Write nginx logs to both nginx and local log directories
+ - Hide contents of .env during deployment
+ - Update deps
+
+
 3.5.6
 -----
 

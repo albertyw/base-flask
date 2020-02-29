@@ -11,20 +11,21 @@ cd "$DIR"/..
 CONTAINER="$PROJECT_NAME"
 PORT="$INTERNAL_PORT"
 NETWORK="$CONTAINER"_net
+BRANCH="$1"
 set +x  # Do not print contents of .env
 source .env
 set -x
 
-if [ "$ENV" = "production" ]; then
+if [ -n "$BRANCH" ]; then
     # Update repository
-    git checkout master
+    git checkout "$BRANCH"
     git fetch -tp
     git pull
 fi
 
 # Build container and network
 docker pull "$(grep FROM Dockerfile | awk '{print $2}')"
-docker build -t "$CONTAINER:$ENV" .
+docker build -t "$CONTAINER:$BRANCH" .
 docker network inspect "$NETWORK" &>/dev/null ||
     docker network create --driver bridge "$NETWORK"
 
@@ -38,9 +39,9 @@ docker run \
     --network="$NETWORK" \
     --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
-    --name="$CONTAINER" "$CONTAINER:$ENV"
+    --name="$CONTAINER" "$CONTAINER:$BRANCH"
 
-if [ "$ENV" = "production" ]; then
+if [ "$ENV" = "production" ] && [ "$BRANCH" = "master" ]; then
     # Cleanup docker
     docker container prune --force --filter "until=168h"
     docker image prune --force --filter "until=168h"

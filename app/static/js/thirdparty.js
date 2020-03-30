@@ -32,7 +32,7 @@ function setupVarsnap() {
 }
 
 module.exports = {
-  rollbar: setupRollbar(),
-  logfit: setupLogfit(),
-  varsnap: setupVarsnap(),
+  rollbar: setupRollbar,
+  logfit: setupLogfit,
+  varsnap: setupVarsnap,
 };

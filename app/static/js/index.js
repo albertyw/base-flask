@@ -2,5 +2,8 @@ var $ = require('jquery');
 global.jQuery = $;
 global.$ = $;
 
-require('./thirdparty.js');
+var thirdParty = require('./thirdparty.js');
+thirdParty.setupRollbar();
+thirdParty.setupLogfit();
+thirdParty.setupVarsnap();
 require('./global.js');

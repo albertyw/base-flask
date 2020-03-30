@@ -4,7 +4,7 @@
     "minify": "node bin/minify.js",
     "eslint": "eslint .",
     "stylelint": "stylelint app/static/css/*",
-    "test": "npm run eslint && npm run stylelint"
+    "test": "npm run eslint && npm run stylelint && mocha app/static/js/test"
   },
   "repository": {
     "type": "git",

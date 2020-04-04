@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.6.0
+-----
+
+ - Set up mocha testing
+ - Update dependencies
+
+
 3.5.7
 -----
 

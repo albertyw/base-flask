@@ -1,5 +1,5 @@
 # Needed for python 3.8
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT

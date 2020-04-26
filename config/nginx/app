@@ -1,7 +1,3 @@
-### Config ###
-# don't send the nginx version number in error pages and Server header
-server_tokens off;
-
 ### Redirects ###
 server {
     listen         80;

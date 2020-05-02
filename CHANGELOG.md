@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.6.1
+-----
+
+ - Update node and python dependencies
+ - Update to ubuntu 20.04
+ - Update nginx configs
+
+
 3.6.0
 -----
 

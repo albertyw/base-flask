@@ -16,7 +16,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babelify": "^10.0.0",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "browserify": "^16.5.1",
     "clean-css": "^4.2.3",
     "dotenv": "^8.2.0",
@@ -25,9 +25,9 @@
     "logfit": "^0.8.1",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
-    "rollbar": "^2.15.2",
+    "rollbar": "^2.16.1",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.5.1"
+    "varsnap": "^1.5.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",

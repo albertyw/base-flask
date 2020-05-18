@@ -37,7 +37,7 @@ jsOutputStream.on('finish', () => {
   Promise.all(jsRawAppendPromises).then(rawAppendData => {
     const stream = fs.createWriteStream(jsOutputFile, {flags: 'a'});
     for(let data of rawAppendData) {
-      stream.write(data);
+      stream.write(data + '\n');
     }
   });
 });

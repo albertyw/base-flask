@@ -9,7 +9,7 @@ function setupRollbar() {
     accessToken: process.env.ROLLBAR_CLIENT_TOKEN,
     captureUncaught: true,
     payload: {
-      environment: process.env.ENVIRONMENT,
+      environment: process.env.ENV,
     }
   };
   return Rollbar.init(rollbarConfig);

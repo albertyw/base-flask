@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.6.2
+-----
+
+ - Fix broken thirdparty js initializations
+ - Fix bug with not correctly separating multiple js appends
+ - Fix docker prune
+ - Dependency updates
+
+
 3.6.1
 -----
 

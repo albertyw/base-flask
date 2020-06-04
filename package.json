@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "babelify": "^10.0.0",
     "bootstrap": "^4.5.0",
     "browserify": "^16.5.1",
@@ -27,7 +27,7 @@
     "popper.js": "^1.16.1",
     "rollbar": "^2.16.2",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.5.2"
+    "varsnap": "^1.5.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",

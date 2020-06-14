@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.6.3
+-----
+ - Optimization of supervisor and uwsgi configs
+ - Updates to dependencies
+ - Make uwsgi log correct IP address
+ - Rotate and limit uwsgi and supervisor logs
+
+
 3.6.2
 -----
 

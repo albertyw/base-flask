@@ -17,3 +17,6 @@ npm install
 
 # Set up supervisor
 cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Set up logrotate
+cp config/uwsgi/logrotate /etc/logrotate.d/uwsgi

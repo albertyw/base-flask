@@ -4,6 +4,7 @@ import dotenv
 from flask import Flask, render_template, got_request_exception
 from flask_sitemap import Sitemap
 from syspath import git_root
+from typing import Any, Mapping
 
 from app.routes import handlers
 
@@ -25,7 +26,7 @@ if os.environ['ENV'] == 'production':
     import rollbar.contrib.flask
 
     @app.before_first_request
-    def init_rollbar():
+    def init_rollbar() -> None:
         """init rollbar module"""
         rollbar.init(
             os.environ['ROLLBAR_SERVER_TOKEN'],
@@ -42,7 +43,7 @@ if os.environ['ENV'] == 'production':
 
 
 @app.context_processor
-def inject_envs():
+def inject_envs() -> Mapping[str, Mapping[str, str]]:
     envs = {}
     envs['SEGMENT_TOKEN'] = os.environ['SEGMENT_TOKEN']
     return {'ENV': envs}
@@ -52,12 +53,12 @@ app.register_blueprint(handlers)
 
 
 @app.route("/robots.txt")
-def robots():
+def robots() -> Any:
     return render_template("robots.txt")
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(e: Exception) -> Any:
     return render_template("404.htm"), 404
 
 

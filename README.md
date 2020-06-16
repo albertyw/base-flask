@@ -68,7 +68,7 @@ python app/serve.py
 
 ```bash
 flake8
-mypy app --ignore-missing-imports
+mypy app --ignore-missing-imports --strict
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 npm test

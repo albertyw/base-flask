@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.8                                   `: Python` \
     python3.8-dev python3-setuptools            `: Support for installing Python packages` \
     nodejs                                      `: Javascript assets` \
+    logrotate                                   `: Rotate logs because uWSGI has bugs` \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures

@@ -1,0 +1,10 @@
+/var/www/app/logs/newrelic/agent.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    copytruncate
+    sharedscripts
+}

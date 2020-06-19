@@ -1,6 +1,6 @@
 import unittest
 
-from varsnap import TestVarsnap  # noqa: F401
+from varsnap import test
 
 from app import serve
 
@@ -28,3 +28,11 @@ class PageCase(unittest.TestCase):
         response = self.app.get(path)
         self.assertEqual(response.status_code, 200)
         self.assertIn(string, response.get_data())
+
+
+class TestIntegration(unittest.TestCase):
+    def test_varsnap(self):
+        matches, logs = test()
+        if matches is None:
+            raise unittest.case.SkipTest('No Snaps found')
+        self.assertTrue(matches, logs)

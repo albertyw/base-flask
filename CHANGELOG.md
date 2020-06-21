@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.7.0
+-----
+
+ - Switch to mypy strict mode.  Note that you may need to backfill python type annotations.
+ - Update uwsgi logrotate to be a bit smarter
+ - Update dependencies
+
+
 3.6.3
 -----
  - Optimization of supervisor and uwsgi configs

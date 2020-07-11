@@ -1,4 +1,4 @@
 logs
-app/static
+static
 .git/*
 node_modules

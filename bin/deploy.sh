@@ -38,7 +38,7 @@ docker run \
     --restart=always \
     --publish="127.0.0.1:$PORT:$PORT" \
     --network="$NETWORK" \
-    --mount type=bind,source="$(pwd)"/app/static,target=/var/www/app/app/static \
+    --mount type=bind,source="$(pwd)"/static,target=/var/www/static \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
     --name="$CONTAINER" "$CONTAINER:$BRANCH"
 

@@ -21,7 +21,7 @@ ratings:
     - bin/**
 exclude_paths:
   - config/
-  - app/static/css/bootstrap.css
-  - app/static/css/normalize.css
-  - app/static/js/bootstrap.bundle.js
-  - app/static/js/jquery.js
+  - static/css/bootstrap.css
+  - static/css/normalize.css
+  - static/js/bootstrap.bundle.js
+  - static/js/jquery.js

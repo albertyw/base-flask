@@ -9,13 +9,13 @@ require('dotenv').config();
 const cssSources = [
   path.join('node_modules', 'normalize.css', 'normalize.css'),
   path.join('node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.css'),
-  path.join('app', 'static', 'css', 'global.css'),
+  path.join('static', 'css', 'global.css'),
 ];
-const cssOutputFile = path.join('app', 'static', 'gen', 'bundle.min.css');
+const cssOutputFile = path.join('static', 'gen', 'bundle.min.css');
 
 // JS Minification Configs
-const jsInputFile = path.join('app', 'static', 'js', 'index.js');
-const jsOutputFile = path.join('app', 'static', 'gen', 'bundle.min.js');
+const jsInputFile = path.join('static', 'js', 'index.js');
+const jsOutputFile = path.join('static', 'gen', 'bundle.min.js');
 const jsRawAppends = [
   path.join('node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js')
 ];

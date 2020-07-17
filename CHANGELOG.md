@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.7.1
+-----
+
+ - Move static directory out of app directory
+ - Update dependencies
+
+
 3.7.0
 -----
 

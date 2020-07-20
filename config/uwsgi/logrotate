@@ -1,7 +1,9 @@
 /var/www/app/logs/newrelic/agent.log
 /var/www/app/logs/uwsgi/app.log
 {
+    su root root
     daily
+    maxsize 1G
     missingok
     rotate 14
     compress

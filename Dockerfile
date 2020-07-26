@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
+HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:5000/health || exit 1
 
 # Set locale
 RUN apt-get update && apt-get install -y --no-install-recommends \

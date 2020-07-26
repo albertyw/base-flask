@@ -16,6 +16,9 @@ class PageCase(unittest.TestCase):
     def test_robots_load(self) -> None:
         self.page_test('/robots.txt', b'')
 
+    def test_health_load(self) -> None:
+        self.page_test('/health', b'ok')
+
     def test_sitemap_load(self) -> None:
         self.page_test('/sitemap.xml', b'')
 

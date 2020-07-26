@@ -57,6 +57,11 @@ def robots() -> Any:
     return render_template("robots.txt")
 
 
+@app.route("/health")
+def health() -> Any:
+    return '{"status": "ok"}'
+
+
 @app.errorhandler(404)
 def page_not_found(e: Exception) -> Any:
     return render_template("404.htm"), 404

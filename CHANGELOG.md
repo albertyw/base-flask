@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.7.2
+-----
+
+ - Add docker healthcheck
+ - Fix logrotate
+ - Update dependencies
+
+
 3.7.1
 -----
 

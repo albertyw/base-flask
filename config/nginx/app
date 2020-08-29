@@ -5,19 +5,6 @@ server {
     return         301 https://www.$HOSTNAME$request_uri;
 }
 
-# Change IP address to domain name
-server {
-    include         sites-enabled/$PROJECT_NAME-headers;
-    server_name     $server_addr;
-    return          301 https://www.$HOSTNAME$request_uri;
-}
-
-server {
-    listen          80;
-    server_name     _; # catch-all
-    rewrite         ^ https://www.$HOSTNAME$request_uri;
-}
-
 # Change naked domain to www
 server {
     listen          443 ssl http2;

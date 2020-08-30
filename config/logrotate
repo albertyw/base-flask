@@ -4,7 +4,7 @@
 {
     su root root
     daily
-    maxsize 100M
+    maxsize 10M
     missingok
     rotate 14
     compress

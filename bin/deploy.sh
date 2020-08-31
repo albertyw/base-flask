@@ -6,7 +6,7 @@ set -exuo pipefail
 IFS=$'\n\t'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-cd "$DIR"/..
+cd "$DIR"/.. || exit 1
 
 CONTAINER="$PROJECT_NAME"
 PORT="$INTERNAL_PORT"

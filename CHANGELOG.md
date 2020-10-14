@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.7.3
+-----
+
+ - Stop redirecting raw IP address requests
+ - Fix logrotate
+ - Update dependencies
+
+
 3.7.2
 -----
 

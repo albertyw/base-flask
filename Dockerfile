@@ -1,4 +1,4 @@
-# Needed for python 3.8
+# Needed for python 3.9
 FROM ubuntu:20.04
 
 LABEL maintainer="git@albertyw.com"
@@ -26,8 +26,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git                                         `: Needed for pip install from github` \
     supervisor                                  `: Runnning python in daemon mode` \
     libssl-dev                                  `: SSL extensions for python` \
-    python3.8                                   `: Python` \
-    python3.8-dev python3-setuptools            `: Support for installing Python packages` \
+    python3.9                                   `: Python` \
+    python3.9-dev python3-setuptools            `: Support for installing Python packages` \
     nodejs                                      `: Javascript assets` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     && rm -rf /var/lib/apt/lists/*

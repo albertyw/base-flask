@@ -32,7 +32,7 @@ project needs, then run `bin/setup.sh` to set up the host.
 
 Base-flask is designed to work with a minimally sized [AWS EC2](https://aws.amazon.com/ec2/instance-types/)
 or [DigitalOcean](https://www.digitalocean.com/pricing/)
-instance, running a modern version of Ubuntu (18.04 LTS recommended).
+instance, running a modern version of Ubuntu (20.04 LTS recommended).
 
 ### CDN
 
@@ -46,7 +46,7 @@ Development
 ### Setup (using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)):
 
 ```bash
-mkvirtualenv app -p python3.8
+mkvirtualenv app -p python3.9
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env
@@ -81,7 +81,7 @@ This repo uses:
 
 ```bash
 # Switch to python 3
-pyenv local 3.8
+pyenv local 3.9
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env

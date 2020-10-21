@@ -9,7 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 cd "$DIR/.."
 
 # Set up python
-curl https://bootstrap.pypa.io/get-pip.py | python3.8
+curl https://bootstrap.pypa.io/get-pip.py | python3.9
 pip3 install -r requirements.txt
 
 # Set up node

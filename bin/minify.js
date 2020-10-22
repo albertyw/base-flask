@@ -17,10 +17,13 @@ const cssOutputFile = path.join('static', 'gen', 'bundle.min.css');
 const jsInputFile = path.join('static', 'js', 'index.js');
 const jsOutputFile = path.join('static', 'gen', 'bundle.min.js');
 const jsRawAppends = [
-  path.join('node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js')
+  path.join('node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js'),
 ];
 
 // Minify js
+console.log('Minifying JS:');
+console.log(jsInputFile);
+console.log('');
 const jsOutputStream = fs.createWriteStream(jsOutputFile);
 browserify(jsInputFile, {debug: true})
   .transform('envify')
@@ -44,6 +47,8 @@ jsOutputStream.on('finish', () => {
 
 
 // Minify CSS
+console.log('Minifying CSS:');
+console.log(cssSources.join(', '));
 new CleanCSS({returnPromise: true})
   .minify(cssSources)
   .then(output => {

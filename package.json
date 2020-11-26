@@ -13,10 +13,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "babelify": "^10.0.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "browserify": "=16.5.1",
     "clean-css": "^4.2.3",
     "dotenv": "^8.2.0",
@@ -25,15 +25,15 @@
     "logfit": "^0.8.2",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
-    "rollbar": "^2.19.3",
+    "rollbar": "^2.19.4",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.5.4"
+    "varsnap": "^1.5.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^7.7.0",
-    "mocha": "^8.1.1",
-    "stylelint": "^13.6.1",
+    "eslint": "^7.14.0",
+    "mocha": "^8.2.1",
+    "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
   }
 }

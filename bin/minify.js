@@ -8,7 +8,7 @@ require('dotenv').config();
 // CSS Minification Configs
 let cssSources = [
   path.join('node_modules', 'normalize.css', 'normalize.css'),
-  path.join('node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.css')
+  path.join('node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.css'),
 ];
 let customCSS = fs.readdirSync(path.join('static', 'css'));
 customCSS = customCSS.map((f) => path.join('static', 'css', f));

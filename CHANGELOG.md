@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.7.4
+-----
+
+ - Update to python 3.9
+ - Update minification to search for all CSS files
+ - Dependency updates
+
+
 3.7.3
 -----
 

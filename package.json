@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babelify": "^10.0.0",
     "bootstrap": "^4.5.3",
     "browserify": "=16.5.1",
@@ -27,11 +27,11 @@
     "popper.js": "^1.16.1",
     "rollbar": "^2.19.4",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.6.3"
+    "varsnap": "^1.6.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.16.0",
     "mocha": "^8.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"

@@ -12,8 +12,9 @@ bash setup_14.x
 # Set up python
 apt-get update
 apt-get install -y --no-install-recommends build-essential curl gcc g++ make git supervisor libssl-dev python3.9 python3.9-dev python3-setuptools nodejs logrotate
-pip install -r requirements.txt
-pip install -r requirements-test.txt
+curl https://bootstrap.pypa.io/get-pip.py | python3.9
+pip3 install -r requirements.txt
+pip3 install -r requirements-test.txt
 
 # Set up node
 npm install

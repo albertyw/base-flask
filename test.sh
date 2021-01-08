@@ -10,7 +10,6 @@ wget https://deb.nodesource.com/setup_14.x
 bash setup_14.x
 
 # Set up python
-apt-get update
 apt-get install -y --no-install-recommends build-essential curl gcc g++ make git supervisor libssl-dev python3.9 python3.9-dev python3-setuptools nodejs logrotate
 curl https://bootstrap.pypa.io/get-pip.py | python3.9
 pip3 install -r requirements.txt
@@ -19,8 +18,8 @@ pip3 install -r requirements-test.txt
 # Set up node
 npm install
 
-# Set up environment
-ln -s .env.development .env
+# Set up shellcheck
+apt-get install shellcheck
 
 # Set up code-climate test reporter
 curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > "bin/cc-test-reporter"
@@ -29,6 +28,10 @@ chmod +x "bin/cc-test-reporter"
 # Set up hadolint
 curl -L https://github.com/hadolint/hadolint/releases/download/v1.17.3/hadolint-Linux-x86_64 > "bin/hadolint"
 chmod +x "bin/hadolint"
+
+# Set up environment
+ln -s .env.development .env
+
 
 
 # Lint python

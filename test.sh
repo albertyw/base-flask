@@ -3,6 +3,12 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# Set environment variables
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:en
+export LC_ALL=en_US.UTF-8
+export DEBIAN_FRONTEND=noninteractive
+
 # Initial setup
 apt-get update
 apt-get install -y --no-install-recommends gpg-agent software-properties-common wget

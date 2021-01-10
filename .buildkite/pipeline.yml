@@ -1,0 +1,13 @@
+steps:
+  - command: "rm .dockerignore && docker build -t base-flask:buildkite ."
+    label: "Build docker container"
+  - command: "bin/test.sh"
+    label: "Test"
+    env:
+      CC_TEST_REPORTER_ID: "e42a05bff9c04dc4688b42419421a047b4d9c943f1734bc2f3180a7d2dae8f4f"
+    plugins:
+      - docker#v3.7.0:
+          image: "base-flask:buildkite"
+          propagate-environment: true
+          mount-buildkite-agent: false
+          mount-checkout: false

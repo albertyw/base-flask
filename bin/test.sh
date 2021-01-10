@@ -7,8 +7,8 @@ echo "--- Set up python"
 pip3 install -r requirements-test.txt
 
 echo "--- Set up shellcheck"
-apt-get update
-apt-get install shellcheck
+curl -L https://github.com/koalaman/shellcheck/releases/download/v0.7.1/shellcheck-v0.7.1.linux.x86_64.tar.xz > "bin/shellcheck.tar.xz"
+tar xvf bin/shellcheck.tar.xz -C bin --strip-components=1 shellcheck-v0.7.1/shellcheck
 
 echo "--- Set up node"
 npm install
@@ -30,7 +30,7 @@ echo "--- Lint python"
 flake8
 
 echo "--- Lint shell"
-shellcheck --exclude=SC1091 bin/*.sh
+bin/shellcheck --exclude=SC1091 bin/*.sh
 
 echo "--- Lint dockerfile"
 bin/hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006

@@ -3,28 +3,11 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Set environment variables
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US:en
-export LC_ALL=en_US.UTF-8
-export DEBIAN_FRONTEND=noninteractive
-
-# Initial setup
-apt-get update
-apt-get install -y --no-install-recommends gpg-agent software-properties-common wget
-wget https://deb.nodesource.com/setup_14.x
-bash setup_14.x
-
 # Set up python
-apt-get install -y --no-install-recommends build-essential curl gcc g++ make git supervisor libssl-dev python3.9 python3.9-dev python3-setuptools nodejs logrotate
-curl https://bootstrap.pypa.io/get-pip.py | python3.9
-pip3 install -r requirements.txt
 pip3 install -r requirements-test.txt
 
-# Set up node
-npm install
-
 # Set up shellcheck
+apt-get update
 apt-get install shellcheck
 
 # Set up code-climate test reporter

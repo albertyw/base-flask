@@ -1,5 +1,6 @@
 # Base Flask Setup
 
+[![Build status](https://badge.buildkite.com/d748e2b3d2491fefb1623165911eb37c04f8a32b9cb4908480.svg?branch=master)](https://buildkite.com/albertyw/base-flask)
 [ ![Codeship Status for albertyw/base-flask](https://codeship.com/projects/7a732790-5535-0134-49ab-4625866fb5c2/status?branch=master)](https://codeship.com/projects/172030)
 [![Updates](https://pyup.io/repos/github/albertyw/base-flask/shield.svg)](https://pyup.io/repos/github/albertyw/base-flask/)
 [![Code Climate](https://codeclimate.com/github/albertyw/base-flask/badges/gpa.svg)](https://codeclimate.com/github/albertyw/base-flask)
@@ -68,35 +69,7 @@ python app/serve.py
 ### Running tests:
 
 ```bash
-flake8
-mypy app --ignore-missing-imports --strict
-shellcheck --exclude=SC1091 bin/*.sh
-coverage run -m unittest discover
-npm test
-```
-
-### CI/CD
-
-This repo uses:
-
-```bash
-# Switch to python 3
-pyenv local 3.9
-pip install -r requirements.txt
-pip install -r requirements-test.txt
-ln -s .env.development .env
-
-# Test
-flake8
-mypy app --ignore-missing-imports --strict
-shellcheck --exclude=SC1091 bin/*.sh
-coverage run -m unittest discover
-coverage report
-codeclimate-test-reporter
-npm test
-
-# Deployment
-ssh example.com website/bin/deploy.sh
+bin/test.sh
 ```
 
 ### Building and starting the docker container
@@ -111,11 +84,15 @@ Production
 
 ### Setup
 
+Run this once on a new server to set up the web app:
+
 ```bash
 bin/setup.sh
 ```
 
 ### Deployment
+
+Run this every time for a new commit to the repository:
 
 ```bash
 bin/deploy.sh

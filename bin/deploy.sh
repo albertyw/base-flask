@@ -42,10 +42,12 @@ docker run \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
     --name="$CONTAINER" "$CONTAINER:$BRANCH"
 
-if [ "$ENV" = "production" ] && [ "$BRANCH" = "master" ]; then
-    # Cleanup docker
-    docker system prune --force --filter "until=168h"
-    docker volume prune --force
+if [ "$ENV" = "production" ]; then
+    if [ "$BRANCH" = "master" ]; then
+        # Cleanup docker
+        docker system prune --force --filter "until=168h"
+        docker volume prune --force
+    fi
 
     # Update nginx
     sudo service nginx reload

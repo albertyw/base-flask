@@ -22,7 +22,16 @@ add_header X-Content-Type-Options nosniff;
 add_header X-XSS-Protection "1; mode=block";
 
 # config to enable HSTS(HTTP Strict Transport Security) https://developer.mozilla.org/en-US/docs/Security/HTTP_Strict_Transport_Security
-# to avoid ssl stripping https://en.wikipedia.org/wiki/SSL_stripping#SSL_stripping
-add_header Strict-Transport-Security "max-age=31536000; includeSubdomains;";
+# to avoid ssl stripping https://blog.cloudflare.com/performing-preventing-ssl-stripping-a-plain-english-primer/
+add_header Strict-Transport-Security "max-age=1209600; includeSubDomains";
 
-add_header Cache-Control "public";
+
+# Set the correct IP addresses from cloudflare
+proxy_set_header X-Real-IP         $remote_addr;
+proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+
+# Set the host from what's forwarded from cloudflare
+proxy_set_header Host              $http_host;
+
+# Set the protocol
+proxy_set_header X-Forwarded-Proto $scheme;

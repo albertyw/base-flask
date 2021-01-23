@@ -31,7 +31,7 @@ sudo rm -rf /var/www/html
 
 # Secure nginx
 sudo mkdir -p /etc/nginx/ssl
-sudo openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
+curl https://ssl-config.mozilla.org/ffdhe2048.txt | sudo tee /etc/nginx/ssl/dhparams.pem > /dev/null
 # Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
 # pair can be generated from Cloudflare or letsencrypt.
 sudo service nginx restart

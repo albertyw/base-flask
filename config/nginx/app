@@ -19,6 +19,8 @@ server {
     ssl_certificate_key         /etc/nginx/ssl/server.key;
     ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
 
+    resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
+
     rewrite         ^ https://www.$HOSTNAME$request_uri;
 }
 
@@ -41,6 +43,8 @@ server {
     ssl_certificate             /etc/nginx/ssl/server.pem;
     ssl_certificate_key         /etc/nginx/ssl/server.key;
     ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
+
+    resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
 
     gzip on;
     gzip_disable "msie6";

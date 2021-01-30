@@ -1,6 +1,5 @@
 # Base Flask Setup
 
-[![Build status](https://badge.buildkite.com/d748e2b3d2491fefb1623165911eb37c04f8a32b9cb4908480.svg?branch=master)](https://buildkite.com/albertyw/base-flask)
 [ ![Codeship Status for albertyw/base-flask](https://codeship.com/projects/7a732790-5535-0134-49ab-4625866fb5c2/status?branch=master)](https://codeship.com/projects/172030)
 [![Updates](https://pyup.io/repos/github/albertyw/base-flask/shield.svg)](https://pyup.io/repos/github/albertyw/base-flask/)
 [![Code Climate](https://codeclimate.com/github/albertyw/base-flask/badges/gpa.svg)](https://codeclimate.com/github/albertyw/base-flask)

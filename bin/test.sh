@@ -22,7 +22,9 @@ curl -L https://github.com/hadolint/hadolint/releases/download/v1.17.3/hadolint-
 chmod +x "bin/hadolint"
 
 echo "--- Set up environment"
-ln -s .env.development .env
+if [ ! -f .env ]; then
+    ln -s .env.development .env
+fi
 
 
 
@@ -49,4 +51,5 @@ npm test
 
 echo "--- Report python coverage"
 coverage xml -i
+# Need to set CC_TEST_REPORTER_ID
 bin/cc-test-reporter after-build --exit-code "$exitcode"

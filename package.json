@@ -16,24 +16,24 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babelify": "^10.0.0",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "browserify": "=16.5.1",
-    "clean-css": "^4.2.3",
+    "clean-css": "^5.0.1",
     "dotenv": "^8.2.0",
     "envify": "^4.1.0",
     "jquery": "^3.5.1",
     "logfit": "^0.8.2",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
-    "rollbar": "^2.19.4",
+    "rollbar": "^2.20.0",
     "uglifyify": "^5.0.2",
     "varsnap": "^1.6.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^7.16.0",
+    "eslint": "^7.19.0",
     "mocha": "^8.2.1",
-    "stylelint": "^13.8.0",
+    "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0"
   }
 }

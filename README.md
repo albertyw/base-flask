@@ -68,7 +68,35 @@ python app/serve.py
 ### Running tests:
 
 ```bash
-bin/test.sh
+flake8
+mypy app --ignore-missing-imports --strict
+shellcheck --exclude=SC1091 bin/*.sh
+coverage run -m unittest discover
+npm test
+```
+
+### CI/CD
+
+This repo uses:
+
+```bash
+# Switch to python 3
+pyenv local 3.9
+pip install -r requirements.txt
+pip install -r requirements-test.txt
+ln -s .env.development .env
+
+# Test
+flake8
+mypy app --ignore-missing-imports --strict
+shellcheck --exclude=SC1091 bin/*.sh
+coverage run -m unittest discover
+coverage report
+codeclimate-test-reporter
+npm test
+
+# Deployment
+ssh example.com website/bin/deploy.sh
 ```
 
 ### Building and starting the docker container

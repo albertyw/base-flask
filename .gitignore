@@ -89,6 +89,3 @@ ENV/
 .ropeproject
 
 node_modules
-bin/shellcheck
-bin/cc-test-reporter
-bin/hadolint

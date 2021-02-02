@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.7.5 (2021-02-01)
+------------------
+
+ - Various nginx config refactors and fixes
+ - Stop cleaning up docker objects when deploying non-master branches
+ - Update dependencies
+ - README updates
+
+
 3.7.4
 -----
 

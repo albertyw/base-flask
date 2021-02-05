@@ -56,7 +56,7 @@ server {
     gzip_types text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
 
     location / {
-        include          sites-enabled/$PROJECT_NAME-headers;
+        include          snippets/headers;
         proxy_pass       http://127.0.0.1:$INTERNAL_PORT;
         proxy_buffering  off;
         add_header       'Cache-Control'                 'public';
@@ -64,7 +64,7 @@ server {
     }
 
     location /static {
-        include          sites-enabled/$PROJECT_NAME-headers;
+        include          snippets/headers;
         root             $REPO_PATH;
         add_header       'Access-Control-Allow-Origin'   'https://www.$HOSTNAME';
         add_header       'Access-Control-Allow-Methods'  'GET, HEAD, OPTIONS';

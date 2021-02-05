@@ -28,16 +28,8 @@ server {
     error_log       $REPO_PATH/logs/nginx/error.log;
 
     include snippets/ssl.conf
+    include snippets/gzip.conf
     resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
-
-    gzip on;
-    gzip_disable "msie6";
-    gzip_vary on;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_buffers 16 8k;
-    gzip_http_version 1.1;
-    gzip_types text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
 
     location / {
         include          snippets/headers.conf;

@@ -27,6 +27,7 @@ sudo rm -rf /etc/nginx/sites-enabled/*
 sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/nginx.conf" "/etc/nginx/nginx.conf"
 sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/app" "/etc/nginx/sites-enabled/$PROJECT_NAME-app"
 sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/headers" "/etc/nginx/snippets/headers"
+sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/ssl.conf" "/etc/nginx/snippets/ssl.conf"
 sudo rm -rf /var/www/html
 
 # Secure nginx

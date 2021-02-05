@@ -10,15 +10,7 @@ server {
     listen          443 ssl http2;
     server_name     $HOSTNAME;
 
-    ssl_protocols               TLSv1.3 TLSv1.2;
-    ssl_ciphers                 EECDH+AESGCM:EECDH+AES256;
-    ssl_prefer_server_ciphers   on;
-    ssl_session_cache           shared:SSL:10m;
-    ssl_session_timeout         10m;
-    ssl_certificate             /etc/nginx/ssl/server.pem;
-    ssl_certificate_key         /etc/nginx/ssl/server.key;
-    ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
-
+    include snippets/ssl.conf
     resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
 
     rewrite         ^ https://www.$HOSTNAME$request_uri;
@@ -35,28 +27,12 @@ server {
     access_log      $REPO_PATH/logs/nginx/access.log;
     error_log       $REPO_PATH/logs/nginx/error.log;
 
-    ssl_protocols               TLSv1.3 TLSv1.2;
-    ssl_ciphers                 EECDH+AESGCM:EECDH+AES256;
-    ssl_prefer_server_ciphers   on;
-    ssl_session_cache           shared:SSL:10m;
-    ssl_session_timeout         10m;
-    ssl_certificate             /etc/nginx/ssl/server.pem;
-    ssl_certificate_key         /etc/nginx/ssl/server.key;
-    ssl_dhparam                 /etc/nginx/ssl/dhparams.pem;
-
+    include snippets/ssl.conf
+    include snippets/gzip.conf
     resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
 
-    gzip on;
-    gzip_disable "msie6";
-    gzip_vary on;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_buffers 16 8k;
-    gzip_http_version 1.1;
-    gzip_types text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
-
     location / {
-        include          sites-enabled/$PROJECT_NAME-headers;
+        include          snippets/headers.conf;
         proxy_pass       http://127.0.0.1:$INTERNAL_PORT;
         proxy_buffering  off;
         add_header       'Cache-Control'                 'public';
@@ -64,7 +40,7 @@ server {
     }
 
     location /static {
-        include          sites-enabled/$PROJECT_NAME-headers;
+        include          snippets/headers.conf;
         root             $REPO_PATH;
         add_header       'Access-Control-Allow-Origin'   'https://www.$HOSTNAME';
         add_header       'Access-Control-Allow-Methods'  'GET, HEAD, OPTIONS';

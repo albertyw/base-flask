@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.7.6 (2021-02-06)
+------------------
+
+ - Modularize nginx configs
+ - Update dependencies
+
+
 3.7.5 (2021-02-01)
 ------------------
 

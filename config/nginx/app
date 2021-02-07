@@ -27,8 +27,8 @@ server {
     access_log      $REPO_PATH/logs/nginx/access.log;
     error_log       $REPO_PATH/logs/nginx/error.log;
 
-    include snippets/ssl.conf
-    include snippets/gzip.conf
+    include snippets/ssl.conf;
+    include snippets/gzip.conf;
     resolver 1.1.1.1 1.0.0.1 [2606:4700:4700::1111] [2606:4700:4700::1001];
 
     location / {

@@ -6,9 +6,9 @@ steps:
   - name: Test Python
     image: python:3.9
     commands:
+      - ln -s .env.development .env
       - pip install -r requirements.txt
       - pip install -r requirements-test.txt
-      - ln -s .env.development .env
       - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > "${HOME}/bin/cc-test-reporter"
       - chmod +x "${HOME}/bin/cc-test-reporter"
       - flake8
@@ -21,3 +21,9 @@ steps:
       - cc-test-reporter after-build --exit-code "$exitcode"
     environment:
       CC_TEST_REPORTER_ID: e42a05bff9c04dc4688b42419421a047b4d9c943f1734bc2f3180a7d2dae8f4f
+
+  - name: Test Node
+    image: node:14
+    commands:
+      - npm install
+      - npm test

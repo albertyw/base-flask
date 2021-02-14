@@ -29,7 +29,7 @@ steps:
       - npm test
 
   - name: Test Bash
-    image: shellcheck:stable
+    image: koalaman/shellcheck:stable
     commands:
       - shellcheck -x bin/*.sh
 

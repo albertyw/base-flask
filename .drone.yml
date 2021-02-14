@@ -1,0 +1,51 @@
+kind: pipeline
+type: docker
+name: test
+
+steps:
+  - name: Test Python
+    image: python:3.9
+    commands:
+      - ln -s .env.development .env
+      - pip install -r requirements.txt
+      - pip install -r requirements-test.txt
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > "${HOME}/bin/cc-test-reporter"
+      - chmod +x "${HOME}/bin/cc-test-reporter"
+      - flake8
+      - mypy app --ignore-missing-imports --strict
+      - cc-test-reporter before-build
+      - coverage run -m unittest discover
+      - exitcode="$?"
+      - coverage report -m
+      - coverage xml -i
+      - cc-test-reporter after-build --exit-code "$exitcode"
+    environment:
+      CC_TEST_REPORTER_ID: e42a05bff9c04dc4688b42419421a047b4d9c943f1734bc2f3180a7d2dae8f4f
+
+  - name: Test Node
+    image: node:14
+    commands:
+      - npm install
+      - npm test
+
+  - name: Test Bash
+    image: koalaman/shellcheck-alpine:stable
+    commands:
+      - shellcheck -x bin/*.sh
+
+  - name: Test Dockerfile
+    image: hadolint/hadolint:latest-alpine
+    commands:
+      - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
+
+  - name: Build Docker Container
+    depends_on:
+      - Test Python
+      - Test Node
+      - Test Bash
+      - Test Dockerfile
+    image: plugins/docker
+    settings:
+      repo: base-flask
+      tags: test
+      dry_run: true

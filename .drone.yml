@@ -19,3 +19,5 @@ steps:
       - coverage report -m
       - coverage xml -i
       - cc-test-reporter after-build --exit-code "$exitcode"
+    environment:
+      CC_TEST_REPORTER_ID: e42a05bff9c04dc4688b42419421a047b4d9c943f1734bc2f3180a7d2dae8f4f

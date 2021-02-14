@@ -34,6 +34,10 @@ steps:
       - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
 
   - name: Build Docker Container
+    depends_on:
+      - Test Python
+      - Test Node
+      - Test Dockerfile
     image: plugins/docker
     settings:
       repo: base-flask

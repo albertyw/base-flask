@@ -28,6 +28,11 @@ steps:
       - npm install
       - npm test
 
+  - name: Test Bash
+    image: shellcheck:stable
+    commands:
+      - shellcheck -x bin/*.sh
+
   - name: Test Dockerfile
     image: hadolint/hadolint:latest-alpine
     commands:
@@ -37,6 +42,7 @@ steps:
     depends_on:
       - Test Python
       - Test Node
+      - Test Bash
       - Test Dockerfile
     image: plugins/docker
     settings:

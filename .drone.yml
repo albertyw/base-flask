@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: test
+
+steps:
+  - name: Test Python
+    image: python:3.9
+    commands:
+      - pip install -r requirements.txt
+      - pip install -r requirements-test.txt
+      - ln -s .env.development .env
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > "${HOME}/bin/cc-test-reporter"
+      - chmod +x "${HOME}/bin/cc-test-reporter"
+      - flake8
+      - mypy app --ignore-missing-imports --strict
+      - cc-test-reporter before-build
+      - coverage run -m unittest discover
+      - exitcode="$?"
+      - coverage report -m
+      - coverage xml -i
+      - cc-test-reporter after-build --exit-code "$exitcode"

@@ -32,3 +32,10 @@ steps:
     image: hadolint/hadolint:latest-alpine
     commands:
       - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
+
+  - name: Build Docker Container
+    image: plugins/docker
+    settings:
+      repo: base-flask
+      tags: test
+      dry_run: true

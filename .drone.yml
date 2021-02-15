@@ -6,7 +6,7 @@ steps:
   - name: Test Python
     image: python:3.9
     commands:
-      - ln -s .env.development .env
+      - ln -fs .env.development .env
       - pip install -r requirements.txt
       - pip install -r requirements-test.txt
       - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > "${HOME}/bin/cc-test-reporter"
@@ -25,14 +25,14 @@ steps:
   - name: Test Node
     image: node:14
     commands:
-      - ln -s .env.development .env
+      - ln -fs .env.development .env
       - npm install
       - npm test
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable
     commands:
-      - ln -s .env.development .env
+      - ln -fs .env.development .env
       - shellcheck -x bin/*.sh
 
   - name: Test Dockerfile

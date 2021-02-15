@@ -25,12 +25,14 @@ steps:
   - name: Test Node
     image: node:14
     commands:
+      - ln -s .env.development .env
       - npm install
       - npm test
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable
     commands:
+      - ln -s .env.development .env
       - shellcheck -x bin/*.sh
 
   - name: Test Dockerfile

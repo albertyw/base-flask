@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.8.0 (2021-02-17)
+------------------
+
+ - Add drone CI config file
+ - Update node dependencies
+
+
 3.7.7 (2021-02-09)
 ------------------
 

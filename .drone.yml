@@ -42,11 +42,8 @@ steps:
 
   - name: Build Docker Container
     depends_on:
-      - Test Python
-      - Test Node
-      - Test Bash
       - Test Dockerfile
-    image: plugins/docker
+    image: plugins/docker:19
     settings:
       repo: base-flask
       tags: test

@@ -18,7 +18,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
-    && wget https://deb.nodesource.com/setup_14.x && bash setup_14.x \
+    && wget -nv https://deb.nodesource.com/setup_14.x && bash setup_14.x \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential curl                        `: Basic-packages` \

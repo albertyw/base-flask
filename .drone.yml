@@ -51,3 +51,20 @@ steps:
       repo: base-flask
       tags: test
       dry_run: true
+
+  #- name: Deploy
+  #  depends_on:
+  #    - Build Docker Container
+  #  image: appleboy/drone-ssh:1.6.3
+  #  settings:
+  #    host: $HOSTNAME
+  #    username: USERNAME
+  #    key_path: KEY_PATH
+  #    script:
+  #      - "$REPO_PATH/bin/deploy.sh master"
+  #  volumes:
+  #    - name: ssh_key
+  #      path: KEY_PATH
+  #  when:
+  #    branch:
+  #      - master

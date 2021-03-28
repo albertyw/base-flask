@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.8.1 (2021-03-28)
+------------------
+
+ - Update dependencies
+ - Optimize docker builds
+
+
 3.8.0 (2021-02-17)
 ------------------
 

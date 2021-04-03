@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.8.2 (2021-04-03)
+------------------
+
+ - Integrate varsnap testing into route handlers
+ - Update dependencies
+
+
 3.8.1 (2021-03-28)
 ------------------
 

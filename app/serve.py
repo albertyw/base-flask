@@ -4,6 +4,7 @@ import dotenv
 from flask import Flask, render_template, got_request_exception
 from flask_sitemap import Sitemap
 from syspath import git_root
+from varsnap import varsnap
 from typing import Any, Mapping
 
 from app.routes import handlers
@@ -57,16 +58,19 @@ app.register_blueprint(handlers)
 
 
 @app.route("/robots.txt")
+@varsnap
 def robots() -> Any:
     return render_template("robots.txt")
 
 
 @app.route("/health")
+@varsnap
 def health() -> Any:
     return '{"status": "ok"}'
 
 
 @app.errorhandler(404)
+@varsnap
 def page_not_found(e: Exception) -> Any:
     return render_template("404.htm"), 404
 

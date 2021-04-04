@@ -1,11 +1,11 @@
 import os
+from typing import Any, Mapping
 
 import dotenv
 from flask import Flask, render_template, got_request_exception
 from flask_sitemap import Sitemap
 from syspath import git_root
 from varsnap import varsnap
-from typing import Any, Mapping
 
 from app.routes import handlers
 

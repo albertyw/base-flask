@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template
 from typing import Any
 
+from flask import Blueprint, render_template
 from varsnap import varsnap
 
 

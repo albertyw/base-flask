@@ -34,6 +34,7 @@
     "eslint": "^7.20.0",
     "mocha": "^8.3.0",
     "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
     "stylelint": "^13.10.0",
     "stylelint-config-standard": "^21.0.0"
   }

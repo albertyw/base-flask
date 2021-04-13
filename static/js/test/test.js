@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const varsnap = require('varsnap');
 
-require('../thirdparty');
+require('../fibonacci');
 
 context('Varsnap', function() {
   this.timeout(30 * 1000);

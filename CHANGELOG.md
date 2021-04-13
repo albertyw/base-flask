@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.9.0 (2021-04-13)
+------------------
+
+ - Switch to running js tests in browser
+ - Fix node test coverage reporting
+ - Add example js function and varsnap test
+ - Dependency updates
+ - Switch healthcheck endpoint to return proper content type
+
+
 3.8.2 (2021-04-03)
 ------------------
 

@@ -30,7 +30,13 @@ const jsOutputStream = fs.createWriteStream(jsOutputFile);
 browserify(jsInputFile, {debug: true})
   .transform('envify')
   .transform('babelify',  {presets: ['@babel/preset-env']})
-  .transform('uglifyify', {compress: true, 'keep_fnames': true, global: true})
+  .transform('uglifyify', {
+    compress: true,
+    mangle: false,
+    'keep_fnames': true,
+    keep_classnames: true,
+    global: true,
+  })
   .bundle()
   .pipe(jsOutputStream);
 

@@ -1,5 +1,3 @@
-const process = require('process');
-
 const LogFit = require('logfit');
 const Rollbar = require('rollbar');
 const varsnap = require('varsnap');

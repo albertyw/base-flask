@@ -28,7 +28,7 @@ console.log(jsInputFile);
 console.log('');
 const jsOutputStream = fs.createWriteStream(jsOutputFile);
 browserify(jsInputFile, {debug: true})
-  .transform('envify')
+  .transform('loose-envify')
   .transform('babelify',  {presets: ['@babel/preset-env']})
   .transform('uglifyify', {
     compress: true,

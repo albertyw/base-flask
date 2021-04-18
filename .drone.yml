@@ -88,7 +88,7 @@ steps:
     commands:
       - ln -fs .env.development .env
       - npm install
-      - npm run refresh-varsnap
+      - node baseflask/refresh-varsnap.js
 trigger:
   cron:
     - refresh-varsnap-production-snaps

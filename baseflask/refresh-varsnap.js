@@ -1,7 +1,7 @@
 require('dotenv').config();
 
-const calculateFibonacci = require('../fibonacci');
-const thirdParty = require('../thirdparty');
+const calculateFibonacci = require('../static/js/fibonacci');
+const thirdParty = require('../static/js/thirdparty');
 
 process.env.ENV='production';
 

@@ -82,13 +82,13 @@ steps:
       - ln -fs .env.development .env
       - pip install -r requirements.txt
       - pip install -r requirements-test.txt
-      - python bin/refresh_varsnap.py
+      - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
     image: node:14
     commands:
       - ln -fs .env.development .env
       - npm install
-      - npm run refresh-varsnap
+      - node baseflask/refresh-varsnap.js
 trigger:
   cron:
     - refresh-varsnap-production-snaps

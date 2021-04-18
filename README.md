@@ -27,7 +27,7 @@ Features
 Setup
 -----
 
-Modify and run `bin/scaffold.sh` to create a copy of base-flask for your
+Modify and run `baseflask/scaffold.sh` to create a copy of base-flask for your
 project needs, then run `bin/setup.sh` to set up the host.
 
 Base-flask is designed to work with a minimally sized [AWS EC2](https://aws.amazon.com/ec2/instance-types/)

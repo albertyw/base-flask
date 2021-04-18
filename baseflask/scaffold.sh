@@ -35,7 +35,7 @@ done
 
 # Cleanup
 cd "$REPODIR"
-rm bin/scaffold.sh
+rm -r baseflask
 rm CHANGELOG.md
 rm LICENSE
 rm README.md

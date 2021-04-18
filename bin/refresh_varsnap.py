@@ -3,12 +3,8 @@ This script refreshes production varsnap snaps
 """
 
 import os
-import subprocess
-import sys
 
-import requests
-import syspath
-from syspath import git_root
+from syspath import git_root  # NOQA
 
 from app import serve
 

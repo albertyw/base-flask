@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const calculateFibonacci = require('../fibonacci');
 const thirdParty = require('../thirdparty');
 

@@ -69,3 +69,26 @@ steps:
   #  when:
   #    branch:
   #      - master
+
+
+---
+kind: pipeline
+type: docker
+name: refresh-varsnap-production-snaps
+steps:
+  - name: Refresh Varsnap Python Production Snaps
+    image: python:3.9
+    commands:
+      - ln -fs .env.development .env
+      - pip install -r requirements.txt
+      - pip install -r requirements-test.txt
+      - python bin/refresh_varsnap.py
+  - name: Refresh Varsnap Javascript Production Snaps
+    image: node:14
+    commands:
+      - ln -fs .env.development .env
+      - npm install
+      - npm run refresh-varsnap
+trigger:
+  cron:
+    - refresh-varsnap-production-snaps

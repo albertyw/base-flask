@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.9.1 (2021-04-18)
+------------------
+
+ - Periodically refresh production varsnap data so they can be tested against
+ - Switch from envify to loose-envify for speed benefits
+
+
 3.9.0 (2021-04-13)
 ------------------
 

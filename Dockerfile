@@ -18,9 +18,6 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
-    && wget -nv https://deb.nodesource.com/setup_14.x && bash setup_14.x \
-    && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential curl                        `: Basic-packages` \
     gcc g++ make                                `: Needed for python/node native extensions` \
     git                                         `: Needed for pip install from github` \
@@ -28,8 +25,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev                                  `: SSL extensions for python` \
     python3.9                                   `: Python` \
     python3.9-dev python3-setuptools            `: Support for installing Python packages` \
-    nodejs                                      `: Javascript assets` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
+    && wget -nv https://deb.nodesource.com/setup_14.x && bash setup_14.x \
+    && apt-get install -y --no-install-recommends \
+    nodejs                                      `: Javascript assets` \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures

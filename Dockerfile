@@ -4,6 +4,7 @@ FROM ubuntu:20.04
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
 HEALTHCHECK --interval=5s --timeout=3s CMD bin/healthcheck.sh || exit 1
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set locale
 RUN apt-get update && apt-get install -y --no-install-recommends \

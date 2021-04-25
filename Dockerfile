@@ -20,7 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
     build-essential curl                        `: Basic-packages` \
     gcc g++ make                                `: Needed for python/node native extensions` \
-    git                                         `: Needed for pip install from github` \
     supervisor                                  `: Runnning python in daemon mode` \
     libssl-dev                                  `: SSL extensions for python` \
     python3.9                                   `: Python` \

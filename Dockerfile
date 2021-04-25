@@ -17,7 +17,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
+    gpg-agent software-properties-common        `: Needed for add-apt-repository` \
     build-essential curl                        `: Basic-packages` \
     gcc g++ make                                `: Needed for python/node native extensions` \
     supervisor                                  `: Runnning python in daemon mode` \
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.9                                   `: Python` \
     python3.9-dev python3-setuptools            `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
-    && wget -nv https://deb.nodesource.com/setup_14.x && bash setup_14.x \
+    && curl https://deb.nodesource.com/setup_14.x | bash \
     && apt-get install -y --no-install-recommends \
     nodejs                                      `: Javascript assets` \
     && rm -rf /var/lib/apt/lists/*

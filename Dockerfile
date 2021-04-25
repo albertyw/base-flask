@@ -4,6 +4,7 @@ FROM ubuntu:20.04
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT
 HEALTHCHECK --interval=5s --timeout=3s CMD bin/healthcheck.sh || exit 1
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set locale
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -17,19 +18,17 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gpg-agent software-properties-common wget   `: Needed for add-apt-repository` \
-    && wget -nv https://deb.nodesource.com/setup_14.x && bash setup_14.x \
-    && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y --no-install-recommends \
+    gpg-agent software-properties-common        `: Needed for add-apt-repository` \
     build-essential curl                        `: Basic-packages` \
     gcc g++ make                                `: Needed for python/node native extensions` \
-    git                                         `: Needed for pip install from github` \
     supervisor                                  `: Runnning python in daemon mode` \
     libssl-dev                                  `: SSL extensions for python` \
     python3.9                                   `: Python` \
     python3.9-dev python3-setuptools            `: Support for installing Python packages` \
-    nodejs                                      `: Javascript assets` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
+    && curl https://deb.nodesource.com/setup_14.x | bash \
+    && apt-get install -y --no-install-recommends \
+    nodejs                                      `: Javascript assets` \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures

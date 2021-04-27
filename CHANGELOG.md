@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.9.2 (2021-04-27)
+------------------
+
+ - Fix Dockerfile lint issues and optimize builds
+
+
 3.9.1 (2021-04-18)
 ------------------
 

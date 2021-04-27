@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.9                                   `: Python` \
     python3.9-dev python3-setuptools            `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
-    && curl https://deb.nodesource.com/setup_14.x | bash \
+    && curl https://deb.nodesource.com/setup_16.x | bash \
     && apt-get install -y --no-install-recommends \
     nodejs                                      `: Javascript assets` \
     && rm -rf /var/lib/apt/lists/*

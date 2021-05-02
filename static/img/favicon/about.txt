@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Inconsolata
+- Font Author: Copyright 2006 The Inconsolata Project Authors (https://github.com/cyrealtype/Inconsolata)
+- Font Source: http://fonts.gstatic.com/s/inconsolata/v21/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8aRr8lleY2co.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)

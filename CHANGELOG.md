@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.10.0 (2021-05-02)
+-------------------
+
+ - Add favicons
+ - Dockerfile optimizations
+ - Depedency updates
+
+
 3.9.2 (2021-04-27)
 ------------------
 

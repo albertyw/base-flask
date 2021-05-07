@@ -21,7 +21,6 @@
     "browserify": "^17.0.0",
     "clean-css": "^5.0.1",
     "dotenv": "^8.2.0",
-    "jquery": "^3.5.1",
     "logfit": "^0.8.2",
     "loose-envify": "^1.4.0",
     "normalize.css": "^8.0.1",

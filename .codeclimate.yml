@@ -24,4 +24,3 @@ exclude_paths:
   - static/css/bootstrap.css
   - static/css/normalize.css
   - static/js/bootstrap.bundle.js
-  - static/js/jquery.js

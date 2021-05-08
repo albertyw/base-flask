@@ -1,12 +1,20 @@
 CHANGELOG
 =========
 
+3.10.1 (2021-05-08)
+-------------------
+
+ - Update bootstrap to v5.0.0
+ - Remove jquery
+ - Dependency updates
+
+
 3.10.0 (2021-05-02)
 -------------------
 
  - Add favicons
  - Dockerfile optimizations
- - Depedency updates
+ - Dependency updates
 
 
 3.9.2 (2021-04-27)

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.10.2 (2021-05-23)
+-------------------
+
+ - Update to Flask v2.0.0
+ - Fix html templates to work with bootstrap v5.0.0
+ - Dependency updates
+
+
 3.10.1 (2021-05-08)
 -------------------
 

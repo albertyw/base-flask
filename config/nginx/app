@@ -22,10 +22,8 @@ server {
 server {
     listen          443 ssl http2 default_server;
     server_name     www.$HOSTNAME;
-    access_log      /var/log/nginx/$PROJECT_NAME.access.log;
-    error_log       /var/log/nginx/$PROJECT_NAME.error.log;
-    access_log      $REPO_PATH/logs/nginx/access.log;
-    error_log       $REPO_PATH/logs/nginx/error.log;
+    access_log      /var/log/nginx/$PROJECT_NAME/$PROJECT_NAME.access.log;
+    error_log       /var/log/nginx/$PROJECT_NAME/$PROJECT_NAME.error.log;
 
     include snippets/ssl.conf;
     include snippets/gzip.conf;

@@ -50,5 +50,6 @@ if [ "$ENV" = "production" ]; then
     fi
 
     # Update nginx
+    sudo cp "$HOME/$PROJECT_NAME/config/nginx/app" "/etc/nginx/sites-enabled/$PROJECT_NAME-app"
     sudo service nginx reload
 fi

@@ -23,12 +23,10 @@ sudo apt-get install -y nginx
 # Configure nginx
 sudo rm /etc/nginx/nginx.conf
 sudo rm -rf /etc/nginx/sites-available
-sudo rm -rf /etc/nginx/sites-enabled/*
-sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/nginx.conf" "/etc/nginx/nginx.conf"
-sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/app" "/etc/nginx/sites-enabled/$PROJECT_NAME-app"
-sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/gzip.conf" "/etc/nginx/snippets/gzip.conf"
-sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/headers.conf" "/etc/nginx/snippets/headers.conf"
-sudo ln -s "$HOME/$PROJECT_NAME/config/nginx/ssl.conf" "/etc/nginx/snippets/ssl.conf"
+sudo cp "$HOME/$PROJECT_NAME/config/nginx/nginx.conf" "/etc/nginx/nginx.conf"
+sudo cp "$HOME/$PROJECT_NAME/config/nginx/gzip.conf" "/etc/nginx/snippets/gzip.conf"
+sudo cp "$HOME/$PROJECT_NAME/config/nginx/headers.conf" "/etc/nginx/snippets/headers.conf"
+sudo cp "$HOME/$PROJECT_NAME/config/nginx/ssl.conf" "/etc/nginx/snippets/ssl.conf"
 sudo rm -rf /var/www/html
 
 # Secure nginx

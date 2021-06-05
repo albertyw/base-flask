@@ -15,10 +15,12 @@ sudo hostnamectl set-hostname "$HOSTNAME"
 cd ~
 git clone "$GIT_REPOSITORY"
 
-# Install nginx
-sudo add-apt-repository ppa:nginx/stable
+# Set up docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt-get install -y docker-ce
+sudo usermod -aG docker "${USER}"
 
 # Configure nginx
 sudo rm /etc/nginx/nginx.conf
@@ -34,14 +36,9 @@ sudo mkdir -p /etc/nginx/ssl
 curl https://ssl-config.mozilla.org/ffdhe2048.txt | sudo tee /etc/nginx/ssl/dhparams.pem > /dev/null
 # Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
 # pair can be generated from Cloudflare or letsencrypt.
-sudo service nginx restart
 
-# Set up docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce
-sudo usermod -aG docker "${USER}"
+# Start nginx
+docker container restart nginx
 
 # Set up directory structures
 ln -s .env.production .env

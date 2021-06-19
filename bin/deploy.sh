@@ -51,5 +51,5 @@ if [ "$ENV" = "production" ]; then
 
     # Update nginx
     sudo cp "$HOME/$PROJECT_NAME/config/nginx/app" "/etc/nginx/sites-enabled/$PROJECT_NAME-app"
-    docker container restart nginx
+    docker exec nginx /etc/init.d/nginx reload
 fi

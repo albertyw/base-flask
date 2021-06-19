@@ -38,7 +38,7 @@ curl https://ssl-config.mozilla.org/ffdhe2048.txt | sudo tee /etc/nginx/ssl/dhpa
 # pair can be generated from Cloudflare or letsencrypt.
 
 # Start nginx
-docker container restart nginx
+docker exec nginx /etc/init.d/nginx reload
 
 # Set up directory structures
 ln -s .env.production .env

@@ -1,10 +1,18 @@
 CHANGELOG
 =========
 
+3.10.4 (2021-06-21)
+-------------------
+
+ - Gracefully restart nginx so there aren't any dropped connections
+ - Speed up Drone CI npm installs
+ - Dependency updates
+
+
 3.10.3 (2021-06-05)
 -------------------
 
- - Switch to working with a dockerized nginx'
+ - Switch to working with a dockerized nginx
 
 
 3.10.2 (2021-05-23)

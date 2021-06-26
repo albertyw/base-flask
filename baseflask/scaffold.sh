@@ -28,8 +28,10 @@ locations="Dockerfile ${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}
 for findString in "${!replacements[@]}"; do
     replaceString="${replacements[$findString]}"
     echo "Replacing '${findString}' with '${replaceString}'"
+    escapedFindString=$(printf '%s\n' "$findString" | sed -e 's/[]\/$*.^[]/\\&/g');
+    escapedReplaceString=$(printf '%s\n' "$replaceString" | sed -e 's/[]\/$*.^[]/\\&/g');
     for location in ${locations}; do
-        find "$location" -type f -print0 | xargs -0 sed -i "s/${findString}/${replaceString}/g"
+        find "$location" -type f -print0 | xargs -0 sed -i "s/${escapedFindString}/${escapedReplaceString}/g"
     done
 done
 

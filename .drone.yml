@@ -87,7 +87,7 @@ steps:
     image: node:16
     commands:
       - ln -fs .env.development .env
-      - npm install
+      - npm ci
       - node baseflask/refresh-varsnap.js
 trigger:
   cron:

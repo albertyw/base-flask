@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.11.0 (2021-07-18)
+-------------------
+
+ - Add Matomo analytics
+ - Optimize drone npm installs
+ - Update dependencies
+
+
 3.10.4 (2021-06-21)
 -------------------
 

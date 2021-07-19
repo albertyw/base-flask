@@ -3,6 +3,7 @@ thirdParty.setupRollbar();
 thirdParty.setupLogfit();
 thirdParty.setupSegment();
 thirdParty.setupVarsnap();
+thirdParty.setupMatomo();
 require('./global.js');
 
 var calculateFibonacci = require('./fibonacci.js');

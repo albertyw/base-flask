@@ -1,4 +1,3 @@
-/var/www/app/logs/newrelic/agent.log
 /var/www/app/logs/nginx/*.log
 /var/www/app/logs/uwsgi/app.log
 {

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.11.1 (2021-07-30)
+-------------------
+
+ - Lint nginx config files
+ - Remove newrelic integration
+ - Update dependencies
+
+
 3.11.0 (2021-07-18)
 -------------------
 

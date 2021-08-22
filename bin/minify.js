@@ -4,6 +4,7 @@ const path = require('path');
 const browserify = require('browserify');
 const CleanCSS = require('clean-css');
 require('dotenv').config();
+const exorcist = require('exorcist');
 
 // CSS Minification Configs
 let cssSources = [
@@ -18,6 +19,7 @@ const cssOutputFile = path.join('static', 'gen', 'bundle.min.css');
 // JS Minification Configs
 const jsInputFile = path.join('static', 'js', 'index.js');
 const jsOutputFile = path.join('static', 'gen', 'bundle.min.js');
+const jsMapFile = path.join('static', 'gen', 'bundle.min.js.map');
 const jsRawAppends = [
   path.join('node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.min.js'),
 ];
@@ -38,6 +40,7 @@ browserify(jsInputFile, {debug: true})
     global: true,
   })
   .bundle()
+  .pipe(exorcist(jsMapFile))
   .pipe(jsOutputStream);
 
 // Append additional files at end of bundle

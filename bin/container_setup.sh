@@ -13,7 +13,7 @@ curl https://bootstrap.pypa.io/get-pip.py | python3.9
 pip3 install -r requirements.txt
 
 # Set up node
-npm install
+npm ci
 
 # Set up supervisor
 cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

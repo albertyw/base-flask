@@ -76,6 +76,10 @@ steps:
   #    branch:
   #      - master
 
+trigger:
+  event:
+    exclude:
+      - cron
 
 ---
 kind: pipeline

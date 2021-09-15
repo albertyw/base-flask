@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.11.2 (2021-09-14)
+-------------------
+
+ - Separate JS sourcemaps to make loading faster
+ - Speed up tests
+ - Dependency updates
+
+
 3.11.1 (2021-07-30)
 -------------------
 

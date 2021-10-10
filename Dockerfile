@@ -1,4 +1,4 @@
-# Needed for python 3.9
+# Needed for python 3.10
 FROM ubuntu:20.04
 
 LABEL maintainer="git@albertyw.com"
@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc g++ make                                `: Needed for python/node native extensions` \
     supervisor                                  `: Runnning python in daemon mode` \
     libssl-dev                                  `: SSL extensions for python` \
-    python3.9                                   `: Python` \
-    python3.9-dev python3-setuptools            `: Support for installing Python packages` \
+    python3.10                                  `: Python` \
+    python3.10-dev python3-setuptools           `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && curl https://deb.nodesource.com/setup_16.x | bash \

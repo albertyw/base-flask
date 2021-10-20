@@ -33,7 +33,7 @@
   "devDependencies": {
     "babel-plugin-istanbul": "^6.0.0",
     "chai": "^4.3.0",
-    "eslint": "^7.20.0",
+    "eslint": "^8.0.1",
     "mocha": "^9.0.1",
     "mochify": "^8.0.0",
     "nyc": "^15.1.0",

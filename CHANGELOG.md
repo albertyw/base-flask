@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.12.0 (2021-10-19)
+-------------------
+
+ - Run python typechecks on entire repository
+ - Clean up badges
+ - Remove csslint
+ - Update dependencies
+
+
 3.11.2 (2021-09-14)
 -------------------
 

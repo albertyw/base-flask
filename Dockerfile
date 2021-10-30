@@ -15,6 +15,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gpg-agent software-properties-common        `: Needed for add-apt-repository` \
+    && add-apt-repository -y ppa:deadsnakes/ppa \
+    && apt-get install -y --no-install-recommends \
     locales build-essential curl                `: Basic-packages` \
     gcc g++ make                                `: Needed for python/node native extensions` \
     supervisor                                  `: Runnning python in daemon mode` \

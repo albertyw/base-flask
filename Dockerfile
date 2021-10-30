@@ -1,5 +1,4 @@
-# Needed for python 3.9
-FROM ubuntu:20.04
+FROM python:3.9-bullseye
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT

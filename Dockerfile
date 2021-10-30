@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev                                  `: SSL extensions for python` \
     python3.10                                  `: Python` \
     python3.10-dev python3-setuptools           `: Support for installing Python packages` \
+    python3.10-distutils                        `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && curl https://deb.nodesource.com/setup_16.x | bash \

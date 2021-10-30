@@ -29,8 +29,10 @@ RUN mkdir -p /var/www/app
 COPY . /var/www/app
 WORKDIR /var/www/app
 
-# App-specific setup
-RUN bin/container_setup.sh
+# Set up dependencies
+RUN pip install --no-cache-dir -r requirements.txt \
+    && npm ci
+    && cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf && cp config/logrotate /etc/logrotate.d/uwsgi
 
 # Set startup script
 CMD ["bin/start.sh"]

@@ -12,16 +12,15 @@ ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN curl https://deb.nodesource.com/setup_16.x | bash \
+    && apt-get update && apt-get install -y --no-install-recommends \
     software-properties-common                  `: Needed for add-apt-repository` \
     locales build-essential                     `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
     python3.9-dev python3-setuptools            `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
-    && curl https://deb.nodesource.com/setup_16.x | bash \
-    && apt-get install -y --no-install-recommends \
     nodejs                                      `: Javascript assets` \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures
@@ -31,7 +30,7 @@ WORKDIR /var/www/app
 
 # Set up dependencies
 RUN pip install --no-cache-dir -r requirements.txt \
-    && npm ci
+    && npm ci \
     && cp config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf && cp config/logrotate /etc/logrotate.d/uwsgi
 
 # Set startup script

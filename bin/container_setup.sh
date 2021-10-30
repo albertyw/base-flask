@@ -10,7 +10,7 @@ cd "$DIR/.."
 
 # Set up python
 curl https://bootstrap.pypa.io/get-pip.py | python3.9
-pip3 install -r requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
 
 # Set up node
 npm ci

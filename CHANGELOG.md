@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.13.0 (2021-10-30)
+-------------------
+
+ - Switch from a ubuntu to python/debian docker base image
+ - Simplify and speed up building containers
+ - Update html head tags
+ - Fix page_not_found varsnap type usage
+ - Update dependencies
+
+
 3.12.0 (2021-10-19)
 -------------------
 

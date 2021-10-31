@@ -17,7 +17,7 @@ RUN curl https://deb.nodesource.com/setup_16.x | bash \
     software-properties-common                  `: Needed for add-apt-repository` \
     locales build-essential                     `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
-    python3.9-dev python3-setuptools            `: Support for installing Python packages` \
+    python3.9-dev                               `: Support for installing Python packages` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     nodejs                                      `: Javascript assets` \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \

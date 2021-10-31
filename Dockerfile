@@ -1,4 +1,4 @@
-FROM python:3.9-bullseye
+FROM python:3.10-bullseye
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE $INTERNAL_PORT

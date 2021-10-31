@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN curl https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update && apt-get install -y --no-install-recommends \
-    locales build-essential                     `: Basic-packages` \
+    locales                                     `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     nodejs                                      `: Javascript assets` \

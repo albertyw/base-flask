@@ -2,23 +2,45 @@
 <html lang="en">
   <head>
     {% block head %}
+    {# Language #}
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-site-verification" content="" />
     <link rel="alternate" href="{{ request.base_url }}" hreflang="en-us" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='gen/bundle.min.css') }}" />
-    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <meta name="Description" content="{% block description %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+
+    {# Style #}
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='gen/bundle.min.css') }}" />
+
+    {# Favicon #}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ url_for('static', filename='img/favicon/manifest.json') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon/favicon.ico') }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{# TODO #}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{# TODO #}">
+    <meta property="og:description" content="{# TODO #}">
+    <meta property="og:image" content="{# TODO #}/static/img/favicon/android-chrome-512x512.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:domain" content="$HOSTNAME">
+    <meta property="twitter:url" content="{# TODO #}">
+    <meta name="twitter:title" content="{# TODO #}">
+    <meta name="twitter:description" content="{# TODO #}">
+    <meta name="twitter:image" content="{# TODO #}/static/img/favicon/android-chrome-512x512.png">
+
+    {# External Dependencies #}
+    <meta name="google-site-verification" content="" />
     <link rel="preconnect" href="https://api.segment.io">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta name="theme-color" content="#ffffff">
-    <title>{% block title %}{% endblock %}</title>
     {% endblock %}
   </head>
   <body>

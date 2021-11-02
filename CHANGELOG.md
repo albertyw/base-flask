@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.14.0 (2021-11-02)
+-------------------
+
+ - Update to Python 3.10
+ - Update dependencies
+ - Update head tags in base html template
+
+
 3.13.0 (2021-10-30)
 -------------------
 

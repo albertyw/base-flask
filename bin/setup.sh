@@ -29,6 +29,7 @@ sudo cp "$HOME/$PROJECT_NAME/config/nginx/nginx.conf" "/etc/nginx/nginx.conf"
 sudo cp "$HOME/$PROJECT_NAME/config/nginx/gzip.conf" "/etc/nginx/snippets/gzip.conf"
 sudo cp "$HOME/$PROJECT_NAME/config/nginx/headers.conf" "/etc/nginx/snippets/headers.conf"
 sudo cp "$HOME/$PROJECT_NAME/config/nginx/ssl.conf" "/etc/nginx/snippets/ssl.conf"
+sudo mkdir -p "/var/log/nginx/$PROJECT_NAME/"
 sudo rm -rf /var/www/html
 
 # Secure nginx

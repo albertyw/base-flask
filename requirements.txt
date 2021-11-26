@@ -1,5 +1,5 @@
 # Core packages
-python-dotenv==0.19.1  # Read environment variables from .env
+python-dotenv==0.19.2  # Read environment variables from .env
 Flask==2.0.2           # Web microframework
 uWSGI==2.0.20          # Application server
 syspath==2.0.5         # Modify paths

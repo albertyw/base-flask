@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.14.1 (2021-12-05)
+-------------------
+
+ - Optimize npm dependency installation
+ - Fix favicon and other html head link
+ - Update dependencies
+
+
 3.14.0 (2021-11-02)
 -------------------
 

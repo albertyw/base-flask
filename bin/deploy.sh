@@ -25,7 +25,7 @@ if [ -n "$DEPLOY_BRANCH" ]; then
 fi
 
 # Build container and network
-docker build -t "$CONTAINER:$BRANCH" .
+docker build --pull -t "$CONTAINER:$BRANCH" .
 docker network inspect "$NETWORK" &>/dev/null ||
     docker network create --driver bridge "$NETWORK"
 

@@ -64,7 +64,6 @@ def robots() -> Any:
 
 
 @app.route("/health")
-@varsnap
 def health() -> Any:
     return Response('{"status": "ok"}', mimetype='text/json')
 

@@ -10,12 +10,12 @@ from varsnap import varsnap
 from app.routes import handlers
 
 
-dotenv.load_dotenv(os.path.join(git_root.path, '.env'))
+dotenv.load_dotenv(git_root.path / '.env')
 
 app = Flask(
     __name__,
     static_url_path='/static',
-    static_folder=os.path.join(git_root.path, 'static'),
+    static_folder=git_root.path / 'static',
 )
 app.debug = os.environ['DEBUG'] == 'true'
 if os.environ.get('SERVER_NAME', ''):  # pragma: no cover

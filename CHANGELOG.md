@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.14.2 (2021-12-25)
+-------------------
+
+ - Optimize testing and deployments
+ - Cleanup
+ - Update dependencies
+
+
 3.14.1 (2021-12-05)
 -------------------
 

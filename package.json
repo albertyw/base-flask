@@ -28,7 +28,7 @@
     "popper.js": "^1.16.1",
     "rollbar": "^2.21.0",
     "uglifyify": "^5.0.2",
-    "varsnap": "^1.6.4"
+    "varsnap": "^1.7.0"
   },
   "devDependencies": {
     "babel-plugin-istanbul": "^6.0.0",

@@ -10,4 +10,4 @@ IFS=$'\n\t'
 npm run minify
 
 # Run supervisor to run uwsgi
-supervisord
+supervisord -c config/supervisord.conf

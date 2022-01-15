@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.14.3 (2022-01-15)
+-------------------
+
+ - Simplify supervisor configuration
+ - Update dependencies
+ - Send git branch name to varsnap during node testing
+
+
 3.14.2 (2021-12-25)
 -------------------
 

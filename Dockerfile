@@ -10,17 +10,15 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    locales                                     `: Basic-packages` \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
-    && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
 RUN curl https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update && apt-get install -y --no-install-recommends \
+    locales                                     `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
     logrotate                                   `: Rotate logs because uWSGI has bugs` \
     nodejs                                      `: Javascript assets` \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up directory structures

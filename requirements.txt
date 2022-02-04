@@ -5,7 +5,7 @@ uWSGI==2.0.20          # Application server
 syspath==3.0.0         # Modify paths
 
 # Features
-git+git://github.com/albertyw/flask-sitemap@python-3-10#flask-sitemap
+git+git://github.com/inveniosoftware/flask-sitemap@b34efdf297aa28886fa686a17522c4af841dd0b0#flask-sitemap
 # Web sitemaps
 
 # Monitoring/tracking/logging

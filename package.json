@@ -20,7 +20,7 @@
     "bootstrap": "^5.0.0",
     "browserify": "^17.0.0",
     "clean-css": "^5.0.1",
-    "dotenv": "^15.0.0",
+    "dotenv": "^16.0.0",
     "exorcist": "^2.0.0",
     "logfit": "^0.8.2",
     "loose-envify": "^1.4.0",

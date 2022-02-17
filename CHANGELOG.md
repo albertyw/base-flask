@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.14.4 (2022-02-16)
+-------------------
+
+ - Optimize docker container
+ - Update dependencies
+
+
 3.14.3 (2022-01-15)
 -------------------
 

@@ -69,7 +69,7 @@ def health() -> Any:
 
 
 # https://github.com/pallets/flask/issues/4295
-@app.errorhandler(404)  # type: ignore
+@app.errorhandler(404)
 def page_not_found(e: Exception) -> Any:
     return render_template("404.htm"), 404
 

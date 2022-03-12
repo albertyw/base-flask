@@ -4,7 +4,7 @@ from typing import Any, Dict
 import dotenv
 from flask import Flask, Response, render_template, got_request_exception
 from flask_sitemap import Sitemap
-from syspath import git_root
+from syspath import get_current_path, git_root
 from varsnap import varsnap
 
 from app.routes import handlers
@@ -38,7 +38,7 @@ if os.environ['ENV'] == 'production':
             # environment name
             os.environ['ENV'],
             # server root directory, makes tracebacks prettier
-            root=os.path.dirname(os.path.realpath(__file__)),
+            root=get_current_path(),
             # flask already sets up logging
             allow_logging_basic_config=False)
 

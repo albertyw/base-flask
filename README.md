@@ -23,6 +23,15 @@ Features
  - Includes setting up secure and fast nginx/uwsgi in production
  - Docker support
 
+Users
+-----
+
+These repositories are based on base-flask:
+
+ - [albertyw/albertyw.com](https://github.com/albertyw/albertyw.com)
+ - [albertyw/pharmadataassociates](https://github.com/albertyw/pharmadataassociates)
+ - [albertyw/chase-center-calendar](https://github.com/albertyw/chase-center-calendar)
+
 Setup
 -----
 

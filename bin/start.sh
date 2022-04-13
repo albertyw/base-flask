@@ -6,8 +6,9 @@
 set -exuo pipefail
 IFS=$'\n\t'
 
-# Minify static files
-npm run minify
+# Make compiled static files available
+rm -rf static/mount/gen
+cp -r static/gen static/mount
 
 # Run supervisor to run uwsgi
 supervisord -c config/supervisord.conf

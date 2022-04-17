@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.14.6 (2022-04-17)
+-------------------
+
+ - Optimize Dockerfile builds
+ - Precompile static files
+ - Update dependencies
+
+
 3.14.5 (2022-03-29)
 -------------------
 

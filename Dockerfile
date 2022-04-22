@@ -1,4 +1,4 @@
-FROM node:16 as node
+FROM node:18 as node
 WORKDIR /
 COPY . .
 RUN npm ci --only=production \

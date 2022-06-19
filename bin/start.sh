@@ -7,8 +7,8 @@ set -exuo pipefail
 IFS=$'\n\t'
 
 # Make compiled static files available
-rm -rf static/mount/gen
-cp -r static/gen static/mount
+rm -rf static/mount/*
+cp -r static/* static/mount || true
 
 # Run supervisor to run uwsgi
 supervisord -c config/supervisord.conf

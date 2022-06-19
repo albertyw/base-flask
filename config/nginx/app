@@ -39,7 +39,7 @@ server {
 
     location /static {
         include          snippets/headers.conf;
-        root             $REPO_PATH;
+        alias            $REPO_PATH/static/mount;
         add_header       'Access-Control-Allow-Origin'   'https://www.$HOSTNAME';
         add_header       'Access-Control-Allow-Methods'  'GET, HEAD, OPTIONS';
         add_header       'Access-Control-Allow-Headers'  'range';

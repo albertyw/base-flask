@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.15.0 (2022-06-25)
+-------------------
+
+ - Remove matomo
+ - Fix serving files
+ - Update to node 18
+ - Update dependencies
+
+
 3.14.6 (2022-04-17)
 -------------------
 

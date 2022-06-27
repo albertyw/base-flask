@@ -5,7 +5,7 @@ RUN npm ci --only=production \
     && npm run minify
 
 
-FROM python:3.10-bullseye
+FROM python:3.10-buster  # Need buster for uwsgi builds
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

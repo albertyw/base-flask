@@ -21,6 +21,7 @@ replacements["\$INTERNAL_PORT"]="\$INTERNAL_PORT"                # 5000
 replacements["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN"  # abcdefgh
 replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"  # abcdefgh
 replacements["\$SEGMENT_TOKEN"]="\$SEGMENT_TOKEN"                # abcdefgh
+replacements["\$LOGFIT_CLIENT_TOKEN"]="\$LOGFIT_CLIENT_TOKEN"    # abcdefgh
 
 IFS=' '
 locations="Dockerfile ${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"

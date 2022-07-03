@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.16.0 (2022-07-02)
+-------------------
+
+ - Remove Segment
+ - Add Google Analytics
+ - Downgrade python docker version to fix uWSGI installation
+ - Use better python types
+
+
 3.15.0 (2022-06-25)
 -------------------
 

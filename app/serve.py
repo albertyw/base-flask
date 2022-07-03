@@ -1,5 +1,5 @@
 import os
-from typing import Any
+from typing import Tuple
 
 import dotenv
 from flask import Flask, Response, render_template, got_request_exception
@@ -52,18 +52,18 @@ app.register_blueprint(handlers)
 
 @app.route("/robots.txt")
 @varsnap
-def robots() -> Any:
+def robots() -> str:
     return render_template("robots.txt")
 
 
 @app.route("/health")
-def health() -> Any:
+def health() -> Response:
     return Response('{"status": "ok"}', mimetype='text/json')
 
 
 # https://github.com/pallets/flask/issues/4295
 @app.errorhandler(404)
-def page_not_found(e: Exception) -> Any:
+def page_not_found(e: Exception) -> Tuple[str, int]:
     return render_template("404.htm"), 404
 
 

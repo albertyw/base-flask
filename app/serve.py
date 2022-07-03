@@ -1,5 +1,5 @@
 import os
-from typing import Any, Dict
+from typing import Any
 
 import dotenv
 from flask import Flask, Response, render_template, got_request_exception
@@ -45,13 +45,6 @@ if os.environ['ENV'] == 'production':
         # send exceptions from `app` to rollbar, using flask's signal system.
         got_request_exception.connect(
             rollbar.contrib.flask.report_exception, app)
-
-
-@app.context_processor
-def inject_envs() -> Dict[str, Any]:
-    envs = {}
-    envs['SEGMENT_TOKEN'] = os.environ['SEGMENT_TOKEN']
-    return {'ENV': envs}
 
 
 app.register_blueprint(handlers)

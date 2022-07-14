@@ -34,7 +34,7 @@ function setupGoogleAnalytics() {
   const script = document.createElement('script');
   script.onload = function () {
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args){window.dataLayer.push(args);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', process.env.GOOGLE_ANALYTICS_TOKEN);
   };

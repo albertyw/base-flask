@@ -1,5 +1,4 @@
 import os
-from typing import Tuple
 
 import dotenv
 from flask import Flask, Response, render_template, got_request_exception
@@ -63,7 +62,7 @@ def health() -> Response:
 
 # https://github.com/pallets/flask/issues/4295
 @app.errorhandler(404)
-def page_not_found(e: Exception) -> Tuple[str, int]:
+def page_not_found(e: Exception) -> tuple[str, int]:
     return render_template("404.htm"), 404
 
 

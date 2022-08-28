@@ -1,7 +1,8 @@
 import os
 
 import dotenv
-from flask import Flask, Response, render_template, got_request_exception
+from flask import Flask, Response, got_request_exception, make_response, \
+    render_template
 from flask_sitemap import Sitemap
 from syspath import get_current_path, git_root
 from varsnap import varsnap
@@ -53,6 +54,14 @@ app.register_blueprint(handlers)
 @varsnap
 def robots() -> str:
     return render_template("robots.txt")
+
+
+@app.route("/humans.txt")
+@varsnap
+def humans() -> str:
+    response = make_response(render_template("humans.txt"))
+    response.headers['Content-Type'] = 'text/plain'
+    return response
 
 
 @app.route("/health")

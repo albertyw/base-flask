@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.17.0 (2022-08-28)
+-------------------
+
+ - Update dependencies
+ - Add a humans.txt
+ - Add security.txt
+ - Update preconnect optimizations
+
+
 3.16.0 (2022-07-02)
 -------------------
 

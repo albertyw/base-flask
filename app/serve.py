@@ -1,8 +1,8 @@
 import os
 
 import dotenv
-from flask import Flask, Response, got_request_exception, make_response, \
-    render_template
+from flask import Flask, Response, got_request_exception, render_template, \
+    send_file
 from flask_sitemap import Sitemap
 from syspath import get_current_path, git_root
 from varsnap import varsnap
@@ -59,9 +59,7 @@ def robots() -> str:
 @app.route("/humans.txt")
 @varsnap
 def humans() -> str:
-    response = make_response(render_template("humans.txt"))
-    response.headers['Content-Type'] = 'text/plain'
-    return response
+    return send_file('templates/humans.txt', mimetype='text/plain')
 
 
 @app.route("/health")

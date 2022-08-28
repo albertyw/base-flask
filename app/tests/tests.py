@@ -31,6 +31,7 @@ class PageCase(unittest.TestCase):
         response = self.app.get(path)
         self.assertEqual(response.status_code, 200)
         self.assertIn(string, response.get_data())
+        response.close()
 
 
 class TestIntegration(unittest.TestCase):

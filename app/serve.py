@@ -52,13 +52,13 @@ app.register_blueprint(handlers)
 
 @app.route("/robots.txt")
 @varsnap
-def robots() -> str:
+def robots() -> Response:
     return send_file('templates/robots.txt', mimetype='text/plain')
 
 
 @app.route("/.well-known/security.txt")
 @varsnap
-def security() -> str:
+def security() -> Response:
     return send_file('templates/wellknown/security.txt', mimetype='text/plain')
 
 

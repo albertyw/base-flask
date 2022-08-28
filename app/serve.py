@@ -53,7 +53,7 @@ app.register_blueprint(handlers)
 @app.route("/robots.txt")
 @varsnap
 def robots() -> str:
-    return render_template("robots.txt")
+    return send_file('templates/robots.txt', mimetype='text/plain')
 
 
 @app.route("/.well-known/security.txt")

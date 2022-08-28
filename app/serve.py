@@ -56,6 +56,12 @@ def robots() -> str:
     return render_template("robots.txt")
 
 
+@app.route("/.well-known/security.txt")
+@varsnap
+def security() -> str:
+    return send_file('templates/wellknown/security.txt', mimetype='text/plain')
+
+
 @app.route("/humans.txt")
 @varsnap
 def humans() -> Response:

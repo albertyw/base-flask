@@ -58,7 +58,7 @@ def robots() -> str:
 
 @app.route("/humans.txt")
 @varsnap
-def humans() -> str:
+def humans() -> Response:
     return send_file('templates/humans.txt', mimetype='text/plain')
 
 

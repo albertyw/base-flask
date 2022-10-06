@@ -51,10 +51,12 @@ install an origin certificate so that requests are encrypted end-to-end.
 Development
 -----------
 
-### Setup (using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)):
+### Setup
+Using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) and
+optionally [direnv](https://github.com/direnv/direnv)
 
 ```bash
-mkvirtualenv app -p python3.10
+mkvirtualenv app -p python3.10  # This repository uses baseflask as the name of the virtualenv
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env
@@ -63,7 +65,6 @@ npm install
 # Install shellcheck
 # brew install shellcheck
 # sudo apt-get install shellcheck
-
 ```
 
 ### Spinning up the server:

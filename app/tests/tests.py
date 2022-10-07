@@ -16,6 +16,12 @@ class PageCase(unittest.TestCase):
     def test_robots_load(self) -> None:
         self.page_test('/robots.txt', b'')
 
+    def test_security_load(self) -> None:
+        self.page_test('/.well-known/security.txt', b'Contact')
+
+    def test_humans_load(self) -> None:
+        self.page_test('/humans.txt', b'albertyw')
+
     def test_health_load(self) -> None:
         self.page_test('/health', b'ok')
 

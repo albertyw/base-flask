@@ -10,4 +10,4 @@ flask-sitemap==0.4.0   # Web sitemaps
 # Monitoring/tracking/logging
 blinker==1.5           # Dependency of rollbar
 rollbar==0.16.3        # rollbar.com error logging
-varsnap==1.5.2         # Test discovery
+varsnap==1.5.3         # Test discovery

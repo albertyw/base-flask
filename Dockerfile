@@ -6,7 +6,7 @@ RUN npm ci --only=production \
 
 
 # Need buster for uwsgi builds
-FROM python:3.10-buster
+FROM python:3.11-buster
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

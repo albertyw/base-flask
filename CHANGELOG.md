@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.19.0 (2022-10-30)
+-------------------
+
+ - Update to python 3.11
+ - Fix varsnap tests
+ - Remove envrc
+ - Update dependencies
+
+
 3.18.0 (2022-10-08)
 -------------------
 

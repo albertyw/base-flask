@@ -27,7 +27,7 @@
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
     "rollbar": "^2.21.0",
-    "uglifyify": "^5.0.2",
+    "@browserify/uglifyify": "^6.0.0",
     "varsnap": "^1.8.0"
   },
   "devDependencies": {

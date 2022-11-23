@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.19.1 (2022-11-22)
+-------------------
+
+ - Update dependencies
+ - Switch to a maintained version of uglifyify
+
+
 3.19.0 (2022-10-30)
 -------------------
 

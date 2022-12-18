@@ -23,7 +23,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     locales                                     `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
-    logrotate                                   `: Rotate logs because uWSGI has bugs` \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -34,8 +33,7 @@ COPY . .
 COPY --from=node ./static/gen ./static/gen
 
 # Set up dependencies
-RUN pip install --no-cache-dir -r requirements.txt \
-    && cp config/logrotate /etc/logrotate.d/uwsgi
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Set startup script
 CMD ["bin/start.sh"]

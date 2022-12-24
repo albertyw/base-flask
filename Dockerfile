@@ -1,7 +1,7 @@
 FROM node:18 as node
 WORKDIR /
 COPY . .
-RUN npm ci --only=production \
+RUN npm ci --omit=dev \
     && npm run minify
 
 

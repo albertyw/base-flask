@@ -93,7 +93,7 @@ steps:
       - pip install -r requirements-test.txt
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: node:18
+    image: node:18-slim
     commands:
       - ln -fs .env.development .env
       - npm ci

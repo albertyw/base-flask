@@ -1,4 +1,4 @@
-FROM node:18 as node
+FROM node:18-slim as node
 WORKDIR /
 COPY . .
 RUN npm ci --omit=dev \

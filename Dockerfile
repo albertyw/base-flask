@@ -5,8 +5,7 @@ RUN npm ci --omit=dev \
     && npm run minify
 
 
-# Need buster for uwsgi builds
-FROM python:3.11-buster
+FROM python:3.11-slim-bullseye
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

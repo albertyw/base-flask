@@ -6,7 +6,7 @@
 [![Test Coverage](https://codeclimate.com/github/albertyw/base-flask/badges/coverage.svg)](https://codeclimate.com/github/albertyw/base-flask/coverage)
 [![Varsnap Status](https://www.varsnap.com/project/bcc034eb-19df-42dc-aa30-8765868f10ec/varsnap_badge.svg)](https://www.varsnap.com/project/bcc034eb-19df-42dc-aa30-8765868f10ec/)
 
-This is a base Flask/uWSGI/nginx setup, useful as a skeleton for building
+This is a base Flask/Gunicorn/nginx setup, useful as a skeleton for building
 simple web apps from.  This is meant to be used for websites, as opposed to
 pure JSON sites which would be better developed using a different language or
 framework (e.g. [sanic](https://github.com/channelcat/sanic)).
@@ -20,7 +20,7 @@ Features
  - No issues from Code Climate
  - PEP8 compliant
  - Documented setup and usage procedures
- - Includes setting up secure and fast nginx/uwsgi in production
+ - Includes setting up secure and fast nginx/gunicorn in production
  - Docker support
 
 Users

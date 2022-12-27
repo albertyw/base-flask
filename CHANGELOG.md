@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.19.3 (2022-12-27)
+-------------------
+
+ - Switch from uWSGI to Gunicorn
+ - Update dependencies
+ - Docker/CI optimizations
+
+
 3.19.2 (2022-12-24)
 -------------------
 

@@ -1,6 +1,7 @@
 import multiprocessing
 
 
+proc_name = '$PROJECT_NAME'
 wsgi_app = 'app.serve:app'
 
 bind = '0.0.0.0:5000'

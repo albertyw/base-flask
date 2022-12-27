@@ -10,5 +10,5 @@ IFS=$'\n\t'
 rm -rf static/mount/*
 cp -r static/* static/mount || true
 
-# Run supervisor to run uwsgi
+# Run supervisor to run gunicorn
 supervisord -c config/supervisord.conf

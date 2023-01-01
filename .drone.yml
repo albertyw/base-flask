@@ -88,7 +88,7 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.11-bullseye-slim
+    image: python:3.11-slim-bullseye
     commands:
       - ln -fs .env.development .env
       - pip install -r requirements.txt

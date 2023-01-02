@@ -20,7 +20,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    locales                                     `: Basic-packages` \
+    curl locales                                `: Basic-packages` \
     supervisor                                  `: Runnning python in daemon mode` \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*

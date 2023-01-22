@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.19.4 (2022-01-21)
+-------------------
+
+ - Fix docker container healthchecks
+ - Update dependencies
+
+
 3.19.3 (2022-12-27)
 -------------------
 

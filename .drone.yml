@@ -28,8 +28,12 @@ steps:
     image: satantime/puppeteer-node:18-bullseye-slim
     commands:
       - ln -fs .env.development .env
+      - apt-get update && apt-get install -y chromium
       - npm ci
       - npm test
+    environment:
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
+      CHROME_PATH: /usr/bin/chromium
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable

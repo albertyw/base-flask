@@ -100,11 +100,15 @@ steps:
       - pip install -r requirements-test.txt
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: node:18-slim
+    image: satantime/puppeteer-node:18-bullseye-slim
     commands:
       - ln -fs .env.development .env
+      - apt-get update && apt-get install -y chromium
       - npm ci
       - node baseflask/refresh-varsnap.js
+    environment:
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
+      CHROME_PATH: /usr/bin/chromium
 trigger:
   cron:
     - refresh-varsnap-production-snaps

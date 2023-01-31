@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-3.19.4 (2022-01-21)
+3.19.4 (2023-01-21)
 -------------------
 
  - Fix docker container healthchecks

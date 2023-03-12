@@ -1,4 +1,4 @@
 # Testing
 coverage==7.2.1                  # Test coverage
 flake8==6.0.0                    # Python linting
-mypy==0.991                      # Type checking
+mypy==1.1.1                      # Type checking

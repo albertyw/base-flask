@@ -68,13 +68,15 @@ steps:
   #- name: Deploy
   #  depends_on:
   #    - Build Docker Container
+  #  environment:
+  #    SSH_KEY:
+  #      from_secret: ssh_key
   #  image: albertyw/ssh-client:4.0.0
   #  commands:
   #    - ssh-keyscan $HOSTNAME >> /root/.ssh/known_hosts
-  #    - ssh USERNAME@$HOSTNAME -i KEY_PATH $REPO_PATH/bin/deploy.sh master
-  #  volumes:
-  #    - name: ssh_key
-  #      path: KEY_PATH
+  #    - echo "$${SSH_KEY}" > /root/.ssh/id_ed25519
+  #    - chmod 600 /root/.ssh/id_ed25519
+  #    - ssh USERNAME@$HOSTNAME $REPO_PATH/bin/deploy.sh master
   #  when:
   #    branch:
   #      - master

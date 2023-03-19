@@ -38,7 +38,7 @@
     "mochify": "^9.0.0",
     "nyc": "^15.1.0",
     "source-map-support": "^0.5.19",
-    "stylelint": "^14.0.1",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard": "^31.0.0"
   }
 }

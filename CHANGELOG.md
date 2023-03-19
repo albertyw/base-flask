@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.19.6 (2023-03-18)
+-------------------
+
+ - Switch deployments from appleboy/drone-ssh to albertyw/ssh-client
+ - Update dependencies
+
+
 3.19.5 (2023-01-31)
 -------------------
 

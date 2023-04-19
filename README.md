@@ -77,7 +77,7 @@ python app/serve.py
 ### Running tests:
 
 ```bash
-flake8
+ruff check .
 mypy . --ignore-missing-imports --strict
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
@@ -96,7 +96,7 @@ pip install -r requirements-test.txt
 ln -s .env.development .env
 
 # Test
-flake8
+ruff check .
 mypy . --ignore-missing-imports --strict
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover

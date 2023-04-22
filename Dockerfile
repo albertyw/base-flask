@@ -2,7 +2,7 @@ FROM node:18-slim as node
 WORKDIR /
 COPY . .
 RUN npm ci --omit=dev \
-    && npm run minify
+    && npm run build:prod
 
 
 FROM python:3.11-slim-bullseye

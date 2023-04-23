@@ -29,6 +29,7 @@
     "clean-css": "^5.0.1",
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.0",
+    "dotenv-webpack": "^8.0.1",
     "exorcist": "^2.0.0",
     "logfit": "^0.8.2",
     "loose-envify": "^1.4.0",

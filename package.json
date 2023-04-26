@@ -1,11 +1,16 @@
 {
   "name": "base-flask",
+  "version": "1.0.0",
+  "description": "base-flask",
   "scripts": {
-    "minify": "node bin/minify.js",
     "eslint": "eslint .",
     "stylelint": "stylelint static/css/*",
-    "test": "npm run minify && npm run eslint && npm run stylelint && npm run cover",
-    "cover": "nyc --require dotenv/config --instrumenter false mochify --transform loose-envify --require source-map-support/register  --transform [ babelify --ignore [ test ] --plugins [ babel-plugin-istanbul ] ] static/js/test --allow-chrome-as-root"
+    "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run cover",
+    "cover": "nyc --require dotenv/config --instrumenter false mochify --global-transform browserify-css --transform loose-envify --require source-map-support/register --transform [ babelify --ignore [ test ] --plugins [ babel-plugin-istanbul ] ] static/js/test --allow-chrome-as-root",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -18,25 +23,31 @@
     "@babel/preset-env": "^7.14.1",
     "babelify": "^10.0.0",
     "bootstrap": "^5.0.0",
-    "browserify": "^17.0.0",
-    "clean-css": "^5.0.1",
+    "css-loader": "^6.7.3",
     "dotenv": "^16.0.0",
+    "dotenv-webpack": "^8.0.1",
     "exorcist": "^2.0.0",
     "logfit": "^0.8.2",
     "loose-envify": "^1.4.0",
+    "mini-css-extract-plugin": "^2.7.5",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.16.1",
     "rollbar": "^2.21.0",
-    "@browserify/uglifyify": "^6.0.0",
-    "varsnap": "^1.8.0"
+    "style-loader": "^3.3.1",
+    "varsnap": "^1.8.0",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2"
   },
   "devDependencies": {
+    "@webpack-cli/generators": "^3.0.2",
     "babel-plugin-istanbul": "^6.0.0",
+    "browserify-css": "^0.15.0",
     "chai": "^4.3.0",
     "eslint": "^8.0.1",
     "mocha": "^10.0.0",
     "mochify": "^9.0.0",
     "nyc": "^15.1.0",
+    "prettier": "^2.8.7",
     "source-map-support": "^0.5.19",
     "stylelint": "^15.3.0",
     "stylelint-config-standard": "^33.0.0"

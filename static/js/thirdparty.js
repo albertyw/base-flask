@@ -2,6 +2,10 @@ const LogFit = require('logfit');
 const Rollbar = require('rollbar');
 const varsnap = require('varsnap');
 
+require('normalize.css/normalize.css');
+require('bootstrap/dist/css/bootstrap.css');
+require('bootstrap/dist/js/bootstrap.js');
+
 function setupRollbar() {
   const rollbarConfig = {
     accessToken: process.env.ROLLBAR_CLIENT_TOKEN,

@@ -70,7 +70,7 @@ npm install
 ### Spinning up the server:
 
 ```bash
-npm run minify
+npm run build:dev
 python app/serve.py
 ```
 

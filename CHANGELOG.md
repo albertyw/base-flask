@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.0 (2023-04-26)
+-------------------
+
+ - Switch from browserify to webpack
+ - Update dependencies
+
+
 3.19.6 (2023-03-18)
 -------------------
 

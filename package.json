@@ -1,7 +1,5 @@
 {
   "name": "base-flask",
-  "version": "1.0.0",
-  "description": "base-flask",
   "scripts": {
     "eslint": "eslint .",
     "stylelint": "stylelint static/css/*",

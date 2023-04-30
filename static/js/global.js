@@ -1,1 +1,3 @@
-require('../css/global.css');
+if (typeof window !== 'undefined') {
+  require('../css/global.css');
+}

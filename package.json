@@ -37,7 +37,6 @@
     "browserify-css": "^0.15.0",
     "chai": "^4.3.0",
     "eslint": "^8.0.1",
-    "mocha": "^10.0.0",
     "mochify": "^9.0.0",
     "nyc": "^15.1.0",
     "prettier": "^2.8.7",

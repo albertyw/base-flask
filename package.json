@@ -33,7 +33,6 @@
     "webpack-cli": "^5.0.2"
   },
   "devDependencies": {
-    "@webpack-cli/generators": "^3.0.2",
     "babel-plugin-istanbul": "^6.0.0",
     "browserify-css": "^0.15.0",
     "chai": "^4.3.0",

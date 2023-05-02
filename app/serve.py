@@ -30,9 +30,7 @@ if os.environ['ENV'] == 'production':
     import rollbar
     import rollbar.contrib.flask
 
-    @app.before_first_request
-    def init_rollbar() -> None:
-        """init rollbar module"""
+    with app.app_context():
         rollbar.init(
             os.environ['ROLLBAR_SERVER_TOKEN'],
             # environment name

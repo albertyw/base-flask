@@ -21,6 +21,7 @@
     "babelify": "^10.0.0",
     "bootstrap": "^5.0.0",
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.0",
     "dotenv": "^16.0.0",
     "dotenv-webpack": "^8.0.1",
     "logfit": "^0.8.2",

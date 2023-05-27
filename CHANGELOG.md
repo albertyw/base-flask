@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.20.1 (2023-05-27)
+-------------------
+
+ - Minify generated css files
+ - Remove unneeded node dependencies
+ - Update dependencies
+ - Various cleanup
+
+
 3.20.0 (2023-04-26)
 -------------------
 

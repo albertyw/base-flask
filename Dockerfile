@@ -5,7 +5,7 @@ RUN npm ci --omit=dev \
     && npm run build:prod
 
 
-FROM python:3.11-slim-bullseye
+FROM python:3.11-slim-bookworm
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

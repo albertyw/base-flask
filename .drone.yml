@@ -4,7 +4,7 @@ name: test
 
 steps:
   - name: Test Python
-    image: python:3.11-slim-bullseye
+    image: python:3.11-slim-bookworm
     commands:
       - apt-get update && apt-get install -y curl git
       - ln -fs .env.development .env
@@ -25,7 +25,7 @@ steps:
       CC_TEST_REPORTER_ID: e42a05bff9c04dc4688b42419421a047b4d9c943f1734bc2f3180a7d2dae8f4f
 
   - name: Test Node
-    image: satantime/puppeteer-node:18-bullseye-slim
+    image: satantime/puppeteer-node:18-bookworm-slim
     commands:
       - ln -fs .env.development .env
       - apt-get update && apt-get install -y chromium
@@ -92,14 +92,14 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.11-slim-bullseye
+    image: python:3.11-slim-bookworm
     commands:
       - ln -fs .env.development .env
       - pip install -r requirements.txt
       - pip install -r requirements-test.txt
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: satantime/puppeteer-node:18-bullseye-slim
+    image: satantime/puppeteer-node:18-bookworm-slim
     commands:
       - ln -fs .env.development .env
       - apt-get update && apt-get install -y chromium

@@ -26,7 +26,7 @@ app.config['SITEMAP_URL_SCHEME'] = 'https'
 ext = Sitemap(app=app)
 
 
-if os.environ['ENV'] == 'production':
+if os.environ['ENV'] == 'production':  # pragma: no cover
     import rollbar
     import rollbar.contrib.flask
 

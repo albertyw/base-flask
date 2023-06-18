@@ -1,6 +1,5 @@
 [tool.ruff]
 select = ["E", "F", "B"]
-ignore = ["E501"]
 
 [tool.mypy]
 strict = true

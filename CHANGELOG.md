@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.20.2 (2023-06-18)
+-------------------
+
+ - Dockerfile fixes
+ - Set up pyproject.toml
+ - Update from bullseye to bookworm
+ - Dependency updates
+
+
 3.20.1 (2023-05-27)
 -------------------
 

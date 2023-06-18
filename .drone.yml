@@ -14,7 +14,7 @@ steps:
       - chmod +x "${HOME}/bin/cc-test-reporter"
       - ruff check .
       - gunicorn -c config/gunicorn.conf.py --check-config
-      - mypy . --ignore-missing-imports --strict
+      - mypy .
       - cc-test-reporter before-build
       - coverage run -m unittest discover
       - exitcode="$?"

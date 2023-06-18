@@ -1,6 +1,6 @@
 FROM node:18-slim as node
-WORKDIR /
-COPY . .
+WORKDIR /root
+COPY . /root
 RUN npm ci --omit=dev \
     && npm run build:prod
 
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /var/www/app
 RUN mkdir -p .
 COPY . .
-COPY --from=node ./static/gen ./static/gen
+COPY --from=node /root/static/gen ./static/gen
 
 # Set up dependencies
 RUN pip install --no-cache-dir -r requirements.txt

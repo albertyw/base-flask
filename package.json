@@ -42,6 +42,6 @@
     "nyc": "^15.1.0",
     "source-map-support": "^0.5.19",
     "stylelint": "^15.3.0",
-    "stylelint-config-standard": "^33.0.0"
+    "stylelint-config-standard": "^34.0.0"
   }
 }

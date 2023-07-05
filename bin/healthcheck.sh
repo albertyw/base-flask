@@ -13,5 +13,5 @@ if [ -z "$SERVER_NAME" ]; then
 fi
 curl \
     --fail \
-    --resolve "$SERVER_NAME:443:localhost" \
-    "https://$SERVER_NAME/health"
+    --header "Host: $SERVER_NAME" \
+    "http://localhost:5000/health"

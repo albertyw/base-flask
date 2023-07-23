@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.3 (2023-07-22)
+-------------------
+
+ - Fix docker container healthchecks
+ - Update dependencies
+
+
 3.20.2 (2023-06-18)
 -------------------
 

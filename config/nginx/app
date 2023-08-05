@@ -1,3 +1,5 @@
+# vi: ft=nginx
+
 ### Redirects ###
 server {
     listen         80;

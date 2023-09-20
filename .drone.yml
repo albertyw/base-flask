@@ -99,7 +99,7 @@ steps:
       - pip install -r requirements-test.txt
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: satantime/puppeteer-node:18-bookworm-slim
+    image: satantime/puppeteer-node:20-bookworm-slim
     commands:
       - ln -fs .env.development .env
       - apt-get update && apt-get install -y chromium

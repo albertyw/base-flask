@@ -1,4 +1,4 @@
 # Testing
 coverage==7.3.1                  # Test coverage
 mypy==1.5.1                      # Type checking
-ruff==0.0.287                    # Python linter
+ruff==0.0.290                    # Python linter

@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.4 (2023-09-24)
+-------------------
+
+ - Update nginx directives
+ - Update dependencies
+
+
 3.20.3 (2023-07-22)
 -------------------
 

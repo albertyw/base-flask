@@ -4,7 +4,7 @@ name: test
 
 steps:
   - name: Test Python
-    image: python:3.11-slim-bookworm
+    image: python:3.12-slim-bookworm
     commands:
       - apt-get update && apt-get install -y curl git
       - ln -fs .env.development .env
@@ -47,7 +47,7 @@ steps:
       - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
 
   - name: Test Nginx
-    image: python:3.11-alpine
+    image: python:3.12-alpine
     commands:
       - pip install gixy==0.1.20 pyparsing==2.4.7
       - gixy config/nginx/*
@@ -92,7 +92,7 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.11-slim-bookworm
+    image: python:3.12-slim-bookworm
     commands:
       - ln -fs .env.development .env
       - pip install -r requirements.txt

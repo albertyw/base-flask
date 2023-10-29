@@ -56,7 +56,7 @@ Using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) a
 optionally [direnv](https://github.com/direnv/direnv)
 
 ```bash
-mkvirtualenv app -p python3.11  # This repository uses baseflask as the name of the virtualenv
+mkvirtualenv app -p python3.12  # This repository uses baseflask as the name of the virtualenv
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env
@@ -90,7 +90,7 @@ This repo uses:
 
 ```bash
 # Switch to python 3
-pyenv local 3.11
+pyenv local 3.12
 pip install -r requirements.txt
 pip install -r requirements-test.txt
 ln -s .env.development .env

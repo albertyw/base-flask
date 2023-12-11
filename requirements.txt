@@ -2,7 +2,7 @@
 python-dotenv==1.0.0   # Read environment variables from .env
 Flask==3.0.0           # Web microframework
 gunicorn==21.2.0       # WSGI server
-syspath==3.0.3         # Modify paths
+syspath==3.0.5         # Modify paths
 
 # Features
 flask-sitemap==0.4.0   # Web sitemaps

@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.6 (2023-12-19)
+-------------------
+
+ - Remove unused uwsgi log directory
+ - Update dependencies
+
+
 3.20.5 (2023-10-08)
 -------------------
 

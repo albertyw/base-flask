@@ -71,7 +71,6 @@ def health() -> Response:
     return Response('{"status": "ok"}', mimetype='text/json')
 
 
-# https://github.com/pallets/flask/issues/4295
 @app.errorhandler(404)
 def page_not_found(e: Exception) -> tuple[str, int]:
     return render_template("404.htm"), 404

@@ -78,7 +78,7 @@ python app/serve.py
 
 ```bash
 ruff check .
-mypy . --ignore-missing-imports --strict
+mypy .
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 npm test
@@ -97,7 +97,7 @@ ln -s .env.development .env
 
 # Test
 ruff check .
-mypy . --ignore-missing-imports --strict
+mypy .
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 coverage report

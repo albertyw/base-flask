@@ -3,6 +3,10 @@ html {
     min-height: 100%;
 }
 
+#main a:visited {
+  color: revert;
+}
+
 body {
     margin-bottom: 150px;
 }

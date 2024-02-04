@@ -43,5 +43,8 @@
     "source-map-support": "^0.5.19",
     "stylelint": "^16.0.2",
     "stylelint-config-standard": "^36.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }

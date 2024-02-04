@@ -1,3 +1,5 @@
+/* Base-Flask */
+
 html {
     position: relative;
     min-height: 100%;
@@ -22,3 +24,5 @@ img {
     padding-top: 50px;
     height: 150px;
 }
+
+/* Overrides */

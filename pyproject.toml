@@ -42,7 +42,7 @@ dependencies = [
 [tool.setuptools]
 py-modules = []
 
-[project.optional-dependendencies]
+[project.optional-dependencies]
 test = [
     # Testing
     "coverage==7.4.0",                  # Test coverage

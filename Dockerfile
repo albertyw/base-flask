@@ -32,7 +32,7 @@ COPY . .
 COPY --from=node /root/static/gen ./static/gen
 
 # Set up dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -e .
 
 # Set startup script
 CMD ["bin/start.sh"]

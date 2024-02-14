@@ -24,7 +24,7 @@ name = "base-flask"
 version = "1.0.0"
 dependencies = [
     # Core packages
-    "python-dotenv==1.0.0",   # Read environment variables from .env
+    "python-dotenv==1.0.1",   # Read environment variables from .env
     "Flask==3.0.2",           # Web microframework
     "gunicorn==21.2.0",       # WSGI server
     "syspath==3.0.5",         # Modify paths

@@ -57,8 +57,7 @@ optionally [direnv](https://github.com/direnv/direnv)
 
 ```bash
 mkvirtualenv app -p python3.12  # This repository uses baseflask as the name of the virtualenv
-pip install -e .
-pip install -r requirements-test.txt
+pip install -e .[test]
 ln -s .env.development .env
 npm install
 
@@ -91,8 +90,7 @@ This repo uses:
 ```bash
 # Switch to python 3
 pyenv local 3.12
-pip install -e .
-pip install -r requirements-test.txt
+pip install -e .[test]
 ln -s .env.development .env
 
 # Test

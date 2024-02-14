@@ -41,3 +41,11 @@ dependencies = [
 
 [tool.setuptools]
 py-modules = []
+
+[project.optional-dependendencies]
+test = [
+    # Testing
+    "coverage==7.4.0",                  # Test coverage
+    "mypy==1.8.0",                      # Type checking
+    "ruff==0.1.13",                     # Python linter
+]

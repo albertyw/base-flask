@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.20.7 (2024-02-15)
+-------------------
+
+ - Restore browser-default visited link color
+ - Merge python dependencies in pyproject.toml
+ - Update dependencies
+
+
 3.20.6 (2023-12-19)
 -------------------
 

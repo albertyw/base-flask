@@ -36,7 +36,7 @@ dependencies = [
     "blinker==1.7.0",         # Dependency of rollbar
     "rollbar==1.0.0",         # rollbar.com error logging
     "setproctitle==1.3.3",    # Allow gunicorn to set process title
-    "varsnap==1.5.7",         # Test discovery
+    "varsnap==1.5.8",         # Test discovery
 ]
 
 [tool.setuptools]

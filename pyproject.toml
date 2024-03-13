@@ -46,6 +46,6 @@ py-modules = []
 test = [
     # Testing
     "coverage==7.4.3",                  # Test coverage
-    "mypy==1.8.0",                      # Type checking
+    "mypy==1.9.0",                      # Type checking
     "ruff==0.2.1",                      # Python linter
 ]

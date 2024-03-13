@@ -47,5 +47,5 @@ test = [
     # Testing
     "coverage==7.4.3",                  # Test coverage
     "mypy==1.9.0",                      # Type checking
-    "ruff==0.2.1",                      # Python linter
+    "ruff==0.3.2",                      # Python linter
 ]

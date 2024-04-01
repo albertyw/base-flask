@@ -1,15 +1,15 @@
-const path = require('path');
+import path from 'path';
 
-const Dotenv = require('dotenv-webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+import Dotenv from 'dotenv-webpack';
+import MiniCssExtractPlugin from'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
 const config = {
   entry: './static/js/index.js',
   output: {
-    path: path.resolve(__dirname, 'static', 'gen'),
+    path: path.resolve('static', 'gen'),
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -36,7 +36,7 @@ const config = {
   },
 };
 
-module.exports = () => {
+export default () => {
   if (isProduction) {
     config.mode = 'production';
   } else {

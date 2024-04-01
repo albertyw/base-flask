@@ -1,4 +1,4 @@
-const thirdparty = require('../thirdparty');
-thirdparty.setupVarsnap();
+import { setupVarsnap } from '../thirdparty.js';
+setupVarsnap();
 
-require('./test');
+import './test.js';

@@ -1,14 +1,12 @@
-const LogFit = require('logfit');
-const Rollbar = require('rollbar');
-const varsnap = require('varsnap');
+import LogFit from 'logfit';
+import Rollbar from 'rollbar';
+import varsnap from 'varsnap';
 
-if (typeof window !== 'undefined') {
-  require('normalize.css/normalize.css');
-  require('bootstrap/dist/css/bootstrap.css');
-  require('bootstrap/dist/js/bootstrap.js');
-}
+import 'normalize.css/normalize.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
-function setupRollbar() {
+export function setupRollbar() {
   const rollbarConfig = {
     accessToken: process.env.ROLLBAR_CLIENT_TOKEN,
     captureUncaught: true,
@@ -19,14 +17,14 @@ function setupRollbar() {
   return Rollbar.init(rollbarConfig);
 }
 
-function setupLogfit() {
+export function setupLogfit() {
   const logfit = new LogFit({
     source: process.env.LOGFIT_CLIENT_TOKEN,
   });
   logfit.report();
 }
 
-function setupVarsnap() {
+export function setupVarsnap() {
   varsnap.updateConfig({
     varsnap: 'true',
     env: process.env.ENV,
@@ -35,7 +33,7 @@ function setupVarsnap() {
   });
 }
 
-function setupGoogleAnalytics() {
+export function setupGoogleAnalytics() {
   const script = document.createElement('script');
   script.onload = function () {
     window.dataLayer = window.dataLayer || [];
@@ -46,10 +44,3 @@ function setupGoogleAnalytics() {
   script.src = 'https://www.googletagmanager.com/gtag/js?id=' + process.env.GOOGLE_ANALYTICS_TOKEN;
   document.head.appendChild(script);
 }
-
-module.exports = {
-  setupRollbar: setupRollbar,
-  setupLogfit: setupLogfit,
-  setupVarsnap: setupVarsnap,
-  setupGoogleAnalytics: setupGoogleAnalytics,
-};

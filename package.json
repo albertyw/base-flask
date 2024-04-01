@@ -1,5 +1,6 @@
 {
   "name": "base-flask",
+  "type": "module",
   "scripts": {
     "eslint": "eslint .",
     "stylelint": "stylelint static/css/*",

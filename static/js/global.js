@@ -1,3 +1,1 @@
-if (typeof window !== 'undefined') {
-  require('../css/global.css');
-}
+import '../css/global.css';

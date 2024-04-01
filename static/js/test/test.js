@@ -1,7 +1,9 @@
-const expect = require('chai').expect;
-const varsnap = require('varsnap');
+import { expect } from 'chai';
 
-require('../fibonacci');
+import { setupVarsnap } from '../thirdparty.js';
+setupVarsnap();
+import varsnap from 'varsnap';
+import '../fibonacci.js';
 
 context('Varsnap', function() {
   this.timeout(30 * 1000);

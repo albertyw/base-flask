@@ -90,3 +90,4 @@ ENV/
 .ropeproject
 
 node_modules
+.coverage_js

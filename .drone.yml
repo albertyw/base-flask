@@ -27,12 +27,8 @@ steps:
     image: satantime/puppeteer-node:21-bookworm-slim
     commands:
       - ln -fs .env.development .env
-      - apt-get update && apt-get install -y chromium
       - npm ci
       - npm test
-    environment:
-      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
-      CHROME_PATH: /usr/bin/chromium
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable
@@ -100,12 +96,8 @@ steps:
     image: satantime/puppeteer-node:21-bookworm-slim
     commands:
       - ln -fs .env.development .env
-      - apt-get update && apt-get install -y chromium
       - npm ci
       - node baseflask/refresh-varsnap.js
-    environment:
-      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
-      CHROME_PATH: /usr/bin/chromium
 trigger:
   cron:
     - refresh-varsnap-production-snaps

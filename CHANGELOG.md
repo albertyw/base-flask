@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.20.8 (2024-03-31)
+-------------------
+
+ - Convert JS to an ESM module
+ - Switch from mochify to wdio for js testing
+ - Dependency updates
+
+
 3.20.7 (2024-02-15)
 -------------------
 

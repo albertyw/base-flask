@@ -1,7 +1,7 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-const calculateFibonacci = require('../static/js/fibonacci');
-const thirdParty = require('../static/js/thirdparty');
+import calculateFibonacci from '../static/js/fibonacci.js';
+import thirdParty from '../static/js/thirdparty.js';
 
 process.env.ENV='production';
 

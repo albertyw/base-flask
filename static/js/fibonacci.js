@@ -1,7 +1,7 @@
-const varsnap = require('varsnap');
+import varsnap from 'varsnap';
 
 // Function for calculating fibonacci numbers
-var calculateFibonacci = varsnap(function calculateFibonacci(index) {
+const calculateFibonacci = varsnap(function calculateFibonacci(index) {
   if (index <= 0) {
     return 0;
   }
@@ -11,4 +11,4 @@ var calculateFibonacci = varsnap(function calculateFibonacci(index) {
   return calculateFibonacci(index - 1) + calculateFibonacci(index - 2);
 });
 
-module.exports = calculateFibonacci;
+export default calculateFibonacci;

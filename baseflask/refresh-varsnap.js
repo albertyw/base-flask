@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import calculateFibonacci from '../static/js/fibonacci.js';
-import thirdParty from '../static/js/thirdparty.js';
+import { setupVarsnap } from '../static/js/thirdparty.js';
 
 process.env.ENV='production';
 
@@ -11,5 +11,5 @@ function loadFibonacci() {
   }
 }
 
-thirdParty.setupVarsnap();
+setupVarsnap();
 loadFibonacci();

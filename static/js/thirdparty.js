@@ -2,10 +2,6 @@ import LogFit from 'logfit';
 import Rollbar from 'rollbar';
 import varsnap from 'varsnap';
 
-import 'normalize.css/normalize.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
-
 export function setupRollbar() {
   const rollbarConfig = {
     accessToken: process.env.ROLLBAR_CLIENT_TOKEN,

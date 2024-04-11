@@ -2,7 +2,7 @@
   "name": "base-flask",
   "type": "module",
   "scripts": {
-    "eslint": "eslint .",
+    "eslint": "eslint -c .eslint.config.js .",
     "stylelint": "stylelint static/css/*",
     "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run wdio",
     "build": "webpack --mode=production --node-env=production",
@@ -38,7 +38,8 @@
     "@wdio/spec-reporter": "^8.32.4",
     "chai": "^5.0.0",
     "dotenv": "^16.0.0",
-    "eslint": "^8.0.1",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
     "stylelint": "^16.0.2",
     "stylelint-config-standard": "^36.0.0"
   },

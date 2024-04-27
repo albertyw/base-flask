@@ -45,7 +45,7 @@ py-modules = []
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.4.4",                  # Test coverage
+    "coverage==7.5.0",                  # Test coverage
     "mypy==1.9.0",                      # Type checking
     "ruff==0.3.4",                      # Python linter
 ]

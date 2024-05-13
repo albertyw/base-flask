@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.9 (2024-05-12)
+-------------------
+
+ - Clean up tests and test configuration
+ - Add additional python lint rules
+ - Update dependencies
+
 3.20.8 (2024-03-31)
 -------------------
 

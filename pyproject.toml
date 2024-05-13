@@ -1,5 +1,6 @@
 [tool.ruff]
-lint.select = ["E", "F", "B"]
+# https://docs.astral.sh/ruff/rules/
+lint.select = ["E", "F", "W", "A", "B", "COM", "N", "PLC", "PLE", "PLW"]
 
 [tool.mypy]
 strict = true

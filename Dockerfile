@@ -1,4 +1,4 @@
-FROM node:22-slim as node
+FROM node:22-slim AS node
 WORKDIR /root
 COPY . /root
 RUN npm ci --omit=dev \
@@ -13,10 +13,10 @@ HEALTHCHECK --interval=5s --timeout=3s CMD bin/healthcheck.sh || exit 1
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set locale
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-ENV DEBIAN_FRONTEND noninteractive
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \

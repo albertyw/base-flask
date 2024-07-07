@@ -50,11 +50,9 @@ steps:
   - name: Build Docker Container
     depends_on:
       - Test Dockerfile
-    image: plugins/docker:20
-    settings:
-      repo: base-flask
-      tags: test
-      dry_run: true
+    image: docker:27
+    commands:
+      - docker build --pull -t "base-flask:test" .
 
   #- name: Deploy
   #  depends_on:

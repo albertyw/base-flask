@@ -2,6 +2,11 @@ kind: pipeline
 type: docker
 name: test
 
+volumes:
+  - name: dockersocket
+    host:
+      path: /var/run/docker.sock
+
 steps:
   - name: Test Python
     image: python:3.12-slim-bookworm
@@ -53,6 +58,9 @@ steps:
     image: docker:27
     commands:
       - docker build --pull -t "base-flask:test" .
+    volumes:
+      - name: dockersocket
+        path: /var/run/docker.sock
 
   #- name: Deploy
   #  depends_on:

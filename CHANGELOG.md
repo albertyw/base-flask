@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.20.10 (2024-07-10)
+--------------------
+
+ - Clean up README, Dockerfile, testing
+ - Update dependencies
+
+
 3.20.9 (2024-05-12)
 -------------------
 

@@ -5,7 +5,7 @@ dependencies = [
     # Core packages
     "python-dotenv==1.0.1",   # Read environment variables from .env
     "Flask==3.0.3",           # Web microframework
-    "gunicorn==22.0.0",       # WSGI server
+    "gunicorn==23.0.0",       # WSGI server
     "syspath==3.0.6",         # Modify paths
 
     # Features
@@ -21,9 +21,9 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.6.0",        # Test coverage
-    "mypy==1.11.0",           # Type checking
-    "ruff==0.5.5",            # Python linter
+    "coverage==7.6.1",        # Test coverage
+    "mypy==1.11.1",           # Type checking
+    "ruff==0.6.1",            # Python linter
 ]
 
 [tool.ruff]

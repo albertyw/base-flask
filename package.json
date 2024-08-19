@@ -36,7 +36,7 @@
     "@wdio/cli": "^8.35.1",
     "@wdio/mocha-framework": "^8.35.0",
     "@wdio/spec-reporter": "^8.32.4",
-    "chai": "^4.0.0",
+    "chai": "^5.0.0",
     "dotenv": "^16.0.0",
     "eslint": "^9.0.0",
     "globals": "^15.0.0",

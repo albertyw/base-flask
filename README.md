@@ -51,11 +51,13 @@ Development
 -----------
 
 ### Setup
-Using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) and
+Using [python venv](https://docs.python.org/3/library/venv.html) and
 optionally [direnv](https://github.com/direnv/direnv)
 
 ```bash
-mkvirtualenv app -p python3.12  # This repository uses baseflask as the name of the virtualenv
+python3.12 -m venv env
+printf "source env/bin/activate\nunset PS1\n" > .envrc
+direnv allow
 pip install -e .[test]
 ln -s .env.development .env
 npm install

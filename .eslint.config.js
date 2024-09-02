@@ -44,6 +44,7 @@ export default [
   },
   {
     'ignores': [
+      'env',
       'static/gen',
     ],
   },

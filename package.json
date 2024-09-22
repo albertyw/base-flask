@@ -32,10 +32,10 @@
     "webpack-cli": "^5.0.2"
   },
   "devDependencies": {
-    "@wdio/browser-runner": "^8.35.1",
-    "@wdio/cli": "^8.35.1",
-    "@wdio/mocha-framework": "^8.35.0",
-    "@wdio/spec-reporter": "^8.32.4",
+    "@wdio/browser-runner": "^9.0.0",
+    "@wdio/cli": "^9.0.0",
+    "@wdio/mocha-framework": "^9.0.0",
+    "@wdio/spec-reporter": "^9.0.0",
     "chai": "^5.0.0",
     "dotenv": "^16.0.0",
     "eslint": "^9.0.0",

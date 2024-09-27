@@ -38,8 +38,8 @@ Modify and run `baseflask/scaffold.sh` to create a copy of base-flask for your
 project needs, then run `bin/setup.sh` to set up the host.
 
 Base-flask is designed to work with a minimally sized [AWS EC2](https://aws.amazon.com/ec2/instance-types/)
-or [DigitalOcean](https://www.digitalocean.com/pricing/)
-instance, running a modern version of Ubuntu (20.04 LTS recommended).
+or [DigitalOcean](https://www.digitalocean.com/pricing/droplets)
+instance, running a modern version of Ubuntu or Debian.
 
 ### CDN
 

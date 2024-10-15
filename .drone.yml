@@ -83,7 +83,7 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.12-slim-bookworm
+    image: python:3.13-slim-bookworm
     commands:
       - ln -fs .env.development .env
       - pip install -e .[test]

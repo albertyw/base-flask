@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.20.11 (2024-10-18)
+--------------------
+
+ - Update to python 3.13
+ - Remove virtualenvwrapper
+ - Update dependencies
+
+
 3.20.10 (2024-07-10)
 --------------------
 

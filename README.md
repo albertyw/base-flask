@@ -52,7 +52,7 @@ Development
 
 ### Setup
 Using [python venv](https://docs.python.org/3/library/venv.html) and
-direnv](https://github.com/direnv/direnv)
+[direnv](https://github.com/direnv/direnv)
 
 ```bash
 python3.13 -m venv env

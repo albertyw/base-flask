@@ -4,7 +4,7 @@ version = "1.0.0"
 dependencies = [
     # Core packages
     "python-dotenv==1.0.1",   # Read environment variables from .env
-    "Flask==3.0.3",           # Web microframework
+    "Flask==3.1.0",           # Web microframework
     "gunicorn==23.0.0",       # WSGI server
     "syspath==3.0.6",         # Modify paths
 
@@ -12,18 +12,18 @@ dependencies = [
     "flask-sitemap==0.4.0",   # Web sitemaps
 
     # Monitoring/tracking/logging
-    "blinker==1.8.2",         # Dependency of rollbar
-    "rollbar==1.0.0",         # rollbar.com error logging
-    "setproctitle==1.3.3",    # Allow gunicorn to set process title
+    "blinker==1.9.0",         # Dependency of rollbar
+    "rollbar==1.1.0",         # rollbar.com error logging
+    "setproctitle==1.3.4",    # Allow gunicorn to set process title
     "varsnap==1.5.8",         # Test discovery
 ]
 
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.6.1",        # Test coverage
-    "mypy==1.11.2",           # Type checking
-    "ruff==0.6.7",            # Python linter
+    "coverage==7.6.8",        # Test coverage
+    "mypy==1.13.0",           # Type checking
+    "ruff==0.8.1",            # Python linter
 ]
 
 [tool.ruff]

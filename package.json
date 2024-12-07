@@ -1,6 +1,10 @@
 {
   "name": "base-flask",
   "type": "module",
+  "sideEffects": [
+    "./static/js/index.js",
+    "*.css"
+  ],
   "scripts": {
     "eslint": "eslint -c .eslint.config.js .",
     "stylelint": "stylelint static/css/*",

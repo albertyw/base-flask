@@ -11,7 +11,7 @@ const config = {
   output: {
     path: path.resolve('static', 'gen'),
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin(),
     new Dotenv(),
@@ -33,6 +33,7 @@ const config = {
       '...',
       new CssMinimizerPlugin(),
     ],
+    usedExports: true,
   },
 };
 

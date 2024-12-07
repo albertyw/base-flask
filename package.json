@@ -9,7 +9,6 @@
     "eslint": "eslint -c .eslint.config.js .",
     "stylelint": "stylelint static/css/*",
     "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run wdio",
-    "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",

@@ -45,7 +45,8 @@ steps:
   - name: Test Nginx
     image: python:3.12-alpine
     commands:
-      - pip install gixy==0.1.21
+      - apk add git
+      - pip install git+https://github.com/albertyw/gixy.git@python-update-versions
       - gixy config/nginx/*
 
   - name: Build Docker Container

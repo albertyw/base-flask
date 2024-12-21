@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.20.12 (2024-12-20)
+--------------------
+
+ - Fix puppeteer-node issues from new releases of mozilla firefox
+ - Switch to a fork of gixy to unblock python upgrades and for better speed
+ - Optimize output size of webpack builds
+ - Update dependencies
+ - Clean up README
+
+
 3.20.11 (2024-10-18)
 --------------------
 

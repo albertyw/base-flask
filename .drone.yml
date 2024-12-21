@@ -43,9 +43,8 @@ steps:
       - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
 
   - name: Test Nginx
-    image: python:3.12-alpine
+    image: albertyw/gixy:0.2.2
     commands:
-      - pip install gixy==0.1.21
       - gixy config/nginx/*
 
   - name: Build Docker Container

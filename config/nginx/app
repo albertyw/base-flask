@@ -14,7 +14,7 @@ server {
     server_name     $HOSTNAME;
 
     include snippets/ssl.conf;
-    resolver 127.0.0.1;
+    resolver 127.0.0.1 [::1];
 
     rewrite         ^ https://www.$HOSTNAME$request_uri;
 }
@@ -31,7 +31,7 @@ server {
 
     include snippets/ssl.conf;
     include snippets/gzip.conf;
-    resolver 127.0.0.1;
+    resolver 127.0.0.1 [::1];
 
     location / {
         include          snippets/headers.conf;

@@ -58,6 +58,11 @@ steps:
 
   #- name: Deploy
   #  depends_on:
+  #    - Test Python
+  #    - Test Node
+  #    - Test Bash
+  #    - Test Dockerfile
+  #    - Test Nginx
   #    - Build Docker Container
   #  environment:
   #    SSH_KEY:

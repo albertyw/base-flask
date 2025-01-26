@@ -23,7 +23,7 @@ test = [
     # Testing
     "coverage==7.6.10",       # Test coverage
     "mypy==1.14.1",           # Type checking
-    "ruff==0.8.2",            # Python linter
+    "ruff==0.9.3",            # Python linter
 ]
 
 [tool.ruff]

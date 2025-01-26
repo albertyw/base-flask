@@ -3,6 +3,7 @@
   "type": "module",
   "sideEffects": [
     "./static/js/index.js",
+    "./static/js/global.js",
     "*.css"
   ],
   "scripts": {

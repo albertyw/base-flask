@@ -1,3 +1,4 @@
 import '../css/global.css';
-import { watchKeyboardEvents } from './navigation.js';
+import { navbarBold, watchKeyboardEvents } from './navigation.js';
+navbarBold();
 watchKeyboardEvents();

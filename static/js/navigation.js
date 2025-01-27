@@ -67,3 +67,12 @@ export function watchKeyboardEvents() {
     processKeyHistory();
   });
 }
+
+export function navbarBold() {
+  const currentPage = window.location.pathname;
+  for (const link of document.getElementsByClassName('nav-link')) {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  }
+}

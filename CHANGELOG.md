@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.21.0 (2025-02-01)
+--------------------
+
+ - Fix global.css not being included in webpack
+ - Bold navbar link for current page
+ - Add keyboard navigation for navbar
+ - Simplify navbar
+ - Update dependencies
+
+
 3.20.12 (2024-12-20)
 --------------------
 

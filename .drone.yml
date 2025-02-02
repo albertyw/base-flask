@@ -66,7 +66,7 @@ steps:
   #  environment:
   #    SSH_KEY:
   #      from_secret: ssh_key
-  #  image: albertyw/ssh-client:4.1.1
+  #  image: albertyw/ssh-client:4.1.8
   #  commands:
   #    - ssh-keyscan $HOSTNAME >> /root/.ssh/known_hosts
   #    - echo "$${SSH_KEY}" > /root/.ssh/id_ed25519

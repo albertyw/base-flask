@@ -21,7 +21,7 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.6.10",       # Test coverage
+    "coverage==7.6.12",       # Test coverage
     "mypy==1.14.1",           # Type checking
     "ruff==0.9.4",            # Python linter
 ]

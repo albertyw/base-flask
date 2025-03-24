@@ -8,7 +8,9 @@ IFS=$'\n\t'
 
 # Make compiled static files available
 rm -rf static/mount/*
-cp -r static/* static/mount || true
+shopt -s extglob
+cp -r static/!(mount) static/mount || true
+shopt -u extglob
 
 # Run supervisor to run gunicorn
 supervisord -c config/supervisord.conf

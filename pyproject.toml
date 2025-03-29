@@ -3,7 +3,7 @@ name = "base-flask"
 version = "1.0.0"
 dependencies = [
     # Core packages
-    "python-dotenv==1.0.1",   # Read environment variables from .env
+    "python-dotenv==1.1.0",   # Read environment variables from .env
     "Flask==3.1.0",           # Web microframework
     "gunicorn==23.0.0",       # WSGI server
     "syspath==3.0.7",         # Modify paths
@@ -13,7 +13,7 @@ dependencies = [
 
     # Monitoring/tracking/logging
     "blinker==1.9.0",         # Dependency of rollbar
-    "rollbar==1.2.0",         # rollbar.com error logging
+    "rollbar==1.3.0",         # rollbar.com error logging
     "setproctitle==1.3.5",    # Allow gunicorn to set process title
     "varsnap==1.5.8",         # Test discovery
 ]
@@ -21,9 +21,9 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.6.12",       # Test coverage
+    "coverage==7.7.1",        # Test coverage
     "mypy==1.15.0",           # Type checking
-    "ruff==0.10.0",           # Python linter
+    "ruff==0.11.2",           # Python linter
 ]
 
 [tool.ruff]

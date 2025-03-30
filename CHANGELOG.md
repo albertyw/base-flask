@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.21.1 (2025-03-29)
+-------------------
+
+ - Fix mount cp error
+ - Update dependencies
+ - Simplify puppeteer-node setup
+
+
 3.21.0 (2025-02-01)
 --------------------
 

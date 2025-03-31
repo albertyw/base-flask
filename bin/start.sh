@@ -9,7 +9,7 @@ IFS=$'\n\t'
 # Make compiled static files available
 rm -rf static/mount/*
 shopt -s extglob
-cp -r static/!(mount) static/mount || true
+cp -r static/!(mount) static/mount
 shopt -u extglob
 
 # Run supervisor to run gunicorn

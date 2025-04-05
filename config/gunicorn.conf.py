@@ -6,7 +6,7 @@ wsgi_app = 'app.serve:app'
 
 bind = '0.0.0.0:5000'
 forwarded_allow_ips = '*'
-workers = multiprocessing.cpu_count() * 2 + 1
+workers = (multiprocessing.cpu_count() // 2) + 1
 preload_app = True
 
 accesslog = '/var/www/app/logs/gunicorn/access.log'

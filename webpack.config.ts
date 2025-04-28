@@ -1,12 +1,13 @@
 import path from 'path';
 
+import type { Configuration } from 'webpack';
 import Dotenv from 'dotenv-webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
-const config = {
+const config: Configuration = {
   entry: './static/js/index.js',
   output: {
     path: path.resolve('static', 'gen'),

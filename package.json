@@ -46,7 +46,7 @@
     "eslint": "^9.0.0",
     "globals": "^16.0.0",
     "stylelint": "^16.0.2",
-    "stylelint-config-standard": "^37.0.0"
+    "stylelint-config-standard": "^38.0.0"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"

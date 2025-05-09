@@ -14,7 +14,7 @@ dependencies = [
     # Monitoring/tracking/logging
     "blinker==1.9.0",         # Dependency of rollbar
     "rollbar==1.3.0",         # rollbar.com error logging
-    "setproctitle==1.3.5",    # Allow gunicorn to set process title
+    "setproctitle==1.3.6",    # Allow gunicorn to set process title
     "varsnap==1.5.8",         # Test discovery
 ]
 
@@ -23,7 +23,7 @@ test = [
     # Testing
     "coverage==7.8.0",        # Test coverage
     "mypy==1.15.0",           # Type checking
-    "ruff==0.11.4",           # Python linter
+    "ruff==0.11.9",           # Python linter
 ]
 
 [tool.ruff]

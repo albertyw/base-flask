@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+3.21.2 (2025-05-14)
+-------------------
+
+ - Update dependencies
+ - Update to node 24
+ - Optimize gunicorn and nginx configurations
+ - Switch nginx config linting back to getpagespeed
+
+
 3.21.1 (2025-03-29)
 -------------------
 

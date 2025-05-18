@@ -30,6 +30,7 @@ docker build \
     --pull \
     --tag "$CONTAINER:$BRANCH" \
     --build-arg GIT_VERSION="$VERSION" \
+    --build-arg GIT_BRANCH="$BRANCH" \
     .
 docker network inspect "$NETWORK" &>/dev/null ||
     docker network create --driver bridge "$NETWORK"

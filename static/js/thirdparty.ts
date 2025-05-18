@@ -8,6 +8,10 @@ export function setupRollbar() {
     captureUncaught: true,
     payload: {
       environment: process.env.ENV,
+      server: {
+        branch: process.env.GIT_BRANCH,
+        commit: process.env.GIT_COMMIT,
+      },
     }
   };
   return Rollbar.init(rollbarConfig);
@@ -26,7 +30,7 @@ export function setupVarsnap() {
     env: process.env.ENV,
     producerToken: process.env.VARSNAP_PRODUCER_TOKEN,
     consumerToken: process.env.VARSNAP_CONSUMER_TOKEN,
-    branch: 'master',
+    branch: process.env.GIT_BRANCH,
   });
 }
 

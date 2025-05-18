@@ -10,11 +10,18 @@ import type { Configuration } from 'webpack';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
-function gitVersion() {
-  if (process.env.GIT_VERSION !== undefined) {
-    return process.env.GIT_VERSION;
+function gitBranch() {
+  if (process.env.GIT_BRANCH === undefined) {
+    process.env.GIT_BRANCH = child_process.execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
   }
-  return child_process.execSync('git describe --always', { encoding: 'utf8' }).trim();
+  return process.env.GIT_BRANCH;
+}
+
+function gitVersion() {
+  if (process.env.GIT_VERSION === undefined) {
+    process.env.GIT_VERSION = child_process.execSync('git describe --always', { encoding: 'utf8' }).trim();
+  }
+  return process.env.GIT_VERSION;
 }
 
 const config: Configuration = {
@@ -28,6 +35,7 @@ const config: Configuration = {
     new Dotenv(),
     new webpack.EnvironmentPlugin({
       GIT_VERSION: gitVersion(),
+      GIT_BRANCH: gitBranch(),
     }),
   ],
   module: {

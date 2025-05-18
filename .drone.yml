@@ -31,6 +31,7 @@ steps:
       - npm test
     environment:
       GIT_VERSION: ${DRONE_COMMIT}
+      GIT_BRANCH: ${DRONE_BRANCH}
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable

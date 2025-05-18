@@ -11,6 +11,13 @@ export const config = {
       reportsDirectory: '.coverage_js',
     },
   }],
+  autoCompileOpts: {
+    autoCompile: true,
+    tsNodeOpts: {
+      project: './tsconfig.json',
+      transpileOnly: true,
+    },
+  },
   //
   // ==================
   // Specify Test Files
@@ -27,7 +34,7 @@ export const config = {
   // of the config file unless it's absolute.
   //
   specs: [
-    './static/js/test/*.js'
+    './static/js/test/*.ts'
   ],
   // Patterns to exclude.
   exclude: [

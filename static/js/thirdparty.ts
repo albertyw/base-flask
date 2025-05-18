@@ -26,7 +26,7 @@ export function setupVarsnap() {
     env: process.env.ENV,
     producerToken: process.env.VARSNAP_PRODUCER_TOKEN,
     consumerToken: process.env.VARSNAP_CONSUMER_TOKEN,
-    branch: 'master',
+    branch: process.env.GIT_BRANCH,
   });
 }
 

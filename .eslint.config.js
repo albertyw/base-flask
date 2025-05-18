@@ -46,6 +46,7 @@ export default [
     'ignores': [
       'env',
       'static/gen',
+      'static/gen-js',
     ],
   },
 ];

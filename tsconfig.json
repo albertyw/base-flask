@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "NodeNext",
+        "outDir": "./static/gen-js",
+        "target": "es6",
+        "skipLibCheck": true
+    },
+    "include": [
+        "./static/js/*"
+    ]
+}

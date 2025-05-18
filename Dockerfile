@@ -1,4 +1,6 @@
 FROM node:24-slim AS node
+ARG GIT_VERSION="master"
+ENV GIT_VERSION=$GIT_VERSION
 WORKDIR /root
 COPY . /root
 RUN npm ci --omit=dev \

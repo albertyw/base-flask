@@ -11,6 +11,9 @@ import type { Configuration } from 'webpack';
 const isProduction = process.env.NODE_ENV == 'production';
 
 function gitVersion() {
+  if (process.env.GIT_VERSION !== undefined) {
+    return process.env.GIT_VERSION;
+  }
   return child_process.execSync('git describe --always', { encoding: 'utf8' }).trim();
 }
 

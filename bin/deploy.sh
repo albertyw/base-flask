@@ -13,6 +13,7 @@ PORT="$INTERNAL_PORT"
 NETWORK="$CONTAINER"_net
 DEPLOY_BRANCH="${1:-}"
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+VERSION="$(git describe --always)"
 set +x  # Do not print contents of .env
 source .env
 set -x
@@ -25,7 +26,11 @@ if [ -n "$DEPLOY_BRANCH" ]; then
 fi
 
 # Build container and network
-docker build --pull -t "$CONTAINER:$BRANCH" .
+docker build \
+    --pull \
+    --tag "$CONTAINER:$BRANCH" \
+    --build-arg GIT_VERSION="$VERSION" \
+    .
 docker network inspect "$NETWORK" &>/dev/null ||
     docker network create --driver bridge "$NETWORK"
 

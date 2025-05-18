@@ -29,6 +29,8 @@ steps:
       - ln -fs .env.development .env
       - npm ci
       - npm test
+    environment:
+      GIT_VERSION: ${DRONE_COMMIT}
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable

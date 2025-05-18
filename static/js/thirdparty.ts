@@ -22,18 +22,19 @@ export function setupLogfit() {
 
 export function setupVarsnap() {
   varsnap.updateConfig({
-    varsnap: 'true',
+    varsnap: true,
     env: process.env.ENV,
     producerToken: process.env.VARSNAP_PRODUCER_TOKEN,
     consumerToken: process.env.VARSNAP_CONSUMER_TOKEN,
+    branch: 'master',
   });
 }
 
 export function setupGoogleAnalytics() {
   const script = document.createElement('script');
   script.onload = function () {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(...args){(window as any).dataLayer.push(args);}
     gtag('js', new Date());
     gtag('config', process.env.GOOGLE_ANALYTICS_TOKEN);
   };

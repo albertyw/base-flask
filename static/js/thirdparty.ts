@@ -8,6 +8,10 @@ export function setupRollbar() {
     captureUncaught: true,
     payload: {
       environment: process.env.ENV,
+      server: {
+        branch: process.env.GIT_BRANCH,
+        commit: process.env.GIT_COMMIT,
+      },
     }
   };
   return Rollbar.init(rollbarConfig);

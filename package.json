@@ -13,7 +13,7 @@
     "build:dev": "tsx node_modules/.bin/webpack-cli --mode=development",
     "build:prod": "tsx node_modules/.bin/webpack-cli --mode=production --node-env=production",
     "watch": "tsx node_modules/.bin/webpack-cli --watch",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.ts"
   },
   "repository": {
     "type": "git",

@@ -2,8 +2,8 @@
   "name": "base-flask",
   "type": "module",
   "sideEffects": [
-    "./static/js/index.js",
-    "./static/js/global.js",
+    "./static/js/index.ts",
+    "./static/js/global.ts",
     "*.css"
   ],
   "scripts": {

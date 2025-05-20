@@ -37,8 +37,8 @@ export function setupVarsnap() {
 export function setupGoogleAnalytics() {
   const script = document.createElement('script');
   script.onload = function () {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    function gtag(...args){(window as any).dataLayer.push(args);}
+    (window as any).dataLayer = (window as any).dataLayer || [];  // eslint-disable-line @typescript-eslint/no-explicit-any
+    function gtag(...args){(window as any).dataLayer.push(args);}  // eslint-disable-line @typescript-eslint/no-explicit-any
     gtag('js', new Date());
     gtag('config', process.env.GOOGLE_ANALYTICS_TOKEN);
   };

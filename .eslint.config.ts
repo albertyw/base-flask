@@ -1,5 +1,6 @@
 import globals from 'globals';
-import js from '@eslint/js';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
 
 let globalVars = globals.browser;
 globalVars = {...globalVars, ...{
@@ -15,8 +16,9 @@ globalVars = {...globalVars, ...{
   'process': true,
 }};
 
-export default [
-  js.configs.recommended,
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     'rules': {
       'indent': [
@@ -49,4 +51,4 @@ export default [
       'static/gen-js',
     ],
   },
-];
+);

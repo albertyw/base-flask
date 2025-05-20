@@ -10,5 +10,5 @@ setupGoogleAnalytics();
 import './global.js';
 
 import calculateFibonacci from './fibonacci.js';
-var random = Math.floor(Math.random() * 20);
+const random = Math.floor(Math.random() * 20);
 console.log(calculateFibonacci(random));

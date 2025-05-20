@@ -7,7 +7,7 @@
     "*.css"
   ],
   "scripts": {
-    "eslint": "eslint -c .eslint.config.js .",
+    "eslint": "eslint -c .eslint.config.ts .",
     "stylelint": "stylelint static/css/*",
     "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run wdio",
     "build:dev": "tsx node_modules/.bin/webpack-cli --mode=development",

@@ -99,7 +99,7 @@ steps:
     commands:
       - ln -fs .env.development .env
       - npm ci
-      - tsx baseflask/refresh-varsnap.ts
+      - npx tsx baseflask/refresh-varsnap.ts
 trigger:
   cron:
     - refresh-varsnap-production-snaps

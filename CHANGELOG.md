@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.22.0 (2025-05-24)
+-------------------
+
+ - Convert javascript to typescript
+ - Update dependencies
+
+
 3.21.2 (2025-05-14)
 -------------------
 

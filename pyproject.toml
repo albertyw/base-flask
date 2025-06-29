@@ -3,7 +3,7 @@ name = "base-flask"
 version = "1.0.0"
 dependencies = [
     # Core packages
-    "python-dotenv==1.1.0",   # Read environment variables from .env
+    "python-dotenv==1.1.1",   # Read environment variables from .env
     "Flask==3.1.1",           # Web microframework
     "gunicorn==23.0.0",       # WSGI server
     "syspath==3.0.7",         # Modify paths
@@ -21,9 +21,9 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.8.2",        # Test coverage
-    "mypy==1.16.0",           # Type checking
-    "ruff==0.11.13",          # Python linter
+    "coverage==7.9.1",        # Test coverage
+    "mypy==1.16.1",           # Type checking
+    "ruff==0.12.1",           # Python linter
 ]
 
 [tool.ruff]

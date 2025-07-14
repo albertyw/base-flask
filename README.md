@@ -100,7 +100,6 @@ mypy .
 shellcheck --exclude=SC1091 bin/*.sh
 coverage run -m unittest discover
 coverage report
-codeclimate-test-reporter
 npm test
 
 # Deployment

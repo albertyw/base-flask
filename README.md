@@ -1,8 +1,8 @@
 # Base Flask Setup
 
 [![Build Status](https://drone.albertyw.com/api/badges/albertyw/base-flask/status.svg)](https://drone.albertyw.com/albertyw/base-flask)
-[![Code Climate](https://codeclimate.com/github/albertyw/base-flask/badges/gpa.svg)](https://codeclimate.com/github/albertyw/base-flask)
-[![Test Coverage](https://codeclimate.com/github/albertyw/base-flask/badges/coverage.svg)](https://codeclimate.com/github/albertyw/base-flask/coverage)
+[![Maintainability](https://qlty.sh/gh/albertyw/projects/albertyw.com/maintainability.svg)](https://qlty.sh/gh/albertyw/projects/albertyw.com)
+[![Code Coverage](https://qlty.sh/gh/albertyw/projects/albertyw.com/coverage.svg)](https://qlty.sh/gh/albertyw/projects/albertyw.com)
 [![Varsnap Status](https://www.varsnap.com/project/bcc034eb-19df-42dc-aa30-8765868f10ec/varsnap_badge.svg)](https://www.varsnap.com/project/bcc034eb-19df-42dc-aa30-8765868f10ec/)
 
 This is a base Flask/Gunicorn/nginx setup, useful as a skeleton for building

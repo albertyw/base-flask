@@ -23,12 +23,15 @@ steps:
   - name: Test Node
     image: satantime/puppeteer-node:24-bookworm-slim
     commands:
+      - curl https://qlty.sh | sh
       - ln -fs .env.development .env
       - npm ci
       - npm test
+      - ~/.qlty/bin/qlty coverage publish coverage/lcov.info --override-commit-sha "$DRONE_COMMIT_SHA" --override-branch "$DRONE_BRANCH" --override-build-id "$DRONE_BUILD_NUMBER"
     environment:
       GIT_VERSION: ${DRONE_COMMIT}
       GIT_BRANCH: ${DRONE_BRANCH}
+      QLTY_COVERAGE_TOKEN: qltcp_eEGvDqcxehmg73W8
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable

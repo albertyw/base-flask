@@ -23,11 +23,12 @@ steps:
   - name: Test Node
     image: satantime/puppeteer-node:24-bookworm-slim
     commands:
+      - apt-get update && apt-get install -y curl
       - curl https://qlty.sh | sh
       - ln -fs .env.development .env
       - npm ci
       - npm test
-      - ~/.qlty/bin/qlty coverage publish coverage/lcov.info --override-commit-sha "$DRONE_COMMIT_SHA" --override-branch "$DRONE_BRANCH" --override-build-id "$DRONE_BUILD_NUMBER"
+      - ~/.qlty/bin/qlty coverage publish .coverage_js/clover.xml --override-commit-sha "$DRONE_COMMIT_SHA" --override-branch "$DRONE_BRANCH" --override-build-id "$DRONE_BUILD_NUMBER"
     environment:
       GIT_VERSION: ${DRONE_COMMIT}
       GIT_BRANCH: ${DRONE_BRANCH}

@@ -23,6 +23,7 @@ steps:
   - name: Test Node
     image: satantime/puppeteer-node:24-bookworm-slim
     commands:
+      - apt-get update && apt-get install -y curl
       - curl https://qlty.sh | sh
       - ln -fs .env.development .env
       - npm ci

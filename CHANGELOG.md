@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.22.1 (2025-07-20)
+-------------------
+
+ - Update dependencies
+ - Lint typescript
+ - Switch from CodeClimate to Qlty
+
+
 3.22.0 (2025-05-24)
 -------------------
 

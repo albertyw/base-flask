@@ -53,7 +53,7 @@ steps:
   - name: Build Docker Container
     depends_on:
       - Test Dockerfile
-    image: plugins/docker:20
+    image: plugins/docker:21
     settings:
       repo: base-flask
       tags: test

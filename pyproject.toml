@@ -6,7 +6,7 @@ dependencies = [
     "python-dotenv==1.1.1",   # Read environment variables from .env
     "Flask==3.1.2",           # Web microframework
     "gunicorn==23.0.0",       # WSGI server
-    "syspath==3.0.7",         # Modify paths
+    "syspath==3.0.8",         # Modify paths
 
     # Features
     "flask-sitemap==0.4.0",   # Web sitemaps

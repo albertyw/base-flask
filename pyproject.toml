@@ -4,9 +4,9 @@ version = "1.0.0"
 dependencies = [
     # Core packages
     "python-dotenv==1.1.1",   # Read environment variables from .env
-    "Flask==3.1.1",           # Web microframework
+    "Flask==3.1.2",           # Web microframework
     "gunicorn==23.0.0",       # WSGI server
-    "syspath==3.0.7",         # Modify paths
+    "syspath==3.0.8",         # Modify paths
 
     # Features
     "flask-sitemap==0.4.0",   # Web sitemaps
@@ -21,9 +21,9 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.10.2",       # Test coverage
+    "coverage==7.10.4",       # Test coverage
     "mypy==1.17.1",           # Type checking
-    "ruff==0.12.7",           # Python linter
+    "ruff==0.12.10",          # Python linter
 ]
 
 [tool.ruff]

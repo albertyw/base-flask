@@ -21,7 +21,7 @@ steps:
       QLTY_COVERAGE_TOKEN: qltcp_eEGvDqcxehmg73W8
 
   - name: Test Node
-    image: satantime/puppeteer-node:24-bookworm-slim
+    image: satantime/puppeteer-node:24-trixie-slim
     commands:
       - apt-get update && apt-get install -y curl
       - curl https://qlty.sh | sh
@@ -96,7 +96,7 @@ steps:
       - pip install -e .[test]
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: satantime/puppeteer-node:24-bookworm-slim
+    image: satantime/puppeteer-node:24-trixie-slim
     commands:
       - ln -fs .env.development .env
       - npm ci

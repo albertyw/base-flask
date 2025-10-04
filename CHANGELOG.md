@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.22.2 (2025-10-04)
+-------------------
+
+ - Update dependencies
+ - Optimize Dockerfile
+ - Update Python and node base images from bookworm to trixie
+
+
 3.22.1 (2025-07-20)
 -------------------
 

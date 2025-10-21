@@ -4,7 +4,7 @@ name: test
 
 steps:
   - name: Test Python
-    image: python:3.13-slim-trixie
+    image: python:3.14-slim-trixie
     commands:
       - apt-get update && apt-get install -y curl git xz-utils
       - curl https://qlty.sh | sh

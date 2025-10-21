@@ -90,7 +90,7 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.13-slim-trixie
+    image: python:3.14-slim-trixie
     commands:
       - ln -fs .env.development .env
       - pip install -e .[test]

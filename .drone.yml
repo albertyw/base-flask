@@ -96,7 +96,7 @@ steps:
       - pip install -e .[test]
       - python baseflask/refresh_varsnap.py
   - name: Refresh Varsnap Javascript Production Snaps
-    image: satantime/puppeteer-node:24-trixie-slim
+    image: satantime/puppeteer-node:25-trixie-slim
     commands:
       - ln -fs .env.development .env
       - npm ci

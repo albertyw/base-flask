@@ -55,7 +55,7 @@ Using [python venv](https://docs.python.org/3/library/venv.html) and
 [direnv](https://github.com/direnv/direnv)
 
 ```bash
-python3.13 -m venv env
+python3.14 -m venv env
 printf "source env/bin/activate\nunset PS1\n" > .envrc
 direnv allow
 pip install -e .[test]
@@ -90,7 +90,7 @@ This repo uses:
 
 ```bash
 # Switch to python 3
-pyenv local 3.13
+pyenv local 3.14
 pip install -e .[test]
 ln -s .env.development .env
 

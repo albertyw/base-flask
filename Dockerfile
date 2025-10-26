@@ -1,4 +1,4 @@
-FROM node:24-slim AS node
+FROM node:25-slim AS node
 ARG GIT_VERSION="master"
 ENV GIT_VERSION=$GIT_VERSION
 ARG GIT_BRANCH="master"
@@ -9,7 +9,7 @@ RUN npm ci --omit=dev \
     && npm run build:prod
 
 
-FROM python:3.13-slim-trixie
+FROM python:3.14-slim-trixie
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

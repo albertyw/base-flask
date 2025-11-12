@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.22.3 (2025-11-11)
+-------------------
+
+ - Switch to python 3.14
+ - Switch to node 25
+ - Update dependencies
+
+
 3.22.2 (2025-10-04)
 -------------------
 

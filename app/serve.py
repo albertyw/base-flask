@@ -1,8 +1,8 @@
 import os
+from pathlib import Path
 
 import dotenv
-from flask import Flask, Response, got_request_exception, render_template, \
-    send_file
+from flask import Flask, Response, got_request_exception, render_template
 from flask_sitemap import Sitemap
 from syspath import get_current_path, git_root
 from varsnap import varsnap
@@ -48,22 +48,34 @@ if os.environ['ENV'] == 'production':  # pragma: no cover
 app.register_blueprint(handlers)
 
 
+file_cache: dict[str, str] = {}
+def cached_send_file(filename: str) -> Response:
+    filedata = file_cache.get(filename)
+    if not filedata:
+        filepath = Path(app.root_path) / str(app.template_folder) / filename
+        with open(filepath, 'r') as f:
+            filedata = f.read()
+        file_cache[filename] = filedata
+    response = Response(filedata, mimetype='text/plain')
+    return response
+
+
 @app.route("/robots.txt")
 @varsnap
 def robots() -> Response:
-    return send_file('templates/robots.txt', mimetype='text/plain')
+    return cached_send_file('robots.txt')
 
 
 @app.route("/.well-known/security.txt")
 @varsnap
 def security() -> Response:
-    return send_file('templates/wellknown/security.txt', mimetype='text/plain')
+    return cached_send_file('wellknown/security.txt')
 
 
 @app.route("/humans.txt")
 @varsnap
 def humans() -> Response:
-    return send_file('templates/wellknown/humans.txt', mimetype='text/plain')
+    return cached_send_file('wellknown/humans.txt')
 
 
 @app.route("/health")

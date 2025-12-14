@@ -23,6 +23,7 @@
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.7",
+    "@types/node": "^25.0.2",
     "bootstrap": "^5.0.0",
     "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
@@ -32,6 +33,7 @@
     "normalize.css": "^8.0.1",
     "rollbar": "^2.26.5",
     "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.0.0",
     "varsnap": "^1.8.0",

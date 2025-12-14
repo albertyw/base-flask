@@ -9,7 +9,7 @@
   "scripts": {
     "eslint": "eslint -c .eslint.config.ts .",
     "stylelint": "stylelint static/css/*",
-    "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run wdio",
+    "test": "pnpm run build:dev && pnpm run eslint && pnpm run stylelint && pnpm run wdio",
     "build:dev": "tsx node_modules/.bin/webpack-cli --mode=development",
     "build:prod": "tsx node_modules/.bin/webpack-cli --mode=production --node-env=production",
     "watch": "tsx node_modules/.bin/webpack-cli --watch",

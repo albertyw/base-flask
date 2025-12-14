@@ -9,10 +9,10 @@
   "scripts": {
     "eslint": "eslint -c .eslint.config.ts .",
     "stylelint": "stylelint static/css/*",
-    "test": "npm run build:dev && npm run eslint && npm run stylelint && npm run wdio",
-    "build:dev": "tsx node_modules/.bin/webpack-cli --mode=development",
-    "build:prod": "tsx node_modules/.bin/webpack-cli --mode=production --node-env=production",
-    "watch": "tsx node_modules/.bin/webpack-cli --watch",
+    "test": "pnpm run build:dev && pnpm run eslint && pnpm run stylelint && pnpm run wdio",
+    "build:dev": "webpack-cli --mode=development",
+    "build:prod": "webpack-cli --mode=production --node-env=production",
+    "watch": "webpack-cli --watch",
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "repository": {
@@ -23,6 +23,7 @@
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.7",
+    "@types/node": "^25.0.2",
     "bootstrap": "^5.0.0",
     "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
@@ -32,6 +33,7 @@
     "normalize.css": "^8.0.1",
     "rollbar": "^2.26.5",
     "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.0.0",
     "varsnap": "^1.8.0",

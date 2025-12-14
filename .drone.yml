@@ -25,9 +25,11 @@ steps:
     commands:
       - apt-get update && apt-get install -y curl
       - curl https://qlty.sh | sh
+      - curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+      - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME:$PATH"
       - ln -fs .env.development .env
-      - npm ci
-      - npm test
+      - pnpm install
+      - pnpm test
       - ~/.qlty/bin/qlty coverage publish .coverage_js/clover.xml --override-commit-sha "$DRONE_COMMIT_SHA" --override-branch "$DRONE_BRANCH" --override-build-id "$DRONE_BUILD_NUMBER"
     environment:
       GIT_VERSION: ${DRONE_COMMIT}
@@ -98,9 +100,12 @@ steps:
   - name: Refresh Varsnap Javascript Production Snaps
     image: satantime/puppeteer-node:25-trixie-slim
     commands:
+      - apt-get update && apt-get install -y curl
+      - curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+      - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME:$PATH"
       - ln -fs .env.development .env
-      - npm ci
-      - npx tsx baseflask/refresh-varsnap.ts
+      - pnpm install
+      - pnpx tsx baseflask/refresh-varsnap.ts
 trigger:
   cron:
     - refresh-varsnap-production-snaps

@@ -10,9 +10,9 @@
     "eslint": "eslint -c .eslint.config.ts .",
     "stylelint": "stylelint static/css/*",
     "test": "pnpm run build:dev && pnpm run eslint && pnpm run stylelint && pnpm run wdio",
-    "build:dev": "tsx node_modules/.bin/webpack-cli --mode=development",
-    "build:prod": "tsx node_modules/.bin/webpack-cli --mode=production --node-env=production",
-    "watch": "tsx node_modules/.bin/webpack-cli --watch",
+    "build:dev": "webpack-cli --mode=development",
+    "build:prod": "webpack-cli --mode=production --node-env=production",
+    "watch": "webpack-cli --watch",
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "repository": {

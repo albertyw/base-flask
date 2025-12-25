@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.0 (2025-12-24)
+-------------------
+
+ - Switch from npm to pnpm for managing node dependencies
+ - Cache send_file for static routes
+ - Update dependencies
+
+
 3.22.3 (2025-11-11)
 -------------------
 

@@ -35,7 +35,7 @@ steps:
       GIT_VERSION: ${DRONE_COMMIT}
       GIT_BRANCH: ${DRONE_BRANCH}
       QLTY_COVERAGE_TOKEN: qltcp_eEGvDqcxehmg73W8
-      PNPM_VERSION=10.26.2  # Use an older version until wdio works again
+      PNPM_VERSION: 10.26.2  # Use an older version until wdio works again
 
   - name: Test Bash
     image: koalaman/shellcheck-alpine:stable

@@ -5,7 +5,7 @@ dependencies = [
     # Core packages
     "python-dotenv==1.2.1",   # Read environment variables from .env
     "Flask==3.1.2",           # Web microframework
-    "gunicorn==23.0.0",       # WSGI server
+    "gunicorn==24.1.1",       # WSGI server
     "syspath==3.0.8",         # Modify paths
 
     # Features

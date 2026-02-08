@@ -14,7 +14,7 @@ REPODIR="$BASEDIR/../"
 # Replace strings.  MODIFY REPLACEMENTS
 declare -A replacements
 replacements["\$REPO_PATH"]="\$REPO_PATH"                              # /home/abcd/website/
-replacements["\$HOSTNAME"]="\$HOSTNAME"                                # albertyw.com
+replacements["\$HOSTNAME"]="\$HOSTNAME"                                # www.albertyw.com
 replacements["\$GIT_REPOSITORY"]="\$GIT_REPOSITORY"                    # git@github.com:albertyw/albertyw.com
 replacements["\$PROJECT_NAME"]="\$PROJECT_NAME"                        # albertyw.com
 replacements["\$INTERNAL_PORT"]="\$INTERNAL_PORT"                      # 5000

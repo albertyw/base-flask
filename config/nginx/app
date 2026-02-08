@@ -3,8 +3,8 @@
 ### Redirects ###
 server {
     listen         80;
-    server_name    $HOSTNAME www.$HOSTNAME;
-    return         301 https://www.$HOSTNAME$request_uri;
+    server_name    $HOSTNAME $HOSTNAME;
+    return         301 https://$HOSTNAME$request_uri;
 }
 
 # Change naked domain to www
@@ -16,7 +16,7 @@ server {
     include snippets/ssl.conf;
     resolver 127.0.0.1 [::1];
 
-    rewrite         ^ https://www.$HOSTNAME$request_uri;
+    rewrite         ^ https://$HOSTNAME$request_uri;
 }
 
 
@@ -25,7 +25,7 @@ server {
 server {
     listen          443 ssl default_server;
     http2           on;
-    server_name     www.$HOSTNAME;
+    server_name     $HOSTNAME;
     access_log      /var/log/nginx/$PROJECT_NAME/$PROJECT_NAME.access.log;
     error_log       /var/log/nginx/$PROJECT_NAME/$PROJECT_NAME.error.log;
 

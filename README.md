@@ -28,8 +28,9 @@ Users
 These repositories are based on base-flask:
 
  - [albertyw/albertyw.com](https://github.com/albertyw/albertyw.com)
- - [albertyw/pharmadataassociates](https://github.com/albertyw/pharmadataassociates)
  - [albertyw/chase-center-calendar](https://github.com/albertyw/chase-center-calendar)
+ - [albertyw/nopages](https://github.com/albertyw/nopages)
+ - [albertyw/pharmadataassociates](https://github.com/albertyw/pharmadataassociates)
 
 Setup
 -----

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.1 (2026-02-08)
+-------------------
+
+ - Fix hostname in scaffolding
+ - Support scaffolding varsnap token
+ - Update dependencies
+
+
 3.23.0 (2025-12-24)
 -------------------
 

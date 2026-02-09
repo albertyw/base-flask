@@ -13,15 +13,17 @@ REPODIR="$BASEDIR/../"
 
 # Replace strings.  MODIFY REPLACEMENTS
 declare -A replacements
-replacements["\$REPO_PATH"]="\$REPO_PATH"                              # /home/abcd/website/
-replacements["\$HOSTNAME"]="\$HOSTNAME"                                # www.albertyw.com
-replacements["\$GIT_REPOSITORY"]="\$GIT_REPOSITORY"                    # git@github.com:albertyw/albertyw.com
-replacements["\$PROJECT_NAME"]="\$PROJECT_NAME"                        # albertyw.com
-replacements["\$INTERNAL_PORT"]="\$INTERNAL_PORT"                      # 5000
-replacements["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN"        # abcdefgh
-replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"        # abcdefgh
-replacements["\$GOOGLE_ANALYTICS_TOKEN"]="\$GOOGLE_ANALYTICS_TOKEN"    # abcdefgh
-replacements["\$LOGFIT_CLIENT_TOKEN"]="\$LOGFIT_CLIENT_TOKEN"          # abcdefgh
+replacements["\$REPO_PATH"]="\$REPO_PATH"                                # /home/abcd/website/
+replacements["\$HOSTNAME"]="\$HOSTNAME"                                  # www.albertyw.com
+replacements["\$GIT_REPOSITORY"]="\$GIT_REPOSITORY"                      # git@github.com:albertyw/albertyw.com
+replacements["\$PROJECT_NAME"]="\$PROJECT_NAME"                          # albertyw.com
+replacements["\$INTERNAL_PORT"]="\$INTERNAL_PORT"                        # 5000
+replacements["\$ROLLBAR_SERVER_TOKEN"]="\$ROLLBAR_SERVER_TOKEN"          # abcdefgh
+replacements["\$ROLLBAR_CLIENT_TOKEN"]="\$ROLLBAR_CLIENT_TOKEN"          # abcdefgh
+replacements["\$GOOGLE_ANALYTICS_TOKEN"]="\$GOOGLE_ANALYTICS_TOKEN"      # abcdefgh
+replacements["\$LOGFIT_CLIENT_TOKEN"]="\$LOGFIT_CLIENT_TOKEN"            # abcdefgh
+replacements["consumer-vst2b2q9tz5nmmiwpopx"]="\$VARSNAP_CONSUMER_TOKEN" # abcdefgh
+replacements["producer-eiwmox20c6930lo5zuth"]="\$VARSNAP_PRODUCER_TOKEN" # abcdefgh
 
 IFS=' '
 locations="Dockerfile ${REPODIR}/app ${REPODIR}/bin ${REPODIR}/config ${REPODIR}/.env.production"

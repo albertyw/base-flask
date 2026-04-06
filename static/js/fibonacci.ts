@@ -1,7 +1,7 @@
 import varsnap from 'varsnap';
 
 // Function for calculating fibonacci numbers
-const calculateFibonacci = varsnap(function calculateFibonacci(index) {
+const calculateFibonacci = varsnap(function calculateFibonacci(index: number): number {
   if (index <= 0) {
     return 0;
   }

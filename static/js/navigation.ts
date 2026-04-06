@@ -1,7 +1,7 @@
-const keyHistory = [];
+const keyHistory: string[] = [];
 
-const navigationOptions = {};
-const navigationOptionsText = {};
+const navigationOptions: Record<string, string> = {};
+const navigationOptionsText: Record<string, string> = {};
 function generateNavigationOptions() {
   const links = document.querySelectorAll('.navbar a');
   for (let i = 0; i < links.length; i++) {
@@ -9,14 +9,14 @@ function generateNavigationOptions() {
     const href = link.getAttribute('href');
     const text = link.innerHTML;
     const letter = findUnusedLetter(text, Object.keys(navigationOptions));
-    if (letter === undefined) {
+    if (letter === undefined || href === null) {
       continue;
     }
     navigationOptions[letter] = href;
     navigationOptionsText[text] = letter;
   }
 }
-function findUnusedLetter(text, usedLetters) {
+function findUnusedLetter(text: string, usedLetters: string[]): string | undefined {
   for (let i = 0; i < text.length; i++) {
     const letter = text[i].toLowerCase();
     if (!usedLetters.includes(letter)) {

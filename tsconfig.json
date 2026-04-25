@@ -5,6 +5,7 @@
         "module": "NodeNext",
         "outDir": "./static/gen-js",
         "rootDir": "./static/js",
+        "strict": true,
         "target": "es6",
         "skipLibCheck": true,
         "types": ["node"]

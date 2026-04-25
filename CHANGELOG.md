@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.2 (2026-04-24)
+-------------------
+
+- Update dependencies
+- Update typescript types
+- Update webpack-cli flags
+
+
 3.23.1 (2026-02-08)
 -------------------
 

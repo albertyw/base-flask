@@ -101,7 +101,7 @@ steps:
     image: satantime/puppeteer-node:25-trixie-slim
     commands:
       - apt-get update && apt-get install -y curl
-      - curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+      - curl -fsSL https://get.pnpm.io/install.sh | PNPM_VERSION=11 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
       - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME/bin:$PATH"
       - ln -fs .env.development .env
       - pnpm install

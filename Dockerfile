@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 ENV PNPM_HOME="/root/.local/share/pnpm"
 ENV PATH="$PNPM_HOME/bin:$PATH"
-RUN curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+RUN curl -fsSL https://get.pnpm.io/install.sh | PNPM_VERSION=11 ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 RUN pnpm install --prod --frozen-lockfile \
     && pnpm run build:prod
 

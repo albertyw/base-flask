@@ -23,7 +23,7 @@
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@types/node": "^25.8.0",
+    "@types/node": "^25.9.4",
     "bootstrap": "^5.3.8",
     "css-loader": "^7.1.4",
     "css-minimizer-webpack-plugin": "^8.0.0",
@@ -32,27 +32,27 @@
     "mini-css-extract-plugin": "^2.10.2",
     "normalize.css": "^8.0.1",
     "rollbar": "^3.1.0",
-    "ts-loader": "^9.5.7",
+    "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
-    "tsx": "^4.22.0",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "varsnap": "^1.12.0",
-    "webpack": "^5.106.2",
-    "webpack-cli": "^7.0.2"
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@wdio/browser-runner": "^9.27.1",
-    "@wdio/cli": "^9.27.1",
-    "@wdio/mocha-framework": "^9.27.1",
-    "@wdio/spec-reporter": "^9.27.1",
+    "@wdio/browser-runner": "^9.29.0",
+    "@wdio/cli": "^9.29.0",
+    "@wdio/mocha-framework": "^9.29.0",
+    "@wdio/spec-reporter": "^9.29.0",
     "chai": "^6.2.2",
     "dotenv": "^17.4.2",
-    "eslint": "^10.4.0",
-    "globals": "^17.6.0",
-    "stylelint": "^17.11.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.7.0",
+    "stylelint": "^17.13.0",
     "stylelint-config-standard": "^40.0.0",
-    "typescript-eslint": "^8.59.3"
+    "typescript-eslint": "^8.62.0"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"

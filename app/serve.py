@@ -36,7 +36,7 @@ if os.environ['ENV'] == 'production':  # pragma: no cover
             # environment name
             os.environ['ENV'],
             # server root directory, makes tracebacks prettier
-            root=get_current_path(),
+            root=str(get_current_path()),
             # flask already sets up logging
             allow_logging_basic_config=False)
 

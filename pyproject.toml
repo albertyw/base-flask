@@ -22,7 +22,7 @@ dependencies = [
 test = [
     # Testing
     "coverage==7.15.2",       # Test coverage
-    "mypy==2.1.0",            # Type checking
+    "mypy==2.3.0",            # Type checking
     "ruff==0.15.20",          # Python linter
 ]
 

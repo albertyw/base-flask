@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.4 (2026-07-25)
+-------------------
+
+ - Update dependencies
+ - Upgrade CI node to node:26
+ - Modernize nginx configuration
+
+
 3.23.3 (2026-05-17)
 -------------------
 

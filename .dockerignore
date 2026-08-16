@@ -1,9 +1,13 @@
 # .env is a symlink to .env.production and is required both at build time
 # (webpack inlines the client tokens) and at runtime, so env files stay in the
 # build context deliberately.
-.git
+
+# The empty .git directory is still needed for syspath to work
+.git/*
+
+# Build artifacts
 __pycache__
 *.egg-info
+node_modules
 
 logs
-node_modules

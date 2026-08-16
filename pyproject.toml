@@ -28,6 +28,10 @@ test = [
     "mypy==2.3.0",            # Type checking
 ]
 
+[tool.bandit]
+# Ignore dev-only false positive
+skips = ["B104"]
+
 [tool.ruff]
 # https://docs.astral.sh/ruff/rules/
 lint.select = ["E", "F", "W", "A", "B", "COM", "N", "PLC", "PLE", "PLW"]

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.5 (2026-08-15)
+-------------------
+
+ - Have rollbar.js ignore false positives from outdated browsers
+ - Various minor security improvements
+ - Update dependencies
+
+
 3.23.4 (2026-07-25)
 -------------------
 

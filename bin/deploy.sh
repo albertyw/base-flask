@@ -50,8 +50,8 @@ docker run \
 if [ "$ENV" = "production" ]; then
     if [ "$BRANCH" = "master" ]; then
         # Cleanup docker
-        docker system prune --force --filter "until=168h"
-        docker volume prune --force
+        docker system prune --force --filter "until=168h" || true
+        docker volume prune --force || true
     fi
 
     # Update nginx

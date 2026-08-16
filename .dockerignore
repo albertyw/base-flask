@@ -1,3 +1,9 @@
+# .env is a symlink to .env.production and is required both at build time
+# (webpack inlines the client tokens) and at runtime, so env files stay in the
+# build context deliberately.
+.git
+__pycache__
+*.egg-info
+
 logs
-.git/*
 node_modules

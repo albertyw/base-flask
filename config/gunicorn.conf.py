@@ -1,11 +1,15 @@
 import multiprocessing
+import os
 
 
 proc_name = '$PROJECT_NAME'
 wsgi_app = 'app.serve:app'
 
 bind = '0.0.0.0:5000'
-forwarded_allow_ips = '*'
+# Only the reverse proxy may set X-Forwarded-*.  bin/deploy.sh passes the
+# docker bridge gateway, which is the address nginx's traffic arrives from;
+# the fallback trusts nobody rather than everybody.
+forwarded_allow_ips = os.environ.get('FORWARDED_ALLOW_IPS', '127.0.0.1')
 workers = (multiprocessing.cpu_count() // 2) + 1
 preload_app = True
 

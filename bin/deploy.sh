@@ -51,6 +51,7 @@ docker run \
     --env FORWARDED_ALLOW_IPS="$GATEWAY" \
     --mount type=bind,source="$(pwd)"/static/mount,target=/var/www/app/static/mount \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
+    --mount type=bind,source="$(pwd)"/.env,target=/var/www/app/.env,readonly \
     --name="$CONTAINER" "$CONTAINER:$BRANCH"
 
 if [ "$ENV" = "production" ]; then

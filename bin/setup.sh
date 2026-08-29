@@ -41,7 +41,15 @@ sudo rm -rf /var/www/html
 
 # Secure nginx
 sudo mkdir -p /etc/nginx/ssl
-curl https://ssl-config.mozilla.org/ffdhe2048.txt | sudo tee /etc/nginx/ssl/dhparams.pem > /dev/null
+# Download to a temporary file and validate it before installing it: piping
+# straight into place leaves an empty or truncated dhparams file when the
+# fetch fails, which nginx then refuses to start with.
+DHPARAMS="$(mktemp)"
+curl --fail --silent --show-error --location \
+    https://ssl-config.mozilla.org/ffdhe2048.txt --output "$DHPARAMS"
+openssl dhparam -in "$DHPARAMS" -check -noout
+sudo install -m 0644 "$DHPARAMS" /etc/nginx/ssl/dhparams.pem
+rm "$DHPARAMS"
 # Copy server.key and server.pem to /etc/nginx/ssl.  The private/public key
 # pair can be generated from Cloudflare or letsencrypt.
 

@@ -47,5 +47,10 @@ COPY . .
 RUN pip install --no-cache-dir -e .
 COPY --from=node /root/static/gen ./static/gen
 
+# The application runs unprivileged: supervisord starts as root so it can set
+# up the bind-mounted directories, then drops to www-data for the gunicorn
+# program (see config/supervisord.conf).
+RUN chown -R www-data:www-data /var/www/app
+
 # Set startup script
 CMD ["bin/start.sh"]

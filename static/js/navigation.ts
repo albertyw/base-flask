@@ -7,7 +7,7 @@ function generateNavigationOptions() {
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
     const href = link.getAttribute('href');
-    const text = link.innerHTML;
+    const text = link.textContent ?? '';
     const letter = findUnusedLetter(text, Object.keys(navigationOptions));
     if (letter === undefined || href === null) {
       continue;
@@ -26,19 +26,36 @@ function findUnusedLetter(text: string, usedLetters: string[]): string | undefin
   return undefined;
 }
 
+function findLetterIndex(text: string, letter: string): number {
+  for (let i = 0; i < text.length; i++) {
+    if (text[i].toLowerCase() === letter) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// Link labels are rebuilt out of text nodes rather than by round-tripping
+// innerHTML, so a label sourced from data can never be parsed as markup.
 function underlineText() {
   const links = document.querySelectorAll('.navbar a');
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
-    const letter = navigationOptionsText[link.innerHTML];
-    let text = link.innerHTML;
-    for (let j = 0; j < text.length; j++) {
-      if (text[j].toLowerCase() === letter) {
-        text = text.replace(text[j], '<u>' + text[j] + '</u>');
-        break;
-      }
+    const text = link.textContent ?? '';
+    const letter = navigationOptionsText[text];
+    if (letter === undefined) {
+      continue;
     }
-    link.innerHTML = text;
+    const index = findLetterIndex(text, letter);
+    if (index === -1) {
+      continue;
+    }
+    const underline = document.createElement('u');
+    underline.textContent = text[index];
+    link.textContent = '';
+    link.appendChild(document.createTextNode(text.slice(0, index)));
+    link.appendChild(underline);
+    link.appendChild(document.createTextNode(text.slice(index + 1)));
   }
 }
 

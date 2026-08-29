@@ -1,8 +1,10 @@
-# .env is a symlink to .env.production and is required both at build time
-# (webpack inlines the client tokens) and at runtime, so env files stay in the
-# build context deliberately.
+# .env is a symlink to .env.production and is required at build time (webpack
+# inlines the client tokens into the JS bundle), so env files stay in the build
+# context.  The runtime image does not copy them -- see Dockerfile -- and
+# receives .env as a bind mount from bin/deploy.sh instead.
 
-# The empty .git directory is still needed for syspath to work
+# Keep the repository history out of the build context.  The runtime image
+# does not copy .git at all; it creates an empty one for syspath.
 .git/*
 
 # Build artifacts

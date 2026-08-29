@@ -35,6 +35,11 @@ docker build \
 docker network inspect "$NETWORK" &>/dev/null ||
     docker network create --driver bridge "$NETWORK"
 
+# gunicorn trusts X-Forwarded-* only from this address, which is where the
+# host's nginx traffic enters the container's network.
+GATEWAY="$(docker network inspect "$NETWORK" \
+    --format '{{range .IPAM.Config}}{{.Gateway}}{{end}}')"
+
 # Start container
 docker stop "$CONTAINER" || true
 docker container rm "$CONTAINER" || true
@@ -43,8 +48,10 @@ docker run \
     --restart=always \
     --publish="127.0.0.1:$PORT:5000" \
     --network="$NETWORK" \
+    --env FORWARDED_ALLOW_IPS="$GATEWAY" \
     --mount type=bind,source="$(pwd)"/static/mount,target=/var/www/app/static/mount \
     --mount type=bind,source="$(pwd)"/logs,target=/var/www/app/logs \
+    --mount type=bind,source="$(pwd)"/.env,target=/var/www/app/.env,readonly \
     --name="$CONTAINER" "$CONTAINER:$BRANCH"
 
 if [ "$ENV" = "production" ]; then

@@ -12,5 +12,13 @@ shopt -s extglob
 cp -r static/!(mount) static/mount
 shopt -u extglob
 
+# gunicorn runs as www-data, but the log directory is a host bind mount whose
+# ownership comes from the host.  Grant group access instead of chowning it:
+# the mount is inside the deploy user's checkout, and taking ownership would
+# lock that user out of a directory git needs to write.
+mkdir -p logs/gunicorn
+chgrp -R www-data logs/gunicorn
+chmod -R g+w logs/gunicorn
+
 # Run supervisor to run gunicorn
 supervisord -c config/supervisord.conf

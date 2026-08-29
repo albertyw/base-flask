@@ -40,12 +40,27 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Set up directory structures
 WORKDIR /var/www/app
-RUN mkdir -p .
-COPY . .
+# Copy only what the runtime needs.  This deliberately leaves the .env files
+# out of the image: they hold server-side secrets, which anyone who can pull
+# the image could otherwise read out of the layer.  bin/deploy.sh bind-mounts
+# .env at run time instead.
+COPY pyproject.toml ./
+COPY app ./app
+COPY bin ./bin
+COPY config ./config
+COPY static/img ./static/img
 
 # Set up dependencies
 RUN pip install --no-cache-dir -e .
 COPY --from=node /root/static/gen ./static/gen
+
+# syspath.git_root looks for a .git entry to locate the project root, and the
+# repository itself is not shipped, so leave an empty marker behind.
+# The application then runs unprivileged: supervisord starts as root so it can
+# set up the bind-mounted directories, then drops to www-data for the gunicorn
+# program (see config/supervisord.conf).
+RUN mkdir -p .git logs/gunicorn logs/supervisord static/mount \
+    && chown -R www-data:www-data /var/www/app
 
 # Set startup script
 CMD ["bin/start.sh"]

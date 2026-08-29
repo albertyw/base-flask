@@ -12,12 +12,22 @@ from app.routes import handlers
 
 dotenv.load_dotenv(git_root.path / '.env')
 
+
+def validate_debug(env: str, debug: bool) -> bool:
+    """Flask's debug mode leaks tracebacks; never allow it in production."""
+    if env == 'production' and debug:
+        raise RuntimeError('DEBUG must not be enabled when ENV is production')
+    return debug
+
+
 app = Flask(
     __name__,
     static_url_path='/static',
     static_folder=git_root.path / 'static',
 )
-app.debug = os.environ['DEBUG'] == 'true'
+app.debug = validate_debug(
+    os.environ['ENV'], os.environ['DEBUG'] == 'true',
+)
 if os.environ.get('SERVER_NAME', ''):  # pragma: no cover
     app.config['SERVER_NAME'] = os.environ['SERVER_NAME']
 

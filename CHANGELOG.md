@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+3.23.6 (2026-08-29)
+-------------------
+
+ - Various security hardening
+ - Fix enabling ipv6 support by nginx
+ - Fix docker mutex errors from concurrent deployments
+ - Optimize memory usage by rollbar
+ - Update dependencies
+
+
 3.23.5 (2026-08-15)
 -------------------
 

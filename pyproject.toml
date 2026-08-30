@@ -25,7 +25,7 @@ test = [
     "ruff==0.16.3",           # Python linter
 
     # Types
-    "mypy==2.3.0",            # Type checking
+    "mypy==2.3.1",            # Type checking
 ]
 
 [tool.bandit]

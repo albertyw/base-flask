@@ -107,7 +107,7 @@ steps:
       - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME/bin:$PATH"
       - ln -fs .env.development .env
       - pnpm install
-      - pnpx tsx baseflask/refresh-varsnap.ts
+      - pnpm exec tsx baseflask/refresh-varsnap.ts
 trigger:
   cron:
     - refresh-varsnap-production-snaps

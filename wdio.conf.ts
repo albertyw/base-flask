@@ -13,13 +13,6 @@ export const config: Options.Testrunner = {
       reportsDirectory: '.coverage_js',
     },
   }],
-  autoCompileOpts: {
-    autoCompile: true,
-    tsNodeOpts: {
-      project: './tsconfig.json',
-      transpileOnly: true,
-    },
-  },
   //
   // ==================
   // Specify Test Files

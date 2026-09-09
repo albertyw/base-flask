@@ -8,10 +8,11 @@
         "strict": true,
         "target": "es6",
         "skipLibCheck": true,
-        "types": ["node"]
+        "types": ["mocha", "node"]
     },
     "include": [
         "./static/js/*",
+        "./static/js/test/*",
         "./wdio.conf.ts",
         "./webpack.config.ts",
         "./.eslint.config.ts"

@@ -13,6 +13,7 @@
     "include": [
         "./static/js/*",
         "./wdio.conf.ts",
+        "./webpack.config.ts",
         "./.eslint.config.ts"
     ]
 }

@@ -7,7 +7,7 @@
     "*.css"
   ],
   "scripts": {
-    "eslint": "eslint -c .eslint.config.ts .",
+    "eslint": "tsc --noEmit && eslint -c .eslint.config.ts .",
     "stylelint": "stylelint static/css/*",
     "test": "pnpm run build:dev && pnpm run eslint && pnpm run stylelint && pnpm run wdio",
     "build:dev": "webpack-cli --mode=development",
@@ -46,6 +46,7 @@
     "@wdio/cli": "^9.31.4",
     "@wdio/mocha-framework": "^9.31.2",
     "@wdio/spec-reporter": "^9.31.2",
+    "@wdio/types": "^9.31.2",
     "chai": "^6.2.2",
     "dotenv": "^17.4.2",
     "eslint": "^10.9.1",

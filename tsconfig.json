@@ -4,13 +4,15 @@
         "allowSyntheticDefaultImports": true,
         "module": "NodeNext",
         "outDir": "./static/gen-js",
-        "rootDir": "./static/js",
+        "rootDir": ".",
         "strict": true,
         "target": "es6",
         "skipLibCheck": true,
         "types": ["node"]
     },
     "include": [
-        "./static/js/*"
+        "./static/js/*",
+        "./wdio.conf.ts",
+        "./.eslint.config.ts"
     ]
 }

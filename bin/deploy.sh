@@ -12,18 +12,18 @@ CONTAINER="$PROJECT_NAME"
 PORT="$INTERNAL_PORT"
 NETWORK="$CONTAINER"_net
 DEPLOY_BRANCH="${1:-}"
-BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-VERSION="$(git describe --always)"
 set +x  # Do not print contents of .env
 source .env
 set -x
 
 if [ -n "$DEPLOY_BRANCH" ]; then
     # Update repository
-    git checkout "$DEPLOY_BRANCH"
     git fetch -tp
+    git checkout "$DEPLOY_BRANCH"
     git pull
 fi
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+VERSION="$(git describe --always)"
 
 # Build container and network
 docker build \

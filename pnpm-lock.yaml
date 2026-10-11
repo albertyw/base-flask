@@ -36,8 +36,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1
       rollbar:
-        specifier: ^3.1.0
-        version: 3.1.0
+        specifier: ^4.0.0
+        version: 4.0.0
       ts-loader:
         specifier: ^9.6.2
         version: 9.6.2(typescript@6.0.3)(webpack@5.111.1)
@@ -3490,8 +3490,8 @@ packages:
   rgb2hex@0.2.5:
     resolution: {integrity: sha512-22MOP1Rh7sAo1BZpDG6R5RFYzR2lYEgwq7HEmyW2qcsOqR2lQKmn+O//xV3YG/0rrhMC6KVX2hU+ZXuaw9a5bw==}
 
-  rollbar@3.1.0:
-    resolution: {integrity: sha512-YELG0MDRzOLnV5sa2vL/IiGEgNoK5JAivKlpjcJewEIqgmiVlEAPFQUNNB3fsK1PZy6VdHpsUd+Xp4qEuAylfQ==}
+  rollbar@4.0.0:
+    resolution: {integrity: sha512-DcJ11PTnwuk63ZlcF48TqvfVZVz4k44qdEhhhQEckCd6uvxgnRbbzougvFYpSynIUiisOAVkqshxSlzcxxFBUQ==}
 
   rollup@4.64.3:
     resolution: {integrity: sha512-iIMWbptLYsZdGTJMH8ngApXdsCatE6bCMv2eqGIfGE1++kwh7TCWBdWKK0FKC0yx++196vGK5VdagzRXSLMa8A==}
@@ -7638,7 +7638,7 @@ snapshots:
 
   rgb2hex@0.2.5: {}
 
-  rollbar@3.1.0:
+  rollbar@4.0.0:
     dependencies:
       '@rrweb/record': 2.1.7
       async: 3.2.6

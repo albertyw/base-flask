@@ -31,7 +31,7 @@
     "logfit": "^0.9.3",
     "mini-css-extract-plugin": "^2.10.2",
     "normalize.css": "^8.0.1",
-    "rollbar": "^3.1.0",
+    "rollbar": "^4.0.0",
     "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.23.15",

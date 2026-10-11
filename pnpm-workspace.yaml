@@ -3,15 +3,17 @@ allowBuilds:
   "edgedriver": false
   "esbuild": false
   "geckodriver": false
+minimumReleaseAgeExclude:
+  - expect-webdriverio@8.0.0
 publicHoistPattern:
-- "@wdio/globals"
-- "aria-query"
-- "css-shorthand-properties"
-- "css-value"
-- "expect"
-- "expect-webdriverio"
-- "grapheme-splitter"
-- "lodash.clonedeep"
-- "lodash.zip"
-- "rgb2hex"
-- "webdriverio"
+  - "@wdio/globals"
+  - "aria-query"
+  - "css-shorthand-properties"
+  - "css-value"
+  - "expect"
+  - "expect-webdriverio"
+  - "grapheme-splitter"
+  - "lodash.clonedeep"
+  - "lodash.zip"
+  - "rgb2hex"
+  - "webdriverio"

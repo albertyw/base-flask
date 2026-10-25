@@ -4,7 +4,7 @@ name: test
 
 steps:
   - name: Test Python
-    image: python:3.14-slim-trixie
+    image: python:3.15-slim-trixie
     commands:
       - apt-get update && apt-get install -y curl git xz-utils
       - curl https://qlty.sh | sh
@@ -94,7 +94,7 @@ type: docker
 name: refresh-varsnap-production-snaps
 steps:
   - name: Refresh Varsnap Python Production Snaps
-    image: python:3.14-slim-trixie
+    image: python:3.15-slim-trixie
     commands:
       - ln -fs .env.development .env
       - pip install -e .[test]

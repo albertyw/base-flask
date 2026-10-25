@@ -18,7 +18,7 @@ RUN pnpm install --prod --frozen-lockfile \
     && pnpm run build:prod
 
 
-FROM python:3.14-slim-trixie
+FROM python:3.15-slim-trixie
 
 LABEL maintainer="git@albertyw.com"
 EXPOSE 5000

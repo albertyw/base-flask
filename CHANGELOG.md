@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+3.23.7 (2026-10-30)
+-------------------
+
+- Update to Python 3.15
+- Update dependencies
+- Fix wdio tests
+
+
 3.23.6 (2026-08-29)
 -------------------
 

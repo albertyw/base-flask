@@ -4,8 +4,8 @@
 # receives .env as a bind mount from bin/deploy.sh instead.
 
 # Keep the repository history out of the build context.  The runtime image
-# does not copy .git at all; it creates an empty one for syspath.
-.git/*
+# creates an empty .git itself so that syspath can find the project root.
+.git
 
 # Build artifacts
 __pycache__

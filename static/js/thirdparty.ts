@@ -37,6 +37,12 @@ export function setupRollbar() {
     captureUncaught: true,
     payload: {
       environment: process.env.ENV,
+      client: {
+        javascript: {
+          source_map_enabled: true,
+          code_version: process.env.GIT_COMMIT,
+        },
+      },
       server: {
         branch: process.env.GIT_BRANCH,
         commit: process.env.GIT_COMMIT,

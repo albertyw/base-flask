@@ -24,6 +24,13 @@ function gitVersion() {
   return process.env.GIT_VERSION;
 }
 
+function gitCommit() {
+  if (process.env.GIT_COMMIT === undefined) {
+    process.env.GIT_COMMIT = child_process.execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+  }
+  return process.env.GIT_COMMIT;
+}
+
 const config: Configuration = {
   entry: './static/js/index.ts',
   output: {
@@ -35,6 +42,7 @@ const config: Configuration = {
     new Dotenv(),
     new webpack.EnvironmentPlugin({
       GIT_VERSION: gitVersion(),
+      GIT_COMMIT: gitCommit(),
       GIT_BRANCH: gitBranch(),
     }),
   ],

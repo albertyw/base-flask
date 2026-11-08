@@ -24,12 +24,14 @@ if [ -n "$DEPLOY_BRANCH" ]; then
 fi
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 VERSION="$(git describe --always)"
+COMMIT="$(git rev-parse HEAD)"
 
 # Build container and network
 docker build \
     --pull \
     --tag "$CONTAINER:$BRANCH" \
     --build-arg GIT_VERSION="$VERSION" \
+    --build-arg GIT_COMMIT="$COMMIT" \
     --build-arg GIT_BRANCH="$BRANCH" \
     .
 docker network inspect "$NETWORK" &>/dev/null ||

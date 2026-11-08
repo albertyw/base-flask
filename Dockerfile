@@ -10,12 +10,7 @@ COPY . /root
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install dependencies and build static files
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl ca-certificates                        `: Needed for installing dependencies` \
-    && rm -rf /var/lib/apt/lists/*
-ENV PNPM_HOME="/root/.local/share/pnpm"
-ENV PATH="$PNPM_HOME/bin:$PATH"
-RUN curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+RUN npm install --global pnpm@11.17.0
 RUN pnpm install --prod --frozen-lockfile \
     && pnpm run build:prod
 

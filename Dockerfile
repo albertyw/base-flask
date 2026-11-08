@@ -60,9 +60,9 @@ COPY --from=node /root/static/gen ./static/gen
 # repository itself is not shipped, so leave an empty marker behind.
 # The application then runs unprivileged: supervisord starts as root so it can
 # set up the bind-mounted directories, then drops to www-data for the gunicorn
-# program (see config/supervisord.conf).
-RUN mkdir -p .git logs/gunicorn logs/supervisord static/mount \
-    && chown -R www-data:www-data /var/www/app
+# program (see config/supervisord.conf).  The code stays owned by root so that
+# the application cannot modify itself.
+RUN mkdir -p .git logs/gunicorn logs/supervisord static/mount
 
 # Set startup script
 CMD ["bin/start.sh"]

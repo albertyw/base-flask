@@ -7,7 +7,7 @@ steps:
     image: python:3.15-slim-trixie
     commands:
       - apt-get update && apt-get install -y curl git xz-utils
-      - curl https://qlty.sh | sh
+      - curl -fsSL https://qlty.sh | QLTY_VERSION=0.662.0 sh
       - ln -fs .env.development .env
       - pip install -e .[test]
       - ruff check .
@@ -25,9 +25,8 @@ steps:
     image: satantime/puppeteer-node:26-trixie-slim
     commands:
       - apt-get update && apt-get install -y curl
-      - curl https://qlty.sh | sh
-      - curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
-      - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME/bin:$PATH"
+      - curl -fsSL https://qlty.sh | QLTY_VERSION=0.662.0 sh
+      - npm install --global pnpm@11.17.0
       - ln -fs .env.development .env
       - pnpm install
       - pnpm test
@@ -40,13 +39,13 @@ steps:
         from_secret: qlty_coverage_token
 
   - name: Test Bash
-    image: koalaman/shellcheck-alpine:stable
+    image: koalaman/shellcheck-alpine:v0.11.0
     commands:
       - ln -fs .env.development .env
       - shellcheck -x bin/*.sh
 
   - name: Test Dockerfile
-    image: hadolint/hadolint:latest-alpine
+    image: hadolint/hadolint:v2.15.1-alpine
     commands:
       - hadolint Dockerfile --ignore=DL3008 --ignore=SC2046 --ignore=SC2006
 
@@ -103,9 +102,7 @@ steps:
   - name: Refresh Varsnap Javascript Production Snaps
     image: satantime/puppeteer-node:26-trixie-slim
     commands:
-      - apt-get update && apt-get install -y curl
-      - curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
-      - export PNPM_HOME="$HOME/.local/share/pnpm" && export PATH="$PNPM_HOME/bin:$PATH"
+      - npm install --global pnpm@11.17.0
       - ln -fs .env.development .env
       - pnpm install
       - pnpm exec tsx baseflask/refresh-varsnap.ts

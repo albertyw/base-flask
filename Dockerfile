@@ -10,12 +10,7 @@ COPY . /root
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install dependencies and build static files
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl ca-certificates                        `: Needed for installing dependencies` \
-    && rm -rf /var/lib/apt/lists/*
-ENV PNPM_HOME="/root/.local/share/pnpm"
-ENV PATH="$PNPM_HOME/bin:$PATH"
-RUN curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+RUN npm install --global pnpm@11.17.0
 RUN pnpm install --prod --frozen-lockfile \
     && pnpm run build:prod
 
@@ -60,9 +55,9 @@ COPY --from=node /root/static/gen ./static/gen
 # repository itself is not shipped, so leave an empty marker behind.
 # The application then runs unprivileged: supervisord starts as root so it can
 # set up the bind-mounted directories, then drops to www-data for the gunicorn
-# program (see config/supervisord.conf).
-RUN mkdir -p .git logs/gunicorn logs/supervisord static/mount \
-    && chown -R www-data:www-data /var/www/app
+# program (see config/supervisord.conf).  The code stays owned by root so that
+# the application cannot modify itself.
+RUN mkdir -p .git logs/gunicorn logs/supervisord static/mount
 
 # Set startup script
 CMD ["bin/start.sh"]

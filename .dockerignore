@@ -7,7 +7,8 @@
 # creates an empty .git itself so that syspath can find the project root.
 .git
 
-# Build artifacts
+# Build artifacts; static/gen is rebuilt inside the image
+static/gen
 __pycache__
 *.egg-info
 node_modules
